@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+<?taglib uri="/WEB-INF/security.tld" prefix="sec"?>
+<zk>
+<window apply="org.zkoss.bind.BindComposer" viewModel="@id('mevm') @init('com.leoni.viewModel.WorkplaceViewModel')">
+ <timer id="timerKeepAliveSession" repeats="true" delay="3600000" onTimer=""/>
+<groupbox title="Pridat novy zaznam" if="${sec:isAllGranted('ROLE_AV')}" closable="true" open="false">
+
+  <grid width="700px" >
+          <rows>
+
+              <row >
+                 <label value="Name:" width="150px"/>
+                 <textbox value="@bind(mevm.name)" width="150px"/>
+
+              </row>
+              <row >
+                           <label value="Band name:" width="150px"/>
+                           <combobox selectedItem="@bind(mevm.bandName)" readonly="true">
+                                                                                                                                                                   <comboitem label="F991RL" value="F991RL"/>
+                                                                                                                                                                   <comboitem label="F9X1RL" value="F9X1RL"/>
+                                                                                                                                                                   <comboitem label="F981LL" value="F981LL"/>
+                                                                                                                                                                   <comboitem label="F991LL" value="F991LL"/>
+                                                                                                                                           </combobox>
+              </row>
+              <row >
+                                         <label value="Step:" width="150px"/>
+                                         <textbox value="@bind(mevm.step)" width="150px"/>
+              </row>
+              <row >
+                                                       <label value="Side:" width="150px"/>
+                                                      <combobox selectedItem="@bind(mevm.side)" readonly="true">
+                                                                                                                                           <comboitem label="A" value="A" />
+                                                                                                                                           <comboitem label="B" value="B"/>
+                                                                                                                                           </combobox>
+              </row>
+              <row >
+                  <label value="Operation:" width="150px"/>
+                  <textbox value="@bind(mevm.operation)" width="150px"/>
+              </row>
+              <row >
+                  <label value="Alias:" width="150px"/>
+                  <textbox value="@bind(mevm.alias)" width="150px"/>
+              </row>
+
+          </rows>
+
+      </grid>
+      <button mold="trendy"  label="Vytvorit"
+                  onClick="@command('generateNewWorkplace')"/>
+    </groupbox>
+<separator bar="true"/>
+
+ <groupbox mold="3d" closable="false">
+ <caption  height="15px" >
+                 <div align="center" >
+                 <label value="Pracoviska"  style="font-size:12pt" />
+                 </div>
+                 </caption>
+    <listbox id="workplaceGrid" model="@load(mevm.workplaceList)" mold="paging" selectedItem="@bind(mevm.selectedWorkplace)" height="600px">
+         <auxhead sclass="category-center">
+         <auxheader colspan="2">
+
+                                                  </auxheader>
+         <auxheader colspan="1">
+                                                             <combobox  onSelect="@command('search')" model="@load(mevm.bandNameList)" selectedItem="@bind(mevm.bandNameSearch)" readonly="true">
+                                                                                                                                                                                                                                           <template name="model" >
+                                                                                                                                                                                                                                                                                     <comboitem label="@load(each)"/>
+                                                                                                                                                                                                                                                                                 </template>
+                                                                                                                                                                                                  </combobox>
+                                             </auxheader>
+                     <auxheader colspan="4">
+
+                                         </auxheader>
+         <auxheader colspan="1" align="center">
+                                 <button image="images/search.png" mold="trendy"  onClick="@command('search')"/>
+                                         </auxheader>
+         </auxhead>
+        <listhead menupopup="auto">
+                    <listheader label="Id" align="center" sort="auto(id)" width="10%"/>
+                    <listheader label="Name" align="center" sort="auto(name)" width="20%"/>
+                    <listheader label="Band name" align="center" sort="auto(bandName)" width="20%"/>
+                    <listheader label="Step" align="center" sort="auto(step)" width="10%"/>
+                    <listheader label="Side" align="center" sort="auto(side)" width="10%"/>
+                    <listheader label="Operation" align="center" sort="auto(operation)" width="10%"/>
+                    <listheader label="Alias" align="center" sort="auto(alias)" width="10%"/>
+                    <listheader label="Delete" align="center" width="10%"/>
+                </listhead>
+        <template name="model">
+            <listitem>
+                <listcell label="@load(each.id)" />
+                <listcell label="@load(each.name)"/>
+                <listcell label="@load(each.bandName)"/>
+                <listcell label="@load(each.step)"/>
+                <listcell label="@load(each.side)"/>
+                <listcell label="@load(each.operation)"/>
+                <listcell label="@load(each.alias)"/>
+
+                <listcell>
+                                    <button image="images/delete.png" if="${sec:isAllGranted('ROLE_AV')}" mold="trendy"  onClick="@command('deleteWorkplace', workplace=each)"/>
+                </listcell>
+            </listitem>
+        </template>
+    </listbox>
+<separator bar="true"/>
+<grid if="${sec:isAllGranted('ROLE_AV')}" form="@id('fx') @load(mevm.selectedWorkplace) @save(mevm.selectedWorkplace, before='saveWorkplace')">
+           <auxhead>
+               <auxheader colspan="8" >Editovat</auxheader>
+           </auxhead>
+           <columns>
+                                  <column label="Id" align="center" width="10%"/>
+                                  <column label="Name" align="center" width="20%"/>
+                                  <column label="Band name" align="center" width="20%"/>
+                                  <column label="Step" align="center" width="10%"/>
+                                  <column label="Side" align="center" width="10%"/>
+                                  <column label="Operation" align="center" width="10%"/>
+                                  <column label="Alias" align="center" width="10%"/>
+
+                                  <column label="Save" align="center" width="10%"/>
+           </columns>
+               <rows>
+               <row>
+
+                   <label value="@load(fx.id)"/>
+                   <textbox value="@bind(fx.name)" width="90%"/>
+                   <combobox selectedItem="@bind(fx.bandName)" readonly="true" width="90%">
+                                                                                                  <comboitem label="F9X1RL" value="F9X1RL"/>
+                                                                                                  <comboitem label="F991RL" value="F991RL"/>
+                                                                                                  <comboitem label="F981LL" value="F981LL"/>
+                                                                                                  <comboitem label="F991LL" value="F991LL"/>
+                                                                          </combobox>
+                   <textbox value="@bind(fx.step)" width="90%"/>
+                    <combobox selectedItem="@bind(fx.side)" readonly="true" width="90%">
+                                                                               <comboitem label="A" value="A" />
+                                                                               <comboitem label="B" value="B"/>
+                                                       </combobox>
+                   <textbox value="@bind(fx.operation)" width="90%"/>
+                   <textbox value="@bind(fx.alias)" width="90%"/>
+
+               <button image="images/save.png" mold="trendy" onClick="@command('saveWorkplace', selectedData= mevm.selectedWorkplace)" />
+             </row>
+             </rows>
+       </grid>
+</groupbox>
+
+</window>
+</zk>

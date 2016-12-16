@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+
+<window apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.leoni.trying.PersonViewModel')" height="100%">
+    <!--<include src="/info.zul" />-->
+    <hlayout spacing="0" height="500px">
+        <listbox model="@load(vm.persons)" vflex="true" width="601px" mold="paging" pageSize="2">
+            <auxhead>
+                <auxheader><textbox value="@bind(vm.filter.title)" instant="true" onChange="@command('filterPersons')" width="95%"/></auxheader>
+                <auxheader><textbox value="@bind(vm.filter.firstName)" instant="true" onChange="@command('filterPersons')" width="95%" /></auxheader>
+                <auxheader><textbox value="@bind(vm.filter.lastName)" instant="true" onChange="@command('filterPersons')" width="95%"/></auxheader>
+                <auxheader><textbox value="@bind(vm.filter.age)" instant="true" onChange="@command('filterPersons')" width="95%"/></auxheader>
+            </auxhead>
+            <listhead>
+                <listheader label="Title" width="25%" align="center"  sort="auto(title)"/>
+                <listheader label="Meno" width="25%" align="center"  sort="auto(firstName)"/>
+                <listheader label="Priezvisko" width="25%" align="center"  sort="auto(lastName)"/>
+                <listheader label="Vek" width="25%" align="center"  sort="auto(age)"/>
+            </listhead>
+            <template name="model" var="person">
+                <listitem>
+                    <listcell label="@load(person.title)" />
+                    <listcell label="@load(person.firstName)" />
+                    <listcell label="@load(person.lastName)" />
+                    <listcell label="@load(person.age)" />
+                </listitem>
+            </template>
+        </listbox>
+
+        <window sclass="card-pre" title="Name Card Preview" width="430px" vflex="true" border="normal">
+            <div sclass="card">
+                <image sclass="logo" src="/images/ZK-Logo.gif" />
+                <vlayout sclass="title">
+                    <label sclass="name" value="@load(vm.selected.lastName)" />
+                    <hlayout sclass="dept">
+                        <label value="@load(vm.selected.age)" />
+                        Contributor
+                    </hlayout>
+                </vlayout>
+                <div sclass="number">
+                    Tel:+1-23-456-789 ext
+                    <label value="@load(vm.selected.mail)" />
+                </div>
+            </div>
+        </window>
+    </hlayout>
+
+    <grid width="830px">
+        <auxhead>
+            <auxheader colspan="5" class="topic">Edit Data</auxheader>
+        </auxhead>
+        <columns>
+            <column label="Title" align="center"/>
+            <column label="com.leoni.trying.First Name" align="center" />
+            <column label="Last Name" align="center" />
+            <column label="Extension" align="center" />
+            <column label="Full Name" align="center"/>
+        </columns>
+        <rows>
+            <row>
+                <combobox id="deptcb" model="@load(vm.titles)" selectedItem="@bind(vm.selected.title)" width="99%" />
+                <textbox value="@bind(vm.selected.firstName)" width="150px" />
+                <textbox value="@bind(vm.selected.lastName)" width="150px" />
+                <textbox value="@bind(vm.selected.mail)" width="150px" />
+                <label value="@load(vm.selected.age)"/>
+            </row>
+        </rows>
+    </grid>
+    <button label="Add" onClick="@command('addNew')"/>
+    <button label="Del" onClick="@command('deletePerson')"/>
+</window>

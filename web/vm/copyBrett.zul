@@ -1,0 +1,49 @@
+<zk>
+    <window id="modalDialog" title="Kopirovat dosku" border="normal" width="500px"
+            apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.leoni.viewModel.vm.CopyBrettVM',vlayout=vlayout)"
+            position="center,center" closable="true"
+            action="show: slideDown;hide: slideUp">
+        <timer id="timerKeepAliveSession" repeats="true" delay="3600000" onTimer=""/>
+        <vlayout>
+
+            <groupbox>
+
+                <vlayout id="vlayout">
+
+                </vlayout>
+                <grid>
+
+                    <rows>
+                        <row>
+                            <label value="Nazov" width="150px" />
+                            <textbox  width="90%" value="@bind(vm.name)"/>
+
+                        </row>
+
+
+                    </rows>
+                </grid>
+                <grid   model="@load(vm.vmSwitchList)">
+                    <columns>
+                        <column label="Klipy" />
+                        <column label="Switche" />
+                    </columns>
+                    <template name="model">
+                        <row >
+                            <cell>
+                                <label  value="@load(each.vmClip.name)"/>
+                            </cell>
+                            <cell>
+                                <textbox  width="90%" value="@bind(each.address)"/>
+                            </cell>
+
+                        </row>
+                    </template>
+                </grid>
+
+            </groupbox>
+            <button mold="trendy"  image="images/yes.png"
+                    onClick="@command('submit', vlayout=vlayout)"/>
+        </vlayout>
+    </window>
+</zk>

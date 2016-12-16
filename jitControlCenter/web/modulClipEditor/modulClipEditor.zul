@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+<?taglib uri="http://www.zkoss.org/zkspring/security" prefix="sec"?>
+<zk>
+<window apply="org.zkoss.bind.BindComposer" viewModel="@id('mevm') @init('com.leoni.viewModel.ModulClipViewModel')">
+<timer id="timerKeepAliveSession" repeats="true" delay="3600000" onTimer=""/>
+<groupbox title="Pridat novy zaznam" if="${sec:isAllGranted('ROLE_AV')}" closable="true" open="false">
+
+  <grid width="700px" >
+          <rows>
+
+
+                             <row >
+                                          <label value="Lieferant Nr:" width="150px"/>
+                                          <combobox  width="150px" selectedItem="@bind(mevm.sachNrLieferantModul)"  model="@load(mevm.modulsList2)" onSelect="@command('updateSachNrBestModul')" onOk="@command('updateSachNrBestModul')" autodrop="true">
+                                                                                                       <template name="model" >
+                                                                                                       <comboitem label="@load(each.sachNrLieferant)"/>
+                                                                                                       </template>
+                                                                                                      </combobox>
+                             </row>
+                                          <row >
+                                                             <label value="Sach Nr:" width="150px"/>
+                                                             <label value="@bind(mevm.sachNrBestModul.sachNrBest)" width="150px"/>
+                                                          </row>
+
+              <row >
+                                         <label value="Code clip:" width="150px"/>
+                                         <textbox value="@bind(mevm.codeClip)" width="150px"/>
+              </row>
+              <row >
+                                                       <label value="Is brett:" width="150px"/>
+                                                       <checkbox checked="@bind(mevm.isBrett)" />
+              </row>
+              <row >
+                                                       <label value="Note:" width="150px"/>
+                                                       <textbox value="@bind(mevm.note)" width="150px"/>
+              </row>
+              <row >
+                                                       <label value="Condition Erz nr.:" width="150px"/>
+                                                       <textbox value="@bind(mevm.conditionErzNr)" width="150px"/>
+              </row>
+          </rows>
+
+      </grid>
+      <button mold="trendy"  label="Vytvorit"
+                  onClick="@command('generateNewModulClip')"/>
+    </groupbox>
+<separator bar="true"/>
+ <button mold="trendy"  label="Exportovat do excelu"
+                          onClick="@command('exportToExcel')"/>
+ <groupbox mold="3d" closable="false">
+    <caption  height="15px" >
+                    <div align="center" >
+                    <label value="Klipy"  style="font-size:12pt" />
+                    </div>
+                    </caption>
+    <listbox id="modulClipGrid" model="@load(mevm.modulClipList)" mold="paging" selectedItem="@bind(mevm.selectedModulClip)" height="600px">
+
+        <auxhead sclass="category-center">
+            <auxheader colspan="1">
+                <textbox  width="90%" value="@bind(mevm.id)"  />
+            </auxheader>
+            <auxheader colspan="1">
+                <textbox   width="90%" value="@bind(mevm.sachNrBestSearch)" onOK="@command('search')"/>
+            </auxheader>
+            <auxheader colspan="1">
+                <textbox  width="90%" value="@bind(mevm.sachNrLieferantSearch)" onOK="@command('search')"/>
+            </auxheader>
+            <auxheader colspan="1">
+                                        <textbox  width="90%" value="@bind(mevm.prodGruppeSearch)" onOK="@command('search')"/>
+                        </auxheader>
+                        <auxheader colspan="1">
+                                        <textbox  width="90%" value="@bind(mevm.ausfuehrungSearch)" onOK="@command('search')"/>
+                        </auxheader>
+                        <auxheader colspan="1">
+                                                                <textbox  width="90%" value="@bind(mevm.codeClipSearch)" onOK="@command('search')"/>
+                                                </auxheader>
+            <auxheader colspan="3">
+
+                    </auxheader>
+            <auxheader colspan="1" align="center">
+                                 <button image="images/search.png" mold="trendy"  onClick="@command('search')"/>
+                                 <button image="images/cancel.png" mold="trendy"  onClick="@command('cancelSearch')"/>
+                                            </auxheader>
+        </auxhead>
+        <listhead menupopup="auto">
+                    <listheader label="Id" align="center" sort="auto(Id)" width="10%"/>
+                    <listheader label="Sach Nr" align="center" sort="auto(moduls.sachNrBest)" width="10%"/>
+                    <listheader label="Lieferant Nr" align="center" sort="auto(moduls.sachNrLieferant)" width="10%"/>
+                    <listheader label="Prod Gruppe" align="center" sort="auto(moduls.prodGruppe)" width="6%"/>
+                    <listheader label="Ausfuehrung" align="center" sort="auto(moduls.ausfuehrung)" width="6%"/>
+                    <listheader label="Code clip" align="center" sort="auto(codeClip)" width="15%"/>
+                    <listheader label="Is brett" align="center" sort="auto(isBrett)" width="10%"/>
+                    <listheader label="Note" align="center" sort="auto(note)" width="15%"/>
+                    <listheader label="Condition Erz nr." align="center" sort="auto(conditionErzNr)" width="10%"/>
+                    <listheader label="Delete" align="center" width="15%"/>
+                </listhead>
+        <template name="model">
+            <listitem>
+
+                <listcell label="@load(each.id)"/>
+                <listcell label="@load(each.moduls.sachNrBest)" />
+                <listcell label="@load(each.moduls.sachNrLieferant)"/>
+                <listcell label="@load(each.moduls.prodGruppe)" />
+                <listcell label="@load(each.moduls.ausfuehrung)"/>
+                <listcell label="@load(each.codeClip)"/>
+                <listcell>
+                                                <checkbox checked="@load(each.isBrett)" disabled="true"/>
+                </listcell>
+                <listcell label="@load(each.note)"/>
+                <listcell label="@load(each.conditionErzNr)"/>
+
+                <listcell>
+                                    <button image="images/delete.png" if="${sec:isAllGranted('ROLE_AV')}" mold="trendy"  onClick="@command('deleteModulClip', modulClip=each)"/>
+                </listcell>
+            </listitem>
+        </template>
+    </listbox>
+<separator bar="true"/>
+<grid if="${sec:isAllGranted('ROLE_AV')}" form="@id('fx') @load(mevm.selectedModulClip) @save(mevm.selectedModulClip, before='saveModulClip')">
+           <auxhead>
+               <auxheader colspan="10" class="topic">Editovat</auxheader>
+           </auxhead>
+           <columns>
+                                  <column label="Id" align="center" width="10%"/>
+                                  <column label="Sach Nr" align="center" width="10%"/>
+                                  <column label="Lieferant Nr" align="center" width="10%"/>
+                                  <column label="Prod Gruppe" align="center" width="5%"/>
+                                  <column label="Ausfuehrung" align="center" width="5%"/>
+                                  <column label="Code clip" align="center" width="15%"/>
+                                  <column label="Is brett" align="center" width="10%"/>
+                                  <column label="Note" align="center" width="15%"/>
+                                  <column label="Condition Erz nr." align="center" width="15%"/>
+                                  <column label="Save" align="center" width="15%"/>
+           </columns>
+               <rows>
+               <row>
+                   <label value="@load(fx.id)"/>
+                   <label value="@load(fx.moduls.sachNrBest)"/>
+                   <label value="@load(fx.moduls.sachNrLieferant)"/>
+                   <label value="@load(fx.moduls.prodGruppe)"/>
+                   <label value="@load(fx.moduls.ausfuehrung)"/>
+                   <textbox value="@bind(fx.codeClip)"/>
+                   <checkbox checked="@init(false)@load(true and fx.isBrett)@save(fx.isBrett)"/>
+                   <textbox value="@bind(fx.note)"/>
+                   <textbox value="@bind(fx.conditionErzNr)"/>
+               <button image="images/save.png" mold="trendy" onClick="@command('saveModulClip', selectedData= mevm.selectedModulClip)" />
+             </row>
+             </rows>
+       </grid>
+</groupbox>
+
+</window>
+</zk>

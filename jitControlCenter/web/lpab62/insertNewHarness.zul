@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+<?taglib uri="http://www.zkoss.org/zkspring/security" prefix="sec"?>
+<zk>
+<window apply="org.zkoss.bind.BindComposer" title="Nova kablovka" border="normal" viewModel="@id('vm') @init('com.leoni.viewModel.InsertNewHarnessVM')"
+   action="show: slideDown;hide: slideUp" position="center,center" closable="true">
+
+         <hlayout>
+         <vlayout width = "600px">
+         <groupbox   closable="false" title="Pridat novu kablovku">
+         <grid  >
+         <rows>
+         <row>
+                         Prod. cislo
+                         <textbox  width="150px" value="@bind(vm.prodNr)" />
+         </row>
+
+         <row>
+                         Zakaznik
+                         <combobox  width="150px" selectedItem="@bind(vm.customer)"  model="@load(vm.customerList)"  autodrop="true">
+                                                                                                                  <template name="model" >
+                                                                                                                  <comboitem label="@load(each.name)"/>
+                                                                                                                  </template>
+                                                                                                                 </combobox>
+         </row>
+         <row>
+                                  Prod. grupa
+                                  <textbox  width="150px" value="@bind(vm.prodGruppe)" />
+         </row>
+         <row>
+                        Ausfuehrung
+                        <combobox  width="50px" selectedItem="@bind(vm.ausfuehrung)"  autodrop="true">
+                                   <comboitem label="LL" value="LL" />
+                                   <comboitem label="RL" value="RL"/>
+                                   </combobox>
+         </row>
+         <row>
+                                  Prod. datum
+                                  <!--textbox  width="150px" value="@bind(vm.lieferDatum)" /-->
+                                  <datebox value="@bind(vm.lieferDatum)" />
+         </row>
+         <!--row>
+                                           Reihenf. cislo
+                                           <textbox  width="150px" value="@bind(vm.reihenfNr)" />
+         </row-->
+         </rows>
+         </grid>
+         </groupbox>
+
+
+         <groupbox   closable="false" title="Vysledok validacie" >
+                     <vlayout>
+                         <hlayout>
+                         <label value = "Pocet F celkovo: " style="font-size:14pt"/>
+                         <label value = "@load(vm.modulsF)" style="font-size:14pt"/>
+                         </hlayout>
+                         <hlayout visible = "@load(vm.grundFvis)">
+                                         <label value = "Pocet F grund: " style="font-size:14pt; color: green " />
+                                         <label value = "@load(vm.grundF)" style="font-size:14pt; color: green "/>
+                                         </hlayout>
+                         <hlayout visible = "@load(not vm.grundFvis)">
+                                                         <label value = "Pocet F grund: " style="font-size:14pt; color: red" />
+                                                         <label value = "@load(vm.grundF)" style="font-size:14pt; color: red"/>
+                                                         </hlayout>
+                                     <hlayout>
+                                     <label value = "Pocet C celkovo: " style="font-size:14pt"/>
+                                     <label value = "@load(vm.modulsC)" style="font-size:14pt"/>
+                                     </hlayout>
+                                     <hlayout visible = "@load(vm.grundCvis)">
+                                                                     <label value = "Pocet C grund: " style="font-size:14pt; color: green" />
+                                                                     <label value = "@load(vm.grundC)" style="font-size:14pt; color: green"/>
+                                                                     </hlayout>
+                                                     <hlayout visible = "@load(not vm.grundCvis)">
+                                                                                     <label value = "Pocet C grund: " style="font-size:14pt; color: red" />
+                                                                                     <label value = "@load(vm.grundC)" style="font-size:14pt; color: red"/>
+                                                                                     </hlayout>
+
+                                    <hlayout>
+                                    <label value = "Pocet T celkovo: " style="font-size:14pt"/>
+                                    <label value = "@load(vm.modulsT)" style="font-size:14pt"/>
+                                    </hlayout>
+                                    <hlayout visible = "@load(vm.grundTvis)">
+                                                                    <label value = "Pocet T grund: " style="font-size:14pt; color: green" />
+                                                                    <label value = "@load(vm.grundT)" style="font-size:14pt; color: green"/>
+                                                                    </hlayout>
+                                                    <hlayout visible = "@load(not vm.grundTvis)">
+                                                                                    <label value = "Pocet T grund: " style="font-size:14pt; color: red" />
+                                                                                    <label value = "@load(vm.grundT)" style="font-size:14pt; color: red"/>
+                                                                                    </hlayout>
+                         <hlayout>
+                         <label value = "Pocet U celkovo: " style="font-size:14pt"/>
+                         <label value = "@load(vm.modulsU)" style="font-size:14pt"/>
+                         </hlayout>
+                         <hlayout visible = "@load(vm.grundUvis)">
+                                                         <label value = "Pocet U grund: " style="font-size:14pt; color: green" />
+                                                         <label value = "@load(vm.grundU)" style="font-size:14pt; color: green"/>
+                                                         </hlayout>
+                                         <hlayout visible = "@load(not vm.grundUvis)">
+                                                                         <label value = "Pocet U grund: " style="font-size:14pt; color: red" />
+                                                                         <label value = "@load(vm.grundU)" style="font-size:14pt; color: red"/>
+                                                                         </hlayout>
+                                    <hlayout>
+                                    <label value = "Pocet E celkovo: " style="font-size:14pt"/>
+                                    <label value = "@load(vm.modulsE)" style="font-size:14pt"/>
+                                    </hlayout>
+                                    <hlayout visible = "@load(vm.grundEvis)">
+                                                                    <label value = "Pocet E grund: " style="font-size:14pt; color: green" />
+                                                                    <label value = "@load(vm.grundE)" style="font-size:14pt; color: green"/>
+                                                                    </hlayout>
+                                                    <hlayout visible = "@load(not vm.grundEvis)">
+                                                                                    <label value = "Pocet E grund: " style="font-size:14pt; color: red" />
+                                                                                    <label value = "@load(vm.grundE)" style="font-size:14pt; color: red"/>
+                                                                                    </hlayout>
+
+                                    <hlayout>
+                                    <label value = "Pocet R celkovo: " style="font-size:14pt"/>
+                                    <label value = "@load(vm.modulsR)" style="font-size:14pt"/>
+                                    </hlayout>
+                                    <hlayout visible = "@load(vm.grundRvis)">
+                                                                    <label value = "Pocet R grund: " style="font-size:14pt; color: green" />
+                                                                    <label value = "@load(vm.grundR)" style="font-size:14pt; color: green"/>
+                                                                    </hlayout>
+                                                    <hlayout visible = "@load(not vm.grundRvis)">
+                                                                                    <label value = "Pocet R grund: " style="font-size:14pt; color: red" />
+                                                                                    <label value = "@load(vm.grundR)" style="font-size:14pt; color: red"/>
+                                                                                    </hlayout>
+                    </vlayout>
+                  </groupbox>
+
+         <hlayout spacing="10px">
+         <button label="Nahrat moduly z Excelu" mold="trendy" upload="true" onUpload="@command('getModulsFromExcel',event=event,rows=rows)"/>
+         <button label="Vytvorit kablovku" mold="trendy" onClick="@command('submit', rows=rows)" />
+         <button label="Validovat" mold="trendy" onClick="@command('validate', rows=rows)" />
+         </hlayout>
+         </vlayout>
+         <vlayout width = "500px">
+
+
+          <groupbox   closable="false" title="Moduly">
+
+                  <grid>
+                       <columns >
+                                   <column label="Sach. nr." width="30%"/>
+                                   <column label="Lief. nr." width="30%"/>
+                                   <column label="Ks" width="5%"/>
+                                   <column width="15%"/>
+                                   <column width="20%"/>
+                       </columns>
+                       <rows id="rows">
+
+                      </rows>
+                  </grid>
+                  <button mold="trendy"  label="+"
+                                    onClick="@command('addModul', rows=rows)"/>
+                  </groupbox>
+
+         </vlayout>
+         </hlayout>
+</window>
+</zk>

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+<?taglib uri="/WEB-INF/security.tld" prefix="sec"?>
+<zk>
+<window apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.leoni.viewModel.FindHarnessVM')">
+ <timer id="timerKeepAliveSession" repeats="true" delay="3600000" onTimer=""/>
+<hbox>
+<grid width="500px">
+
+                    <rows>
+                        <row>
+                            <label value="Produkcne cislo" width="150px" />
+
+                                <textbox value="@bind(vm.harnessScan)"
+                                    width="150px" onOK="@command('submit')"/>
+
+
+                        </row>
+                        <row>
+                                                 <label value="Kabelsatz:" width="50px"/>
+                                                 <combobox  width="50px" selectedItem="@bind(vm.selectedKs)" value = "@bind(vm.selectedKs)"  model="@load(vm.kabelsatzList)"  readonly="true" autodrop="true">
+                                                  <template name="model" >
+                                                   <comboitem label="@load(each)"/>
+                                                  </template>
+                                                 </combobox>
+                        </row>
+
+
+                    </rows>
+
+         </grid>
+<button label="OK" mold="trendy" onClick="@command('submit')" width="100px" />
+</hbox>
+<separator bar="true"/>
+<groupbox width="500px" title="Kablovka">
+<vbox>
+<hbox>
+<label value="Produkcne cislo: "  style="font-size:12pt"/>
+<label value="@bind(vm.harnessLpab62.prodNr)"  style="font-size:14pt; color:blue; "/>
+</hbox>
+<hbox>
+<label value="Typ: " style="font-size:12pt" />
+<label value="@bind(vm.harnessLpab62.kabelsatzKz)" style="font-size:14pt " />
+</hbox>
+<hbox>
+<label value="Zakaznicke c.: " style="font-size:12pt" />
+<label value="@bind(vm.harnessLpab62.kundenNr)" style="font-size:14pt "/>
+</hbox>
+<hbox>
+<label value="Prod. grupa: " style="font-size:12pt" />
+<label value="@bind(vm.harnessLpab62.prodgruppe)" style="font-size:14pt " />
+</hbox>
+<hbox>
+<label value="Ausfuehrung: " style="font-size:12pt" />
+<label value="@bind(vm.harnessLpab62.ausfuehrung)" style="font-size:14pt " />
+</hbox>
+<hbox>
+<label value="Produkcny datum: " style="font-size:12pt" />
+<label value="@bind(vm.harnessLpab62.lieferDatum)" style="font-size:14pt " />
+</hbox>
+<hbox>
+<label value="Folge nr: " style="font-size:12pt" />
+<label value="@bind(vm.harnessLpab62.prodReihenfNr)" style="font-size:14pt " />
+</hbox>
+</vbox>
+</groupbox>
+<hlayout>
+<groupbox title="Statusy" width="500px">
+<grid>
+ <columns>
+            <column label="Status" width="35%"/>
+            <column label="Hodnota" width="35%"/>
+            <column label="Zmenit" width="15%"/>
+            <column label="Zmazat" width="15%"/>
+ </columns>
+ <rows>
+   <row>
+    <label value="Prijem objednavky: " width="150px" />
+    <label value="@bind(vm.harnessLpab62.staUebernahme)" width="150px" />
+    <label/>
+    <label/>
+   </row>
+   <row>
+    <label value="Naplanovanie: " width="150px" />
+    <label value="@bind(vm.harnessLpab62.staMontageliste)" width="150px" />
+    <label/>
+    <label/>
+   </row>
+   <row>
+       <label value="Nabeh na pas: " width="150px" />
+       <label value="@bind(vm.harnessLpab62.staBandEinlauf)" width="150px" />
+       <button  mold="trendy" onClick="@command('updateStaBandEinlauf')" image="images/edit.png" visible="@load(vm.updateStaBandEinlauf)"/>
+       <button  mold="trendy" onClick="@command('deleteStaBandEinlauf')" image="images/delete.png" visible="@load(vm.deleteStaBandEinlauf)"/>
+   </row>
+   <row>
+       <label value="Letovanie: " width="150px" />
+       <label value="@bind(vm.harnessLpab62.staLoetung)" width="150px" />
+       <button  mold="trendy" onClick="@command('updateStaLoetung')" image="images/edit.png" visible="@load(vm.updateStaLoetung)"/>
+       <button  mold="trendy" onClick="@command('deleteStaLoetung')" image="images/delete.png" visible="@load(vm.deleteStaLoetung)"/>
+   </row>
+   <row>
+       <label value="Klipy: " width="150px" />
+       <label value="@bind(vm.harnessLpab62.staClip)" width="150px" />
+       <button  mold="trendy" onClick="@command('updateStaClip')" image="images/edit.png" visible="@load(vm.updateStaClip)"/>
+       <button  mold="trendy" onClick="@command('deleteStaClip')" image="images/delete.png" visible="@load(vm.deleteStaClip)"/>
+   </row>
+
+   <row>
+       <label value="Vybeh z pasu: " width="150px" />
+       <label value="@bind(vm.harnessLpab62.staBandAuslauf)" width="150px" />
+       <button  mold="trendy" onClick="@command('updateStaBandAuslauf')" image="images/edit.png" visible="@load(vm.updateStaBandAuslauf)"/>
+       <button  mold="trendy" onClick="@command('deleteStaBandAuslauf')" image="images/delete.png" visible="@load(vm.deleteStaBandAuslauf)"/>
+   </row>
+   <row>
+       <label value="Srobovanie B-dose: " width="150px" />
+       <label value="@bind(vm.harnessLpab62.staSchraub)" width="150px" />
+       <button  mold="trendy" onClick="@command('updateStaSchraub')" image="images/edit.png" visible="@load(vm.updateStaSchraub)"/>
+       <button  mold="trendy" onClick="@command('deleteStaSchraub')" image="images/delete.png" visible="@load(vm.deleteStaSchraub)"/>
+   </row>
+   <row>
+       <label value="Zapenovanie: " width="150px" />
+       <label value="@bind(vm.harnessLpab62.staSchaumen)" width="150px" />
+       <button  mold="trendy" onClick="@command('updateStaSchaumen')" image="images/edit.png" visible="@load(vm.updateStaSchaumen)"/>
+       <button  mold="trendy" onClick="@command('deleteStaSchaumen')" image="images/delete.png" visible="@load(vm.deleteStaSchaumen)"/>
+   </row>
+   <row valign="center">
+    <label value="Elektricka skuska: " width="150px" />
+    <label value="@bind(vm.harnessLpab62.staPruefElektr)" width="150px" />
+    <button  mold="trendy" onClick="@command('updateStaPruefElektr')"  image="images/edit.png" visible="@load(vm.updateStaPruefElektr)" />
+    <button  mold="trendy" onClick="@command('deleteStaPruefElektr')"  image="images/delete.png" visible="@load(vm.deleteStaPruefElektr)"/>
+   </row>
+   <row>
+    <label value="Relatka-Opto skuska: " width="150px" />
+    <label value="@bind(vm.harnessLpab62.staPruefRelais)" width="150px" />
+    <label/>
+    <label/>
+   </row>
+   <row>
+    <label value="Poistky-Opto skuska: " width="150px" />
+    <label value="@bind(vm.harnessLpab62.staSicherung)" width="150px" />
+    <button  mold="trendy" onClick="@command('updateStaSicherung')"  image="images/edit.png" visible="@load(vm.updateStaSicherung)"/>
+    <button  mold="trendy" onClick="@command('deleteStaSicherung')"  image="images/delete.png" visible="@load(vm.deleteStaSicherung)"/>
+   </row>
+   <row>
+    <label value="Srobovanie ESD - zaciatok: " width="150px" />
+    <label value="@bind(vm.harnessLpab62.staEsdSchraubBegin)" width="150px" />
+    <button  mold="trendy" onClick="@command('updateStaEsdSchraubBegin')" image="images/edit.png" visible="@load(vm.updateStaEsdSchraubBegin)"/>
+    <button  mold="trendy" onClick="@command('deleteStaEsdSchraubBegin')" image="images/delete.png" visible="@load(vm.deleteStaEsdSchraubBegin)"/>
+   </row>
+   <row>
+    <label value="Srobovanie ESD - koniec: " width="150px" />
+    <label value="@bind(vm.harnessLpab62.staEsdSchraub)" width="150px" />
+    <button  mold="trendy" onClick="@command('updateStaEsdSchraub')" image="images/edit.png" visible="@load(vm.updateStaEsdSchraub)"/>
+    <button  mold="trendy" onClick="@command('deleteStaEsdSchraub')" image="images/delete.png" visible="@load(vm.deleteStaEsdSchraub)"/>
+   </row>
+   <row>
+       <label value="Versand-Wa: " width="150px" />
+       <label value="@bind(vm.harnessLpab62.staWa)" width="150px" />
+       <button  mold="trendy" onClick="@command('updateStaWa')" image="images/edit.png" visible="@load(vm.updateStaWa)"/>
+       <button  mold="trendy" onClick="@command('deleteStaWa')" image="images/delete.png" visible="@load(vm.deleteStaWa)"/>
+   </row>
+     <row>
+         <label value="Forma T1: " width="150px" />
+         <checkbox checked="@bind(vm.harnessLpab62.staTuelleT1)" width="150px" disabled="true"  visible="@load(vm.globalVis)"/>
+         <button  mold="trendy" onClick="@command('updateT1')" image="images/switch.png" visible="@load(vm.globalVis)"/>
+         <label/>
+     </row>
+     <row>
+         <label value="Forma T2: " width="150px" />
+         <checkbox checked="@bind(vm.harnessLpab62.staTuelleT2)" width="150px" disabled="true"   visible="@load(vm.globalVis)"/>
+         <button  mold="trendy" onClick="@command('updateT2')" image="images/switch.png" visible="@load(vm.globalVis)"/>
+         <label/>
+     </row>
+     <row>
+         <label value="Forma T3: " width="150px" />
+         <checkbox checked="@bind(vm.harnessLpab62.staTuelleT3)" width="150px" disabled="true"   visible="@load(vm.globalVis)"/>
+         <button  mold="trendy" onClick="@command('updateT3')" image="images/switch.png" visible="@load(vm.globalVis)"/>
+         <label/>
+     </row>
+     <row>
+         <label value="Forma T4: " width="150px" />
+         <checkbox checked="@bind(vm.harnessLpab62.staTuelleT4)" width="150px" disabled="true"   visible="@load(vm.globalVis)"/>
+         <button  mold="trendy" onClick="@command('updateT4')" image="images/switch.png" visible="@load(vm.globalVis)"/>
+         <label/>
+     </row>
+     <row>
+         <label value="Forma T5: " width="150px" />
+         <checkbox checked="@bind(vm.harnessLpab62.staTuelleT5)" width="150px" disabled="true"  visible="@load(vm.globalVis)"/>
+         <button  mold="trendy" onClick="@command('updateT5')" image="images/switch.png" visible="@load(vm.globalVis)"/>
+         <label/>
+     </row>
+
+ </rows>
+</grid>
+</groupbox>
+<groupbox title="Moduly" width="500px">
+<grid model="@load(vm.harnessLpab64List)">
+ <template name="model">
+             <row>
+                             <label value="@load(each.sachNrBest)" />
+                             <label value="@load(each.sachNrLieferant)" />
+             </row>
+         </template>
+</grid>
+</groupbox>
+</hlayout>
+</window>
+</zk>

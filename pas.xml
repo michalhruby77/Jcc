@@ -1,0 +1,12 @@
+<workplaces>
+    <w id="A1" name="grund">
+        <p id="A01" n="Janko Hrasko"/>
+        <p id="B01" n="Janko Mrkvicka"/>
+    </w>
+
+    <w id="A2" name="tuelle_bug">
+        <p id="A02">Janko Petrzlen</p>
+        <p id="B02">Janko Zeler</p>
+        <p id="A03">Janko Redkovka</p>
+    </w>
+</workplaces>

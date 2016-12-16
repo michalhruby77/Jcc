@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+<?taglib uri="/WEB-INF/security.tld" prefix="sec"?>
+<zk>
+<window apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.leoni.viewModel.oldJit.SendungsVM')" width="1700px">
+<groupbox>
+<hlayout>
+<grid width="300px">
+
+                    <rows>
+                        <row>
+                            <label value="Dodacie c." width="150px" />
+
+                                <textbox value="@bind(vm.lieferscheinNr)"
+                                    width="100px" />
+
+                        </row>
+                        <row>
+                                                    <label value="Dodacie c." width="150px" />
+
+                                                        <label value="@load(vm.sendung.lieferscheinNr)"
+                                                            width="150px" />
+
+                                                </row>
+                                                <row>
+                                                                            <label value="Transportne c." width="150px" />
+
+                                                                                <label value="@load(vm.sendung.transportNr)"
+                                                                                    width="150px" />
+
+                                                                        </row>
+                                                <row>
+                                                                            <label value="Uebt datum" width="150px" />
+
+                                                                                <label value="@load(vm.sendung.uebtDatum)"
+                                                                                    width="150px" />
+
+                                                                        </row>
+                    </rows>
+         </grid>
+         <button label="Ok" mold="trendy" onClick="@command('submit')" />
+</hlayout>
+
+</groupbox>
+</window>
+</zk>

@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+	<workplaces>
+	<wp n="Grund" id="1A" i="t">
+		<p id="A1"></p>
+		<p id="B1"></p>
+		<p id="A2"></p>
+		<p id="B2"></p>
+	</wp>
+	<wp n="DME" id="2B" i="t">
+		<p id="A3"></p>
+		<p id="B3"></p>
+		<p id="A4"></p>
+		<p id="B4"></p>
+	</wp>
+	<wp n="Tulle Bug" id="2A" i="t">
+		<p id="A5"></p>
+		<p id="B5"></p>
+		<p id="A6"></p>
+		<p id="B6"></p>
+	</wp>
+	<wp n="RM" id="4B" i="t">
+		<p id="B1"></p>
+	</wp>
+	<wp n="RM" id="5A" i="t">
+		<p id="A1"></p>
+	</wp>
+	
+	<wp n="Letovanie" id="6A" i="t">
+		<p id="A1"></p>
+		<p id="B1"></p>
+		<p id="A2"></p>
+		<p id="B2"></p>
+	</wp>
+
+	<wp n="Bandaz" id="24A">
+		<p id="A1"></p>
+		<p id="B1"></p>
+		<p id="A2"></p>
+		<p id="B2"></p>
+		<p id="A3"></p>
+		<p id="B3"></p>
+		<p id="A4"></p>
+		<p id="B4"></p>
+	</wp>
+	
+	<wp n="Klipy" id="26A">
+		<p id="A1"></p>
+		<p id="B1"></p>
+		<p id="A2"></p>
+		<p id="B2"></p>
+	</wp>
+		
+	<wp n="Zhadzovanie + BAK" id="30A" i="t">
+		<p id="A1"></p>
+		<p id="B1"></p>
+		<p id="A2"></p>
+		<p id="B2"></p>
+	</wp>
+
+	<wp n="Checkpoint" id="35A">
+		<p id="A1"></p>
+	</wp>
+	</workplaces>

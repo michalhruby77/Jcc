@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+<?taglib uri="/WEB-INF/security.tld" prefix="sec"?>
+<zk>
+    <window apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.leoni.viewModel.HarnessLockVM')" width="1700px">
+
+        <groupbox closable="false" mold="3d"  width="25%">
+            <caption  height="15px" >
+                <div align="center" >
+                    <label  value="Blokovanie prod. cisiel podla modulu"  style="font-size:12pt" />
+                </div>
+            </caption>
+            <grid width="100%">
+                <columns>
+                    <column width="50%"/>
+                    <column width="50%"/>
+                </columns>
+                <rows >
+                    <row>
+                        <label value="Modul"/>
+                        <textbox value="@bind(vm.modul)"/>
+                    </row>
+                </rows>
+            </grid>
+
+            <grid width="100%">
+                <columns>
+                    <column  label="Kontajnery" width="50%"/>
+                    <column width="50%"/>
+                </columns>
+                <rows id = "rows">
+
+                </rows>
+            </grid>
+
+        </groupbox>
+        <button label="Blokovat" mold="trendy" onClick="@command('submit')" width="100px" />
+
+    </window>
+</zk>

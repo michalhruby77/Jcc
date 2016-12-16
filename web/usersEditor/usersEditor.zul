@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+<?taglib uri="/WEB-INF/security.tld" prefix="sec"?>
+<zk>
+<window apply="org.zkoss.bind.BindComposer" viewModel="@id('mevm') @init('com.leoni.viewModel.UsersVM')" width="1700px">
+
+ <groupbox title="Pridat noveho uzivatela" if="${sec:isAllGranted('ROLE_ADMIN')}" closable="true" open="false">
+
+   <grid >
+           <rows>
+
+               <row >
+                  <label value="Uzivatelske meno:" width="150px"/>
+                  <textbox value="@bind(mevm.username)" width="150px"/>
+               </row>
+               <row >
+                                 <label value="Heslo:" width="150px"/>
+                                 <textbox value="@bind(mevm.password)" width="150px"/>
+               </row>
+               <row >
+                                                               <label value="Meno a priezvisko:" width="150px"/>
+                                                               <textbox value="@bind(mevm.name)" />
+               </row>
+               <row >
+                                                <label value="Povoleny:" width="150px"/>
+                                                <checkbox checked="@bind(mevm.enabled)" />
+               </row>
+               <row >
+                                                               <label value="Role:" width="150px"/>
+                                                               <hbox id="hbox"/>
+               </row>
+           </rows>
+
+       </grid>
+       <button mold="trendy"  label="Vytvorit"
+                   onClick="@command('generateNewUser')"/>
+
+     </groupbox>
+    <separator bar="true"/>
+
+
+
+ <groupbox title="Uzivatelia" closable="false">
+    <listbox model="@load(mevm.usersList)" mold="paging" height="600px">
+
+        <auxhead sclass="category-center">
+
+        </auxhead>
+        <listhead menupopup="auto">
+                    <listheader label="Meno" align="center" sort="auto(username)" width="20%"/>
+                    <listheader label="Heslo" align="center" width="20%"/>
+                    <listheader label="Meno zamestnanca" align="center"  width="20%"/>
+                    <listheader label="Role" align="center"  width="20%"/>
+
+                    <listheader label="Delete" align="center" width="10%"/>
+                    <listheader label="Edit" align="center" width="10%"/>
+                </listhead>
+        <template name="model">
+            <listitem>
+                <listcell label="@load(each.username)"/>
+                <listcell label="@load(each.password)" />
+                <listcell label="@load(each.name)" />
+                <listcell>
+
+                                                            <grid zclass="none"   model="@load(each.userRoles)">
+                                                              <template name="model">
+                                                                <row zclass="none" height="15px">
+                                                                <label  value="${each.role}" />
+                                                                </row>
+                                                              </template>
+                                                            </grid>
+                </listcell>
+                <listcell>
+                          <button label="Vymazat" if="${sec:isAllGranted('ROLE_ADMIN')}" mold="trendy"  onClick="@command('deleteUser', user=each)"/>
+                </listcell>
+                <listcell>
+                          <button label="Upravit" if="${sec:isAllGranted('ROLE_ADMIN')}" mold="trendy"  onClick="@command('editUser', user=each)"/>
+                </listcell>
+            </listitem>
+        </template>
+    </listbox>
+<separator bar="true"/>
+
+     </groupbox>
+</window>
+</zk>

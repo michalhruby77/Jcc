@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="670469886">
+    <data-source source="LOCAL" name="Data Source" product="PostgreSQL" version="9.0.1" jdbc-version="3.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.0 JDBC3 (build 801)" uuid="2fa3992a-685b-4fd9-b8b0-a4666053bcdc">
+      <identifier-quote-string>&quot;</identifier-quote-string>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://lxp16001.p16.leoni.local/JITTABLES</jdbc-url>
+      <user-name>jit</user-name>
+      <user-password>dfcbdfdfdfd8dfcfdfc6dfc3dfcb</user-password>
+      <libraries>
+        <library>
+          <url>file://$USER_HOME$/Desktop/libs/postgresql-9.0-801.jdbc3.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+  </component>
+</project>
+

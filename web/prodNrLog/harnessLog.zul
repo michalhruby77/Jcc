@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+<?taglib uri="/WEB-INF/security.tld" prefix="sec"?>
+<zk>
+
+<window apply="org.zkoss.bind.BindComposer" title="Prod nr log" border="normal"
+viewModel="@id('vm') @init('com.leoni.viewModel.HarnessLogVM')" position="center,center" closable="true">
+    <listbox id="listbox" model="@load(vm.prodNrLogList)" mold="paging"  height="600px" checkmark="true" multiple="true">
+
+        <auxhead sclass="category-center">
+
+        </auxhead>
+        <listhead menupopup="auto">
+                    <listheader label="Vsetky" align="center"  width="5%"/>
+                    <listheader label="Prod nr" align="center" sort="auto(id)" width="10%"/>
+                    <listheader label="Ks" align="center" sort="auto(moduls.sachNrBest)" width="5%"/>
+                    <listheader label="Table id" align="center" sort="auto(moduls.sachNrLieferant)" width="10%"/>
+                    <listheader label="Tester id" align="center"  width="10%"/>
+                    <listheader label="Mode" align="center" sort="auto(moduls.prodGruppe)" width="20%"/>
+                    <listheader label="Log text" align="center"  width="40%"/>
+                </listhead>
+        <template name="model">
+            <listitem>
+                <listcell/>
+                <listcell label="@load(each.prodNr)"/>
+                <listcell label="@load(each.kabelsatzKz)"/>
+                <listcell label="@load(each.tableId)" />
+                <listcell label="@load(each.testerId)" />
+                <listcell label="@load(each.mode)" />
+                <listcell label="@load(each.logtext)" />
+            </listitem>
+        </template>
+    </listbox>
+  <button label="Vymazat"  onClick="@command('submit')"  />
+</window>
+</zk>

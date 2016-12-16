@@ -1,0 +1,3 @@
+<window>
+    <include bandName="C9X1RL" src="band/bandVisual.zul"/>
+</window>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+<?taglib uri="/WEB-INF/security.tld" prefix="sec"?>
+<zk>
+<window apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.leoni.viewModel.CustomHarnessModulsVM')"
+action="show: slideDown;hide: slideUp" position="center,center" closable="true" title="Moduly">
+
+ <groupbox title="Pridat novy zaznam"  closable="true" open="false">
+
+    <grid width="700px" >
+            <rows>
+
+
+
+                                            <row >
+                                                               <label value="Sach nr best:" width="150px"/>
+                                                               <textbox value="@bind(vm.sachNrBest)" width="150px" onOK="@command('updateSachNrLieferantList')"/>
+                                                            </row>
+
+
+                <row >
+                <label value="Sach nr lief:" width="50px"/>
+                <combobox  width="150px" selectedItem="@bind(vm.selectedModul)"  model="@load(vm.sachNrLieferantList)"   autodrop="true">
+                                                                                                                                                  <template name="model" >
+                                                                                                                                                  <comboitem label="@load(each.sachNrLieferant)"/>
+                                                                                                                                                  </template>
+                                                                                                                                                 </combobox>
+                </row>
+            </rows>
+
+        </grid>
+        <button mold="trendy"  label="Pridat"
+                    onClick="@command('addModul')"/>
+      </groupbox>
+ <separator bar="true"/>
+ <groupbox title="Zoznam" closable="false">
+    <listbox model="@load(vm.modulsList)" mold="paging" height="600px">
+
+        <listhead menupopup="auto">
+                    <listheader label="Prod Nr" align="center" sort="auto(prodNr)" width="20%"/>
+                    <listheader label="Kabelsatz" align="center" sort="auto(kabelsatzKz)" width="10%"/>
+                    <listheader label="Grund" align="center" width="10%"/>
+                    <listheader label="Sach nr best" align="center" sort="auto(sachNrBest)" width="20%"/>
+                    <listheader label="Sach nr lief" align="center" sort="auto(sachNrLieferant)" width="20%"/>
+                    <listheader label="Beipack" align="center" sort="auto(beipackKz)" width="10%"/>
+                    <listheader label="Zmazat" align="center" width="10%"/>
+
+                </listhead>
+        <template name="model">
+            <listitem>
+                <listcell label="@load(each.prodNr)" />
+                <listcell label="@load(each.kabelsatzKz)"/>
+                <listcell label="@load(each.grundmodul_kz)"/>
+                <listcell label="@load(each.sachNrBest)"/>
+                <listcell label="@load(each.sachNrLieferant)"/>
+                <listcell label="@load(each.beipackKz)"/>
+                <listcell>
+                                    <button label="Zmazat"  mold="trendy"  onClick="@command('open', modul=each)"/>
+                </listcell>
+
+            </listitem>
+        </template>
+    </listbox>
+</groupbox>
+
+</window>
+</zk>

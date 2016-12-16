@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+<?taglib uri="/WEB-INF/security.tld" prefix="sec"?>
+<zk>
+<window apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.leoni.viewModel.AbrufControlVM')" width="1700px">
+<vbox>
+<groupbox closable="false" mold="3d" >
+         <caption  height="15px" >
+         <div align="center" >
+         <label  value="Kontrola abrufov podla kabloviek"  style="font-size:12pt" />
+         </div>
+         </caption>
+        <hbox>
+        <grid width="100%">
+                   <columns>
+                               <column label="Prod cislo" width="20%"/>
+                               <column label="Stav" width="20%"/>
+                               <column label="Poznamka" width="60%"/>
+                    </columns>
+                    <rows id = "rows"/>
+         </grid>
+         <grid width="100%">
+                            <columns>
+                                        <column label="Prod cislo" width="20%"/>
+                                        <column label="Stav" width="30%"/>
+                                        <column label="Poznamka" width="50%"/>
+                             </columns>
+                             <rows id = "rows2"/>
+         </grid>
+         </hbox>
+  </groupbox>
+<button label="OK" mold="trendy" onClick="@command('submit')" width="100px" />
+</vbox>
+
+</window>
+</zk>

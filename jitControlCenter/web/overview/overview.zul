@@ -1,0 +1,79 @@
+<zk>
+    <window id="win" title="Prehlad kabloviek" apply="org.zkoss.bind.BindComposer" viewModel="@id('ovm') @init('com.leoni.viewModel.OverwievViewModel')">
+   <hlayout>
+   <groupbox>
+   <grid width="830px">
+       <auxhead>
+         <auxheader label="Zakaznik" />
+         <auxheader label="Pas" />
+         <auxheader label="Datum" />
+         <auxheader label="Celkom"/>
+         <auxheader label="Einlauf"/>
+         <auxheader label="Auslauf" />
+         <auxheader label="B-dose" />
+         <auxheader label="Foam" />
+         <auxheader label="Elektrik" />
+         <auxheader label="P/R" />
+         <auxheader label="ESD screw" />
+         <auxheader label="Photo WA" />
+
+
+       </auxhead>
+       <columns visible="false">
+         <column />
+         <column />
+         <column />
+         <column />
+         <column />
+         <column />
+         <column />
+         <column />
+         <column />
+         <column />
+         <column />
+         <column />
+
+
+       </columns>
+
+       <rows id="rows"/>
+     </grid>
+     </groupbox>
+     <groupbox>
+     <grid width="830px">
+            <auxhead>
+              <auxheader label="Zakaznik" />
+              <auxheader label="Pas" />
+              <auxheader label="Datum" />
+              <auxheader label="Celkom"/>
+              <auxheader label="Einlauf"/>
+              <auxheader label="Auslauf" />
+              <auxheader label="B-dose" />
+              <auxheader label="Foam" />
+              <auxheader label="Elektrik" />
+              <auxheader label="P/R" />
+              <auxheader label="ESD screw" />
+              <auxheader label="Photo WA" />
+
+
+            </auxhead>
+            <columns visible="false">
+              <column />
+              <column />
+              <column />
+              <column />
+              <column />
+              <column />
+              <column />
+              <column />
+              <column />
+              <column />
+              <column />
+              <column />
+            </columns>
+            <rows id="rows2"/>
+     </grid>
+     </groupbox>
+    </hlayout>
+    </window>
+</zk>

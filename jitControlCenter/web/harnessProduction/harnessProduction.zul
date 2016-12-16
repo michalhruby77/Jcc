@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+<?taglib uri="http://www.zkoss.org/zkspring/security" prefix="sec"?>
+<zk>
+<window apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.leoni.viewModel.HarnessProductionVM')">
+ <timer id="timerKeepAliveSession" repeats="true" delay="3600000" onTimer=""/>
+<groupbox   width="700px" >
+<grid width="300px">
+
+                    <rows>
+                        <row>
+                            <label value="Prod. c." width="150px" />
+
+                                <textbox value="@bind(vm.prodNr)"
+                                    width="100px" />
+
+                        </row>
+                        <row>
+                          <label value="Kabelsatz:" width="150px"/>
+
+                                                                   <combobox width="50px"  selectedItem="@bind(vm.kabelsatzKz)"  readonly="true">
+                                                                      <comboitem label="F" value="F"/>
+                                                                      <comboitem label="C" value="C"/>
+                                                                      <comboitem label="T" value="T"/>
+                                                                      <comboitem label="U" value="U"/>
+                                                                      <comboitem label="E" value="E"/>
+                                                                      <comboitem label="R" value="R"/>
+                                                                   </combobox>
+                        </row>
+
+                    </rows>
+         </grid>
+         <button label="OK" mold="trendy" onClick="@command('submit')" />
+         </groupbox>
+         <hlayout>
+         <vlayout>
+         <groupbox  width="700px" >
+         <caption  height="15px" >
+                  <label  value="Produkcne cislo a typ"  style="font-size:12pt" />
+                  </caption>
+                  <label value="@load(vm.prodNrInfo)" width="150px"/>
+                  <label value="@load(vm.kabelsatzKzInfo)" width="150px"/>
+         </groupbox>
+         <!--groupbox   width="700px" >
+         <caption  height="15px" >
+                           <label  value="Brana"  style="font-size:12pt" />
+                           </caption>
+         <vlayout id="vlayoutGrund">
+         <hlayout>Var <label value="@load(vm.gvn.varianteName)" width="150px"/></hlayout>
+         <label value="@load(vm.gvn.beschreibung)" width="150px"/>
+         </vlayout>
+         </groupbox-->
+         <groupbox  title="Brana" width="700px" >
+                  <grid  model="@load(vm.brana)">
+                                                                <template name="model">
+                                                                  <row>
+                                                                  <label pre="true" value="${each}" />
+                                                                  </row>
+                                                                </template>
+                                                              </grid>
+         </groupbox>
+         <groupbox   width="700px" >
+                  <caption  height="15px" >
+                                    <label  value="HLRE"  style="font-size:12pt" />
+                                    </caption>
+                  <vlayout id="vlayoutHLRE">
+                  <label value="@load(vm.hlreVariant)" width="150px"/>
+                  </vlayout>
+         </groupbox>
+         <hlayout>
+         <groupbox   width="350px" >
+         <caption  height="15px" >
+                           <label  value="DMESw"  style="font-size:12pt" />
+                           </caption>
+
+         <label  value="@load(vm.dvnSw.varianteName)" />
+         <image id="imgSw" />
+         </groupbox>
+         <groupbox   width="350px" >
+         <caption  height="15px" >
+                                    <label  value="DMEGr"  style="font-size:12pt" />
+                                    </caption>
+         <label  value="@load(vm.dvnGr.varianteName)" />
+         <image id="imgGr" />
+         </groupbox>
+         </hlayout>
+         <groupbox   width="700px" >
+         <caption  height="15px" >
+                                    <label  value="Tuelle"  style="font-size:12pt" />
+                                    </caption>
+         <vlayout>
+         <!--hlayout>Var <label value="@load(vm.tbvn.varianteName)" width="150px"/></hlayout>
+         <label value="@load(vm.tbvn.beschreibung)" width="150px"/-->
+         <label value="@load(vm.tbVariant)" width="150px"/>
+         </vlayout>
+         </groupbox>
+         <groupbox   width="700px" >
+         <caption  height="15px" >
+                                    <label  value="Rozvod modulov"  style="font-size:12pt" />
+                                    </caption>
+         <hlayout>
+         <vlayout>
+         <groupbox  title="Krok 5A" width="300px" >
+         <grid  model="@load(vm.step5A)">
+                                                       <template name="model">
+                                                         <row>
+                                                         <label pre="true" value="${each}" />
+                                                         </row>
+                                                       </template>
+                                                     </grid>
+         </groupbox>
+         <groupbox  title="Krok 6A" width="300px" >
+         <grid  model="@load(vm.step6A)">
+                                                       <template name="model">
+                                                         <row>
+                                                         <label pre="true" value="${each}" />
+                                                         </row>
+                                                       </template>
+                                                     </grid>
+         </groupbox>
+         <groupbox  title="Krok 7A" width="300px" >
+         <grid  model="@load(vm.step7A)">
+                                                       <template name="model">
+                                                         <row >
+                                                         <label pre="true" value="${each}" />
+                                                         </row>
+                                                       </template>
+                                                     </grid>
+         </groupbox>
+         <groupbox  title="Krok 8A" width="300px" >
+         <grid  model="@load(vm.step8A)">
+                                                       <template name="model">
+                                                         <row >
+                                                         <label pre="true" value="${each}" />
+                                                         </row>
+                                                       </template>
+                                                     </grid>
+         </groupbox>
+         </vlayout>
+         <vlayout>
+                  <groupbox  title="Krok 4B" width="300px" >
+                                    <grid  model="@load(vm.step4B)">
+                                                                                  <template name="model">
+                                                                                    <row>
+                                                                                    <label pre="true" value="${each}" />
+                                                                                    </row>
+                                                                                  </template>
+                                                                                </grid>
+                                    </groupbox>
+                  <groupbox  title="Krok 5B" width="300px" >
+                  <grid   model="@load(vm.step5B)">
+                                                                <template name="model">
+                                                                  <row >
+                                                                  <label pre="true" value="${each}" />
+                                                                  </row>
+                                                                </template>
+                                                              </grid>
+                  </groupbox>
+                  <groupbox  title="Krok 6B" width="300px" >
+                  <grid  model="@load(vm.step6B)">
+                                                                <template name="model">
+                                                                  <row >
+                                                                  <label pre="true" value="${each}" />
+                                                                  </row>
+                                                                </template>
+                                                              </grid>
+                  </groupbox>
+                  <groupbox  title="Krok 7B" width="300px" >
+                  <grid   model="@load(vm.step7B)">
+                                                                <template name="model">
+                                                                  <row >
+                                                                  <label pre="true" value="${each}" />
+                                                                  </row>
+                                                                </template>
+                                                              </grid>
+                  </groupbox>
+                  <groupbox  title="Krok 8B" width="300px" >
+                  <grid   model="@load(vm.step8B)">
+                                                                <template name="model">
+                                                                  <row  >
+                                                                  <label pre="true" value="${each}" />
+                                                                  </row>
+                                                                </template>
+                                                              </grid>
+                  </groupbox>
+         </vlayout>
+         </hlayout>
+         </groupbox>
+         <!--groupbox   width="700px" >
+         <caption  height="15px" >
+                                    <label  value="Varianty"  style="font-size:12pt" />
+                                    </caption>
+                     <grid zclass="none"  model="@load(vm.variantList)">
+                                                                            <template name="model">
+                                                                              <row zclass="none" >
+                                                                              <label  value="${each.description}" />
+                                                                              <label  value="${each.workplace.name}" />
+                                                                              <label  value="${each.scanString}" />
+                                                                              </row>
+                                                                            </template>
+                                                                          </grid>
+                  </groupbox-->
+                  <groupbox width="700px">
+                   <caption  height="15px" >
+                                              <label  value="Letovanie"  style="font-size:12pt" />
+                                              </caption>
+                   <grid   model="@load(vm.vsModules)">
+                    <columns>
+                                                      <column label="Nazov" />
+                                                      <column label="Obrazok" />
+                                                      <column label="Pocet" />
+                                      </columns>
+                                                                                      <template name="model">
+                                                                                        <row >
+                                                                                        <cell>
+                                                                                        <label  value="@load(each.nazov)"/>
+                                                                                        </cell>
+                                                                                        <cell>
+                                                                                        <image content="@load(each.vsFarby.obrazok) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                                                                        </cell>
+                                                                                        <cell>${vm.vsModulesMap[each]}
+                                                                                        </cell>
+                                                                                        </row>
+                                                                                      </template>
+                                                                                    </grid>
+                  </groupbox>
+         </vlayout>
+         <vlayout>
+
+         <groupbox  width="700px">
+         <caption  height="15px" >
+                                    <label  value="Klipy"  style="font-size:12pt" />
+                                    </caption>
+         <label value="@load(vm.clipModulesStr)" width="150px"/>
+                   <!--grid zclass="none"  model="@load(vm.clipModules)">
+                                                                                      <template name="model">
+                                                                                        <row zclass="none" >
+                                                                                        <label  value="${each.codeClip}" />
+                                                                                        </row>
+                                                                                      </template>
+                                                                                    </grid-->
+                  </groupbox>
+         <groupbox  width="700px">
+                   <caption  height="15px" >
+                                              <label  value="Zapenovacka"  style="font-size:12pt" />
+                                              </caption>
+                   <grid  model="@load(vm.foamModules)">
+                   <columns>
+                                   <column label="T1" />
+                                   <column label="T2" />
+                                   <column label="T3" />
+                                   <column label="T4" />
+                                   <column label="T5" />
+                   </columns>
+                                                                                      <template name="model">
+                                                                                        <row  >
+                                                                                        <label  value="${each.t1}" />
+                                                                                        <label  value="${each.t2}" />
+                                                                                        <label  value="${each.t3}" />
+                                                                                        <label  value="${each.t4}" />
+                                                                                        <label  value="${each.t5}" />
+                                                                                        </row>
+                                                                                      </template>
+                                                                                    </grid>
+                  </groupbox>
+         <groupbox  width="700px">
+                   <caption  height="15px" >
+                                              <label  value="Optoautomat"  style="font-size:12pt" />
+                                              </caption>
+                   <grid  model="@load(vm.sicherungenModules)">
+                   <columns>
+                                   <column label="Box" />
+                                   <column label="Platz" />
+                                   <column label="Wert" />
+                   </columns>
+                                                                                      <template name="model">
+                                                                                        <row >
+                                                                                        <label  value="${each.box}" />
+                                                                                        <label  value="${each.platz}" />
+                                                                                        <label  value="${each.wert}" />
+                                                                                        </row>
+                                                                                      </template>
+                                                                                    </grid>
+                  </groupbox>
+         </vlayout>
+         </hlayout>
+</window>
+</zk>

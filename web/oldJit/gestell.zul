@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+<?taglib uri="/WEB-INF/security.tld" prefix="sec"?>
+<zk>
+<window apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.leoni.viewModel.oldJit.GestellVM')" height="100%" width="100%" >
+
+         <vbox width="100%" height="100%" align="center" pack="center" >
+         <vbox width="40%"  >
+         <groupbox width="400px" mold="3d" >
+         <label  value="Pozor! Stlacenim tlacidla Spustit gestell upravite pre kazdy riadok hodnotu ablade_stelle z A450 na S2506!"  style="font-size:12pt; color:red"/>
+         <button label="Spustit gestell" mold="trendy" onClick="@command('submit')" />
+         <hbox>
+                  <label value="Pocet upravenych riadkov: "  style="font-size:12pt"/>
+                  <label value="@bind(vm.updatedRows)"  style="font-size:12pt"/>
+         </hbox>
+         </groupbox>
+         </vbox>
+         </vbox>
+
+</window>
+</zk>

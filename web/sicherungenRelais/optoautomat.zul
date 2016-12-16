@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+<?taglib uri="/WEB-INF/security.tld" prefix="sec"?>
+<zk>
+    <window apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.leoni.viewModel.OptoautomatVM')">
+        <timer id="timerKeepAliveSession" repeats="true" delay="3600000" onTimer=""/>
+        <hbox>
+            <grid width="500px">
+
+                <rows>
+                    <row>
+                        <label value="Produkcne cislo" width="150px" />
+
+                        <textbox value="@bind(vm.harnessScan)"
+                                 width="150px" onOK="@command('submit')"/>
+                    </row>
+                </rows>
+
+            </grid>
+            <button label="OK" mold="trendy" onClick="@command('submit')" width="100px" />
+        </hbox>
+        <separator bar="true"/>
+        <label value="@bind(vm.harness)" style="font-size:14pt " />
+        <vlayout>
+            <groupbox width="800px" title="Vorne">
+            <grid>
+                <rows>
+                <row>
+                    <label value="@load(vm.vorneMap['K1'])" />
+                    <label value="@load(vm.vorneMap['K2b'])" />
+                    <label value="@load(vm.vorneMap['K3'])" />
+                    <label value="@load(vm.vorneMap['K4'])" />
+                    <label value="@load(vm.vorneMap['K5'])" />
+                    <label value="@load(vm.vorneMap['K6'])" />
+                    <label value="@load(vm.vorneMap['K7'])" />
+                    <label value="@load(vm.vorneMap['K8'])" />
+                    <label value="@load(vm.vorneMap['K9'])" />
+                </row>
+                </rows>
+            </grid>
+        </groupbox>
+            <groupbox width="800px" title="Hinten">
+                <grid>
+                    <rows>
+                        <row>
+                            <label value="@load(vm.hintenMap['K1'])" />
+                            <label value="@load(vm.hintenMap['K2'])" />
+                            <label value="@load(vm.hintenMap['K3'])" />
+                            <label value="@load(vm.hintenMap['K4'])" />
+                            <label value="@load(vm.hintenMap['K5'])" />
+                            <label value="@load(vm.hintenMap['K6'])" />
+                            <label value="@load(vm.hintenMap['K7a'])" />
+                            <label value="@load(vm.hintenMap['K8'])" />
+                            <label value="@load(vm.hintenMap['K9'])" />
+                        </row>
+                        <row>
+                            <label value="@load(vm.hintenMap['D1'])" />
+                            <label value="@load(vm.hintenMap['D2'])" />
+                            <label value="@load(vm.hintenMap['D3'])" />
+                            <label value="@load(vm.hintenMap['D4'])" />
+                            <label value="@load(vm.hintenMap['D5'])" />
+                            <label value="@load(vm.hintenMap['D6'])" />
+                            <label value="@load(vm.hintenMap['D7'])" />
+                            <label value="@load(vm.hintenMap['D8'])" />
+                            <label value="@load(vm.hintenMap['D9'])" />
+                        </row>
+                        <row>
+                            <label value="@load(vm.hintenMap['C1'])" />
+                            <label value="@load(vm.hintenMap['C2'])" />
+                            <label value="@load(vm.hintenMap['C3'])" />
+                            <label value="@load(vm.hintenMap['C4'])" />
+                            <label value="@load(vm.hintenMap['C5'])" />
+                            <label value="@load(vm.hintenMap['C6'])" />
+                            <label value="@load(vm.hintenMap['C7'])" />
+                            <label value="@load(vm.hintenMap['C8'])" />
+                            <label value="@load(vm.hintenMap['C9'])" />
+                        </row>
+                        <row>
+                            <label value="@load(vm.hintenMap['B1'])" />
+                            <label value="@load(vm.hintenMap['B2'])" />
+                            <label value="@load(vm.hintenMap['B3'])" />
+                            <label value="@load(vm.hintenMap['B4'])" />
+                            <label value="@load(vm.hintenMap['B5'])" />
+                            <label value="@load(vm.hintenMap['B6'])" />
+                            <label value="@load(vm.hintenMap['B7'])" />
+                            <label value="@load(vm.hintenMap['B8'])" />
+                            <label value="@load(vm.hintenMap['B9'])" />
+                        </row>
+                        <row>
+                            <label value="@load(vm.hintenMap['A1'])" />
+                            <label value="@load(vm.hintenMap['A2'])" />
+                            <label value="@load(vm.hintenMap['A3'])" />
+                            <label value="@load(vm.hintenMap['A4'])" />
+                            <label value="@load(vm.hintenMap['A5'])" />
+                            <label value="@load(vm.hintenMap['A6'])" />
+                            <label value="@load(vm.hintenMap['A7'])" />
+                            <label value="@load(vm.hintenMap['A8'])" />
+                            <label value="@load(vm.hintenMap['A9'])" />
+                        </row>
+                    </rows>
+                </grid>
+            </groupbox>
+
+                <groupbox width="800px" title="Links">
+                    <grid>
+                        <rows>
+                            <row>
+                                <label value="@load(vm.rechtsMap['G1'])" />
+                                <label value="@load(vm.rechtsMap['G2'])" />
+                                <label value="@load(vm.rechtsMap['G3'])" />
+                                <label value="@load(vm.rechtsMap['G4'])" />
+                                <label value="@load(vm.rechtsMap['G5'])" />
+                                <label value="@load(vm.rechtsMap['G6'])" />
+                                <label value="@load(vm.rechtsMap['G7'])" />
+                                <label value="@load(vm.rechtsMap['G8'])" />
+                                <label value="@load(vm.rechtsMap['G9'])" />
+                            </row>
+                            <row>
+                                <label value="@load(vm.hintenMap['D1'])" />
+                                <label value="@load(vm.hintenMap['D2'])" />
+                                <label value="@load(vm.hintenMap['D3'])" />
+                                <label value="@load(vm.hintenMap['D4'])" />
+                                <label value="@load(vm.hintenMap['D5'])" />
+                                <label value="@load(vm.hintenMap['D6'])" />
+                                <label value="@load(vm.hintenMap['D7'])" />
+                                <label value="@load(vm.hintenMap['D8'])" />
+                                <label value="@load(vm.hintenMap['D9'])" />
+                            </row>
+                            <row>
+                                <label value="@load(vm.hintenMap['C1'])" />
+                                <label value="@load(vm.hintenMap['C2'])" />
+                                <label value="@load(vm.hintenMap['C3'])" />
+                                <label value="@load(vm.hintenMap['C4'])" />
+                                <label value="@load(vm.hintenMap['C5'])" />
+                                <label value="@load(vm.hintenMap['C6'])" />
+                                <label value="@load(vm.hintenMap['C7'])" />
+                                <label value="@load(vm.hintenMap['C8'])" />
+                                <label value="@load(vm.hintenMap['C9'])" />
+                            </row>
+                            <row>
+                                <label value="@load(vm.hintenMap['B1'])" />
+                                <label value="@load(vm.hintenMap['B2'])" />
+                                <label value="@load(vm.hintenMap['B3'])" />
+                                <label value="@load(vm.hintenMap['B4'])" />
+                                <label value="@load(vm.hintenMap['B5'])" />
+                                <label value="@load(vm.hintenMap['B6'])" />
+                                <label value="@load(vm.hintenMap['B7'])" />
+                                <label value="@load(vm.hintenMap['B8'])" />
+                                <label value="@load(vm.hintenMap['B9'])" />
+                            </row>
+                            <row>
+                                <label value="@load(vm.hintenMap['A1'])" />
+                                <label value="@load(vm.hintenMap['A2'])" />
+                                <label value="@load(vm.hintenMap['A3'])" />
+                                <label value="@load(vm.hintenMap['A4'])" />
+                                <label value="@load(vm.hintenMap['A5'])" />
+                                <label value="@load(vm.hintenMap['A6'])" />
+                                <label value="@load(vm.hintenMap['A7'])" />
+                                <label value="@load(vm.hintenMap['A8'])" />
+                                <label value="@load(vm.hintenMap['A9'])" />
+                            </row>
+
+                        </rows>
+                    </grid>
+                </groupbox>
+                <groupbox width="800px" title="Rechts">
+                    <grid>
+                        <rows>
+                            <row>
+                                <label value="@load(vm.rechtsMap['H1'])" />
+                                <label value="@load(vm.rechtsMap['H2'])" />
+                                <label value="@load(vm.rechtsMap['H3'])" />
+                                <label value="@load(vm.rechtsMap['H4'])" />
+                                <label value="@load(vm.rechtsMap['H5'])" />
+                                <label value="@load(vm.rechtsMap['H6'])" />
+                                <label value="@load(vm.rechtsMap['H7'])" />
+                                <label value="@load(vm.rechtsMap['H8'])" />
+                                <label value="@load(vm.rechtsMap['H9'])" />
+                            </row>
+                            <row>
+                                <label value="@load(vm.hintenMap['D1'])" />
+                                <label value="@load(vm.hintenMap['D2'])" />
+                                <label value="@load(vm.hintenMap['D3'])" />
+                                <label value="@load(vm.hintenMap['D4'])" />
+                                <label value="@load(vm.hintenMap['D5'])" />
+                                <label value="@load(vm.hintenMap['D6'])" />
+                                <label value="@load(vm.hintenMap['D7'])" />
+                                <label value="@load(vm.hintenMap['D8'])" />
+                                <label value="@load(vm.hintenMap['D9'])" />
+                            </row>
+                            <row>
+                                <label value="@load(vm.hintenMap['C1'])" />
+                                <label value="@load(vm.hintenMap['C2'])" />
+                                <label value="@load(vm.hintenMap['C3'])" />
+                                <label value="@load(vm.hintenMap['C4'])" />
+                                <label value="@load(vm.hintenMap['C5'])" />
+                                <label value="@load(vm.hintenMap['C6'])" />
+                                <label value="@load(vm.hintenMap['C7'])" />
+                                <label value="@load(vm.hintenMap['C8'])" />
+                                <label value="@load(vm.hintenMap['C9'])" />
+                            </row>
+                            <row>
+                                <label value="@load(vm.hintenMap['B1'])" />
+                                <label value="@load(vm.hintenMap['B2'])" />
+                                <label value="@load(vm.hintenMap['B3'])" />
+                                <label value="@load(vm.hintenMap['B4'])" />
+                                <label value="@load(vm.hintenMap['B5'])" />
+                                <label value="@load(vm.hintenMap['B6'])" />
+                                <label value="@load(vm.hintenMap['B7'])" />
+                                <label value="@load(vm.hintenMap['B8'])" />
+                                <label value="@load(vm.hintenMap['B9'])" />
+                            </row>
+                            <row>
+                                <label value="@load(vm.hintenMap['A1'])" />
+                                <label value="@load(vm.hintenMap['A2'])" />
+                                <label value="@load(vm.hintenMap['A3'])" />
+                                <label value="@load(vm.hintenMap['A4'])" />
+                                <label value="@load(vm.hintenMap['A5'])" />
+                                <label value="@load(vm.hintenMap['A6'])" />
+                                <label value="@load(vm.hintenMap['A7'])" />
+                                <label value="@load(vm.hintenMap['A8'])" />
+                                <label value="@load(vm.hintenMap['A9'])" />
+                            </row>
+                        </rows>
+                    </grid>
+                </groupbox>
+         </vlayout>
+        <image content="@load(vm.test)  @converter('com.leoni.viewModel.TestConverter')"/>
+    </window>
+</zk>

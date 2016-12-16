@@ -1,0 +1,85 @@
+<zk>
+<window id="modalDialog" title="Nova varianta" border="normal"  sizable="true" contentStyle="overflow:auto" width="1500px"
+     apply="org.zkoss.bind.BindComposer" viewModel="@id('tvm') @init('com.leoni.viewModel.AddVariantVM',vlayout=vlayout)"
+    position="center,center" closable="true"
+    action="show: slideDown;hide: slideUp">
+<vlayout>
+<grid>
+                    <columns>
+                                    <column width="20%" />
+                                    <column width="75%" />
+                                    <column width="5%" />
+
+                      </columns>
+                    <rows>
+                        <row>
+                            <label value="Nazov" width="150px" />
+                            <hlayout>
+                                <textbox value="@bind(tvm.name)"
+                                    width="500px"  />
+                            </hlayout>
+
+                        </row>
+                        <row>
+                                                    Popis
+                                                    <textbox value="@bind(tvm.description)"
+                                                        width="150px"  />
+
+                        </row>
+                        <row>
+                             <label value="Sken retazec" width="150px" />
+                            <hlayout id="hlayout">
+
+                                           </hlayout>
+                                            <button mold="trendy"  label="+"  onClick="@command('addTextBoxHor', hlayout=hlayout)"/>
+
+                        </row>
+                        <row>
+                                                   <label value="Skenovat?" width="150px" />
+                                                    <checkbox checked="@bind(tvm.scanReq)"
+                                                        width="150px" />
+
+                        </row>
+
+                        <row>
+                               <label value="Workplace" width="150px" />
+                               <combobox width="150px" model="@load(tvm.workplaceList)"
+                                                                                                 selectedItem="@bind(tvm.workplace)" value="@bind(tvm.workplace.name)" readonly="true">
+                                                                                           <template name="model">
+                                                                                               <comboitem label="@load(each.name)"/>
+                                                                                           </template>
+
+                                                                                       </combobox>
+                        </row>
+                        <row>
+                                                       <label value="Farba" width="150px" />
+                                                       <combobox width="150px" model="@load(tvm.colorList)" selectedItem="@bind(tvm.color)" value="@bind(tvm.color.name)" readonly="true">
+                                                                                                                                                  <template name="model">
+                                                                                                                                                      <comboitem label="@load(each.name)"/>
+                                                                                                                                                  </template>
+
+                                                                                                                                              </combobox>
+                        </row>
+                        <row>
+                                                    <label value="Typ" width="150px" />
+                                                    <hlayout>
+                                                        <textbox value="@bind(tvm.typ)"
+                                                            width="500px" />
+                                                    </hlayout>
+
+                        </row>
+                    </rows>
+         </grid>
+<groupbox  title="Moduly vo variante"  >
+
+               <vlayout id="vlayout">
+
+               </vlayout>
+                <button mold="trendy"  label="+"  onClick="@command('addTextBoxVert', vlayout=vlayout)"/>
+
+      </groupbox>
+      <button mold="trendy"  label="Ulozit"
+                        onClick="@command('saveVariant', vlayout=vlayout)"/>
+</vlayout>
+</window>
+</zk>

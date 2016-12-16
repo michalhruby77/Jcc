@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+
+<window title="Pritomost"
+        apply="org.zkoss.bind.BindComposer"
+        viewModel="@id('pvm') @init('com.leoni.jcc.presence.PresenceVM')">
+    <vlayout>
+        <separator height="30px"/>
+        <hbox align="center" pack="center" width="100%">
+            <calendar weekOfYear="true" onChange="@command('calendarChanged', calendar=self)"/>
+        </hbox>
+
+        <zk>
+            <tabbox width="100%" sclass="nav_tabs">
+                <tabs id="tabs">
+                    <tab label="F991LL" onSelect="@command('bandSelected', bandName=self.label)"/>
+                    <tab label="F981LL" onSelect="@command('bandSelected', bandName=self.label)"/>
+                    <tab label="F9X1RL" onSelect="@command('bandSelected', bandName=self.label)"/>
+                    <tab label="Zadna Oblast" onSelect="@command('bandSelected', bandName=self.label)"/>
+                </tabs>
+            </tabbox>
+
+            <toolbar>
+                <label value="Smena: "/>
+                <radiogroup id="shiftTimeIntervalRadiogroup"
+                            onCheck="@command('shiftSelected', radio=self.selectedItem)"/>
+            </toolbar>
+
+            <!-- Nastavenie smeny pre kazdu volbu-->
+            <groupbox closable="false">
+                <caption label="Nastavenie smeny"/>
+                <separator/>
+                <hlayout>
+                    <label value="Od:"/>
+                    <datebox format="short" value="@bind(pvm.selectedPresenceSettings.beginDate)" disabled="true"/>
+                    <separator/>
+                    <timebox format="short" value="@bind(pvm.selectedPresenceSettings.beginTime)" buttonVisible="false"/>
+                </hlayout>
+                <separator/>
+                <hlayout>
+                    <label value="Do:"/>
+                    <datebox format="short" value="@bind(pvm.selectedPresenceSettings.endDate)"/>
+                    <separator/>
+                    <timebox format="short" value="@bind(pvm.selectedPresenceSettings.endTime)" buttonVisible="false"/>
+                </hlayout>
+                <separator/>
+                <hlayout>
+                    <label value="Farba:"/>
+                    <listbox mold="select" model="@load(pvm.shiftNamesListModel)"
+                             selectedItem="@bind(pvm.selectedPresenceSettings.shiftName)">
+                        <template name="model">
+                            <listitem label="${each}" value=""/>
+                        </template>
+                    </listbox>
+                </hlayout>
+                <separator/>
+                <hlayout>
+                    <button label="Uloz" onClick="@command('shiftSave')"/>
+                    <button label="Kopiruj do" onClick="@command('shiftCopy')"/>
+                    <button label="Vymaz" onClick="@command('shiftDelete')"/>
+                    <!--<button label="Pridaj pracovisko" onClick="@command('addWorkplace')"/>-->
+                </hlayout>
+                <separator/>
+            </groupbox>
+
+            <!-- Nastavenie pracovisk zavisle od vybranej smeny-->
+            <hbox>
+                <vbox id="siteAHolder">
+                    <groupbox width="200px">
+                        <caption label="Grund"/>
+                        <vlayout>
+                            <hlayout>
+                                <listbox mold="select">
+                                    <listitem label="A1" value="A1"/>
+                                    <listitem label="A2" value="A2"/>
+                                    <listitem label="A3" value="A3"/>
+                                    <listitem label="A4" value="A4"/>
+                                </listbox>
+                                <textbox/>
+                            </hlayout>
+                            <hlayout>
+                                <listbox mold="select">
+                                    <listitem label="A1" value="A1"/>
+                                    <listitem label="A2" value="A2"/>
+                                    <listitem label="A3" value="A3"/>
+                                    <listitem label="A4" value="A4"/>
+                                </listbox>
+                                <textbox/>
+                            </hlayout>
+                        </vlayout>
+                    </groupbox>
+                    <groupbox width="500px" height="150px">
+                        <caption label="TEST"/>
+                    </groupbox>
+                    <hlayout>
+                        <groupbox width="300px" height="250px">
+                            <caption label="TEST"/>
+                        </groupbox>
+                        <groupbox width="300px" height="250px">
+                            <caption label="TEST"/>
+                        </groupbox>
+                    </hlayout>
+                </vbox>
+                <separator width="10px"/>
+                <vbox id="siteBHolder">
+                    <groupbox width="300px" height="250px">
+                        <caption label="TEST"/>
+                    </groupbox>
+                    <groupbox width="300px" height="250px">
+                        <caption label="TEST"/>
+                    </groupbox>
+                    <groupbox width="400px" height="250px">
+                        <caption label="TEST"/>
+                    </groupbox>
+                    <groupbox width="500px" height="250px">
+                        <caption label="TEST"/>
+                    </groupbox>
+                </vbox>
+            </hbox>
+
+        </zk>
+    </vlayout>
+</window>

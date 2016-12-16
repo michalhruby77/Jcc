@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+<?taglib uri="http://www.zkoss.org/zkspring/security" prefix="sec"?>
+<zk>
+<window apply="org.zkoss.bind.BindComposer" title="Skenovanie na export" border="normal" viewModel="@id('vm') @init('com.leoni.viewModel.VersandExportVM')">
+<!--button label="Nahrat export" mold="trendy" onClick="@command('createExport')"/-->
+<button label="Nahrat export" mold="trendy" upload="true" onUpload="@command('createExport',event=event)"/>
+    <!--listbox id="relaisListbox" model="@load(vm.versandModulList)" mold="paging"  height="600px">
+
+        <auxhead sclass="category-center">
+
+        </auxhead>
+        <listhead menupopup="auto">
+                    <listheader label="Sach nr best" align="center" sort="auto(id)" width="25%"/>
+                    <listheader label="Sach nr lief" align="center" sort="auto(moduls.sachNrBest)" width="25%"/>
+                    <listheader label="Auftrag nr" align="center" sort="auto(moduls.sachNrLieferant)" width="25%"/>
+                    <listheader label="Count" align="center" sort="auto(moduls.prodGruppe)" width="25%"/>
+                </listhead>
+        <template name="model">
+            <listitem>
+                <listcell label="@load(each.sachNrBest)"/>
+                <listcell label="@load(each.sachNrLieferant)"/>
+                <listcell label="@load(each.auftragNr)" />
+                <listcell label="@load(each.count)"/>
+
+            </listitem>
+        </template>
+    </listbox-->
+    <listbox id="relaisListbox" model="@load(vm.versandExportList)" mold="paging"  height="600px" itemRenderer="com.leoni.viewModel.VersandExportRenderer">
+
+        <auxhead sclass="category-center">
+
+        </auxhead>
+        <listhead menupopup="auto">
+                    <listheader label="Date" align="center" sort="auto(id)" width="25%"/>
+                    <listheader label="Open" align="center" sort="auto(moduls.sachNrBest)" width="25%"/>
+                    <listheader label="Print export" align="center" sort="auto(moduls.sachNrBest)" width="25%"/>
+                    <listheader label="Delete export" align="center" sort="auto(moduls.sachNrBest)" width="25%"/>
+                </listhead>
+        <template name="model">
+            <listitem>
+                <listcell label="@load(each.date)"/>
+                <listcell>
+                 <button image="images/open.png" mold="trendy"  onClick="@command('openExport', export=each)"/>
+                </listcell>
+                <listcell>
+                 <button image="images/print.png" mold="trendy"  onClick="@command('printExport', export=each)"/>
+                </listcell>
+                <listcell>
+                 <button image="images/delete.png" mold="trendy"  onClick="@command('deleteExport', export=each)"/>
+                </listcell>
+            </listitem>
+        </template>
+    </listbox>
+
+</window>
+</zk>

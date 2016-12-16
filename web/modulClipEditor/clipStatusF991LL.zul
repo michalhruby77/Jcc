@@ -1,0 +1,3 @@
+<window >
+    <include bandName="F991LL" src="modulClipEditor/clipStatusEditor.zul"/>
+</window>

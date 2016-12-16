@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+
+<zk>
+<window apply="org.zkoss.bind.BindComposer" viewModel="@id('mevm') @init('com.leoni.viewModel.SchrittViewModel')">
+ <timer id="timerKeepAliveSession" repeats="true" delay="3600000" onTimer=""/>
+<groupbox title="Pridat novy zaznam" if="${sec:isAllGranted('ROLE_AV')}" closable="true" open="false">
+
+   <grid width="700px" >
+           <rows>
+
+
+                              <row >
+                                           <label value="Lieferant Nr:" width="150px"/>
+                                           <combobox  width="150px" selectedItem="@bind(mevm.sachNrLieferantModul)"  model="@load(mevm.modulsList2)" onSelect="@command('updateSachNrBestModul')" onOk="@command('updateSachNrBestModul')" autodrop="true">
+                                                                                                        <template name="model" >
+                                                                                                        <comboitem label="@load(each.sachNrLieferant)"/>
+                                                                                                        </template>
+                                                                                                       </combobox>
+                              </row>
+                                           <row >
+                                                              <label value="Sach Nr:" width="150px"/>
+                                                              <label value="@bind(mevm.sachNrBestModul.sachNrBest)" width="150px"/>
+                                                           </row>
+
+
+               <row >
+                                          <label value="Strana:" width="50px"/>
+                                          <listbox selectedItem="@bind(mevm.seite)" mold="select">
+                                                                                     <listitem label="A" value="A" selected="true"/>
+                                                                                     <listitem label="B" value="B"/>
+                                                                                     </listbox>
+               </row>
+               <row >
+                                          <label value="Krok:" width="150px"/>
+                                         <!--textbox value="@bind(mevm.schritt)" width="150px"/-->
+                                         <listbox selectedItem="@bind(mevm.schritt)" mold="select">
+                                                  <listitem label="1" value="1"/>
+                                                  <listitem label="2" value="2"/>
+                                                  <listitem label="3" value="3"/>
+                                                  <listitem label="4" value="4"/>
+                                                  <listitem label="5" value="5"/>
+                                                  <listitem label="6" value="6"/>
+                                                  <listitem label="7" value="7"/>
+                                                  <listitem label="8" value="8"/>
+                                         </listbox>
+               </row>
+               <row >
+                                          <label value="Popis:" width="150px"/>
+                                          <textbox value="@bind(mevm.popis)" width="150px"/>
+               </row>
+               <row >
+                                                         <label value="Farba:" width="150px"/>
+                                                         <textbox value="@bind(mevm.farba)" width="150px"/>
+                                                         <!--combobox  width="150px" selectedItem="@bind(mevm.color)" readonly="true" model="@load(mevm.colorList)" >
+                                                                                                                                              <template name="model" >
+                                                                                                                                              <comboitem label="@load(each.name)"/>
+                                                                                                                                              </template>
+                                                                                                   </combobox-->
+               </row>
+               <row >
+                                                         <label value="Skenovat:" width="150px"/>
+                                                          <checkbox checked="@bind(mevm.isCheckBool)" />
+               </row>
+               <row >
+                                                         <label value="Pas:" width="150px"/>
+                                                         <listbox selectedItem="@bind(mevm.bandName)" mold="select">
+                                                                                                                                        <listitem label="F991RL" value="F991RL"/>
+                                                                                                                                        <listitem label="F981LL" value="F981LL"/>
+                                                                                                                                        <listitem label="F991LL" value="F991LL"/>
+                                                                                                                </listbox>
+               </row>
+
+
+           </rows>
+
+       </grid>
+       <button mold="trendy"  label="Vytvorit"
+                   onClick="@command('generateNewSchritt')"/>
+     </groupbox>
+<separator bar="true"/>
+ <button mold="trendy"  label="Exportovat do excelu"
+                          onClick="@command('exportToExcel')"/>
+ <groupbox mold="3d" closable="false">
+    <caption  height="15px" >
+                    <div align="center" >
+                    <label value="Rozvod modulov"  style="font-size:12pt" />
+                    </div>
+                    </caption>
+    <listbox id="schrittGrid" model="@load(mevm.schrittList)" mold="paging" selectedItem="@bind(mevm.selectedSchritt)" height="600px">
+
+        <auxhead sclass="category-center">
+            <auxheader colspan="1">
+                <textbox  width="90%" value="@bind(mevm.id)"  />
+            </auxheader>
+            <auxheader colspan="1">
+                <textbox   width="90%" value="@bind(mevm.sachNrBestSearch)" onOK="@command('search')"/>
+            </auxheader>
+            <auxheader colspan="1">
+                <textbox  width="90%" value="@bind(mevm.sachNrLieferantSearch)" onOK="@command('search')"/>
+            </auxheader>
+            <auxheader colspan="1">
+                                        <textbox  width="90%" value="@bind(mevm.prodGruppeSearch)" onOK="@command('search')"/>
+                        </auxheader>
+                        <auxheader colspan="1">
+                                        <textbox  width="90%" value="@bind(mevm.ausfuehrungSearch)" onOK="@command('search')"/>
+                        </auxheader>
+            <auxheader colspan="1">
+                            <combobox  onSelect="@command('search')" model="@load(mevm.seiteList)" width="50px" selectedItem="@bind(mevm.seiteSearch)" readonly="true">
+                                                                                                                                                                  <template name="model" >
+                                                                                                                                                                                                            <comboitem label="@load(each)"/>
+                                                                                                                                                                                                        </template>
+                                                                                                                         </combobox>
+                        </auxheader>
+            <auxheader colspan="1">
+                            <combobox  onSelect="@command('search')" model="@load(mevm.stepList)" width="50px" selectedItem="@bind(mevm.schrittSearch)" readonly="true">
+                                                                                                                                                                                              <template name="model" >
+                                                                                                                                                                                                                                        <comboitem label="@load(each)"/>
+                                                                                                                                                                                                                                    </template>
+                                                                                                                                                     </combobox>
+                        </auxheader>
+            <auxheader colspan="3">
+
+                        </auxheader>
+
+            <auxheader colspan="1">
+                                        <combobox  onSelect="@command('search')" model="@load(mevm.bandNameList)" selectedItem="@bind(mevm.bandNameSearch)" readonly="true">
+                                                                                                                                                                              <template name="model" >
+                                                                                                                                                                                                                        <comboitem label="@load(each)"/>
+                                                                                                                                                                                                                    </template>
+                                                                                                                                     </combobox>
+                                    </auxheader>
+
+            <auxheader colspan="1" align="center">
+                    <button image="images/search.png" mold="trendy"  onClick="@command('search')"/>
+                    <button image="images/cancel.png" mold="trendy"  onClick="@command('cancelSearch')"/>
+                    </auxheader>
+        </auxhead>
+        <listhead menupopup="auto">
+                    <listheader label="Id" align="center" sort="auto(Id)" width="5%"/>
+                    <listheader label="Sach Nr" align="center" sort="auto(moduls.sachNrBest)" width="10%"/>
+                    <listheader label="Lieferant Nr" align="center" sort="auto(moduls.sachNrLieferant)" width="10%"/>
+                    <listheader label="Prod Grupa" align="center" sort="auto(moduls.prodGruppe)" width="7%"/>
+                    <listheader label="Ausfuehrung" align="center" sort="auto(moduls.ausfuehrung)" width="7%"/>
+                    <listheader label="Strana" align="center" sort="auto(seite)" width="10%"/>
+                    <listheader label="Krok" align="center" sort="auto(schritt)" width="10%"/>
+                    <listheader label="Popis" align="center" sort="auto(popis)" width="10%"/>
+                    <listheader label="Farba" align="center" sort="auto(color)" width="5%"/>
+                    <listheader label="Skenovat" align="center" sort="auto(isCheck)" width="10%"/>
+                    <listheader label="Pas" align="center" sort="auto(bandName)" width="10%"/>
+                    <listheader label="Zmazat" align="center" width="10%"/>
+                </listhead>
+        <template name="model">
+            <listitem>
+
+                <listcell label="@load(each.id)"/>
+                <listcell label="@load(each.moduls.sachNrBest)" />
+                <listcell label="@load(each.moduls.sachNrLieferant)"/>
+                <listcell label="@load(each.moduls.prodGruppe)" />
+                <listcell label="@load(each.moduls.ausfuehrung)"/>
+                <listcell label="@load(each.seite)"/>
+                <listcell label="@load(each.schritt)"/>
+                <listcell label="@load(each.popis)"/>
+                <listcell label="@load(each.farba)"/>
+                <listcell label="@load(each.isCheck)"/>
+                <listcell label="@load(each.bandName)"/>
+                <listcell>
+                                    <button image="images/delete.png" if="${sec:isAllGranted('ROLE_AV')}" mold="trendy"  onClick="@command('deleteSchritt', schritt=each)"/>
+                </listcell>
+            </listitem>
+        </template>
+    </listbox>
+<separator bar="true"/>
+<grid if="${sec:isAllGranted('ROLE_AV')}" form="@id('fx') @load(mevm.selectedSchritt) @save(mevm.selectedSchritt, before='saveSchritt')">
+           <auxhead>
+               <auxheader colspan="12" class="topic">Editovat</auxheader>
+           </auxhead>
+           <columns>
+                                  <column label="Id" align="center" width="5%"/>
+                                  <column label="Sach Nr" align="center" width="10%"/>
+                                  <column label="Lieferant Nr" align="center" width="10%"/>
+                                  <column label="Prod Grupa" align="center" width="7%"/>
+                                  <column label="Ausfuehrung" align="center" width="7%"/>
+                                  <column label="Strana" align="center" width="5%"/>
+                                  <column label="Krok" align="center" width="5%"/>
+                                  <column label="Popis" align="center" width="15%"/>
+                                  <column label="Farba" align="center" width="10%"/>
+                                  <column label="Skenovat" align="center" width="10%"/>
+                                  <column label="Pas" align="center" width="10%"/>
+                                  <column label="Ulozit" align="center" width="10%"/>
+           </columns>
+               <rows>
+               <row>
+                   <label value="@load(fx.id)"/>
+                   <label value="@load(fx.moduls.sachNrBest)"/>
+                   <label value="@load(fx.moduls.sachNrLieferant)"/>
+                   <label value="@load(fx.moduls.prodGruppe)"/>
+                   <label value="@load(fx.moduls.ausfuehrung)"/>
+                   <listbox selectedItem="@bind(fx.seite)" mold="select">
+                                                            <listitem label="A" value="A" />
+                                                            <listitem label="B" value="B"/>
+                                    </listbox>
+                   <combobox width="50px" model="@load(mevm.stepList)" selectedItem="@bind(fx.schritt)" value="@bind(fx.schritt)" readonly="true">
+                                                                                                  <template name="model">
+                                                                                                      <comboitem label="@load(each)"/>
+                                                                                                  </template>
+
+                                                                                              </combobox>
+                   <textbox value="@bind(fx.popis)"/>
+                   <textbox value="@bind(fx.farba)"/>
+                   <!--combobox width="100px" model="@load(mevm.colorList)"          value="@bind(fx.color.name)"
+                                                                                                       selectedItem="@bind(fx.color)"  readonly="true">
+                                                                                                 <template name="model">
+                                                                                                     <comboitem label="@load(each.name)"/>
+                                                                                                 </template>
+
+                   </combobox-->
+                   <listbox selectedItem="@bind(fx.isCheck)" mold="select">
+                                                                               <listitem label="true" value="T" />
+                                                                               <listitem label="false" value="F"/>
+                                                       </listbox>
+                   <listbox selectedItem="@bind(fx.bandName)" mold="select">
+                                                                               <listitem label="F991RL" value="F991RL  "/>
+                                                                               <listitem label="F981LL" value="F981LL  "/>
+                                                                               <listitem label="F991LL" value="F991LL  "/>
+                                                       </listbox>
+
+               <button image="images/save.png" mold="trendy" onClick="@command('saveSchritt', selectedData= mevm.selectedSchritt)" />
+             </row>
+             </rows>
+       </grid>
+</groupbox>
+</window>
+</zk>

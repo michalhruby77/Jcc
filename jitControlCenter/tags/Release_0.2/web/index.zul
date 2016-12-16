@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+<?page title="Jit Control Center"?>
+
+<?taglib uri="http://www.zkoss.org/zkspring/security" prefix="sec"?>
+<?variable-resolver class="org.zkoss.spring.DelegatingVariableResolver"?>
+
+<zk>
+    <borderlayout apply="com.leoni.jcc.IndexComposer">
+        <north height="80px">
+            <hbox width="100%" height="100%" pack="center" align="center">
+                <!--<vbox width="40%">-->
+                <label value="Jit Control Center" style="font:bold 30px Georgia, serif;"/>
+                <!--</vbox>-->
+            </hbox>
+        </north>
+        <west>
+            <vbox height="100%" heights="50%,5%,45%">
+                <tabbox id="tb" width="200px" mold="accordion">
+                    <tabs>
+                        <tab label="MAJSTRI" if="${sec:isAllGranted('ROLE_FOREMAN')}"/>
+                        <tab label="FST" if="${sec:isAllGranted('ROLE_FST')}"/>
+                        <tab label="AV" if="${sec:isAllGranted('ROLE_AV')}"/>
+                        <tab label="PAS" if="${sec:isAllGranted('ROLE_WORKER')}"/>
+                        <tab label="ADMIN" if="${sec:isAllGranted('ROLE_ADMIN')}"/>
+                    </tabs>
+                    <tabpanels>
+                        <tabpanel width="200px" if="${sec:isAllGranted('ROLE_FOREMAN')}">
+                            <menubar orient="vertical">
+                                <menuitem label="Dochadzka" value="presence/presenceEditor.zul"/>
+                                <menuseparator/>
+                                <menuitem label="Odhlasit" href="/j_spring_security_logout"/>
+                            </menubar>
+                        </tabpanel>
+                        <tabpanel if="${sec:isAllGranted('ROLE_FST')}">
+                            MANU FST
+                        </tabpanel>
+                        <tabpanel if="${sec:isAllGranted('ROLE_AV')}">
+                            <menubar orient="vertical">
+                                <menuitem label="Mouldy" value="modulsEditor/listModuls.zul"/>
+                                <menuitem label="Optoautomat" value="sicherungenRelais/sicherungenRelaisList.zul"/>
+                                <menuseparator/>
+                                <menuitem label="Odhlasit" href="/j_spring_security_logout"/>
+                            </menubar>
+                        </tabpanel>
+                        <tabpanel if="${sec:isAllGranted('ROLE_WORKER')}">
+                            MANU PAS
+                        </tabpanel>
+                        <tabpanel if="${sec:isAllGranted('ROLE_ADMIN')}">
+                            MANU ADMIN
+                        </tabpanel>
+                    </tabpanels>
+                </tabbox>
+                <splitter collapse="after" open="false"/>
+                <toolbar orient="vertical" width="200px">
+                    <label value="${authentication.name}"/>
+                    <zk if="${!sec:isAllGranted('ROLE_ANONYMOUS')}">
+                        <toolbarbutton label="Logout " href="/j_spring_security_logout"/>
+                        <label value="AUTHORITIES:"/>
+                        <label value="${each.authority}" forEach="${authentication.principal.authorities}"/>
+                    </zk>
+                </toolbar>
+            </vbox>
+        </west>
+        <center autoscroll="true">
+            <div id="contentContainer">
+                <zk if="${sec:isAllGranted('ROLE_FOREMAN')}">
+                    <include src="presence/presenceEditor.zul"/>
+                </zk>
+            </div>
+        </center>
+    </borderlayout>
+</zk>

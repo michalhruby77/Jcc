@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:n="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd"?>
+<?variable-resolver class="org.zkoss.spring.DelegatingVariableResolver"?>
+
+<zk>
+    <window title="Editovanie Modulov"
+            apply="org.zkoss.bind.BindComposer"
+            viewModel="@id('vm') @init('com.leoni.jcc.modulsEditor.listModulsVM')"
+            hflex="1" vflex="1">
+        <listbox id="grid" onSelect="@command('selectionChanged', modul=self.selectedIndex)">
+            <auxhead sclass="category-center">
+                <auxheader colspan="1">
+                    <textbox instant="true" width="90%"
+                             onChange="@command('filterChanged', column='id', criterion='eq', value1=self.value)"/>
+                </auxheader>
+                <auxheader colspan="1">
+                    <textbox instant="true" width="90%"
+                             onChange="@command('filterChanged', column='sachNrBest', criterion='like', value1=self.value)"/>
+                </auxheader>
+                <auxheader colspan="1">
+                    <textbox instant="true" width="90%"
+                             onChange="@command('filterChanged', column='sachNrLieferant', criterion='eq', value1=self.value)"/>
+                </auxheader>
+                <auxheader colspan="1">
+                    <textbox instant="true" width="90%"
+                             onChange="@command('filterChanged', column='prodGruppe', criterion='eq', value1=self.value)"/>
+                </auxheader>
+                <auxheader colspan="1">
+                    <textbox instant="true" width="90%"
+                             onChange="@command('filterChanged', column='kabelsatzKz', criterion='eq', value1=self.value)"/>
+                </auxheader>
+                <auxheader colspan="1">
+                    <textbox instant="true" width="90%"
+                             onChange="@command('filterChanged', column='ausfuehrung', criterion='eq', value1=self.value)"/>
+                </auxheader>
+                <auxheader colspan="1">
+                    <checkbox onCheck="@command('filterChanged', column='grund', criterion='eq', value1=self.checked)"/>
+                </auxheader>
+                <auxheader colspan="1">
+                    <checkbox onCheck="@command('filterChanged', column='grund', criterion='eq', value1=self.checked)"/>
+                </auxheader>
+                <auxheader colspan="1">
+                    <button label="Clear Filter" onClick="@command('clearFilter')"/>
+                </auxheader>
+                <auxheader colspan="1"/>
+                <auxheader colspan="1"/>
+                <auxheader colspan="1"/>
+            </auxhead>
+
+            <listhead>
+                <listheader label="Id" align="center" sort="auto(id)" width="3%"/>
+                <listheader label="Sach Nr" align="center" sort="auto(sachNrBest)" width="10%"/>
+                <listheader label="Lieferant Nr" align="center" sort="auto(sachNrLieferant)" width="10%"/>
+                <listheader label="Prod Gruppe" align="center" sort="auto(prodGruppe)" width="5%"/>
+                <listheader label="Kabelsatz kz" align="center" sort="auto(kabelsatzKz)" width="5%"/>
+                <listheader label="Ausfuehrung" align="center" sort="auto(ausfuehrung)" width="5%"/>
+                <listheader label="Grund" align="center" sort="auto(grund)" width="4%"/>
+                <listheader label="Block" align="center" sort="auto(block)" width="4%"/>
+                <listheader label="Create time" align="center" sort="auto(createTime)" width="10%"/>
+                <listheader label="Create person" align="center" sort="auto(createPerson)" width="10%"/>
+                <listheader label="Commentary" align="center" sort="auto(commentary)"/>
+            </listhead>
+
+            <template name="model">
+                <listitem>
+                    <listcell label="${each.id}"/>
+                    <listcell label="${each.sachNrBest}"/>
+                    <listcell label="${each.sachNrLieferant}"/>
+                    <listcell label="${each.prodGruppe}"/>
+                    <listcell label="${each.kabelsatzKz}"/>
+                    <listcell label="${each.ausfuehrung}"/>
+                    <listcell label="${each.grund}"/>
+                    <listcell label="${each.block}"/>
+                    <!--<listcell label="${each.createTime}"/>-->
+                    <listcell>
+                        <datebox format="yyyyMMdd HHmm" value="${each.createTime}" mold="rounded" disabled="true"
+                                 width="90%"/>
+                    </listcell>
+                    <listcell label="${each.createPerson}"/>
+                    <listcell label="${each.commentary}"/>
+                </listitem>
+            </template>
+        </listbox>
+        <div>
+            <paging id="paging" hflex="1" vflex="1"/>
+            <toolbar hflex="1" vflex="1">
+                <button label="New" onClick="@command('createModuls')"/>
+                <button label="Copy" onClick="@command('copyModuls')"/>
+                <button label="Edit" onClick="@command('editModuls')"/>
+                <button label="Delete" onClick="@command('deleteModuls')"/>
+            </toolbar>
+        </div>
+    </window>
+</zk>

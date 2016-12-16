@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+<?taglib uri="http://www.zkoss.org/zkspring/security" prefix="sec"?>
+<zk>
+<window apply="org.zkoss.bind.BindComposer" viewModel="@id('mevm') @init('com.leoni.viewModel.SicherungenRelaisViewModel')">
+ <timer id="timerKeepAliveSession" repeats="true" delay="3600000" onTimer=""/>
+ <groupbox title="Pridat novy zaznam"  closable="true" open="false">
+
+   <grid width="700px" >
+           <rows>
+
+
+               <row >
+                            <label value="Lieferant Nr:" width="150px"/>
+                            <combobox  width="150px" selectedItem="@bind(mevm.sachNrLieferantModul)"  model="@load(mevm.modulsList2)" onSelect="@command('updateSachNrBestModul')" onOk="@command('updateSachNrBestModul')" autodrop="true">
+                                                                                         <template name="model" >
+                                                                                         <comboitem label="@load(each.sachNrLieferant)"/>
+                                                                                         </template>
+                                                                                        </combobox>
+               </row>
+                            <row >
+                                               <label value="Sach Nr:" width="150px"/>
+                                               <label value="@bind(mevm.sachNrBestModul.sachNrBest)" width="150px"/>
+                                            </row>
+
+               <row >
+                                          <label value="Box:" width="150px"/>
+                                          <combobox  width="150px" selectedItem="@bind(mevm.box)" readonly="true" model="@load(mevm.boxList)" onSelect="@command('updatePlatzList')">
+                                           <template name="model" >
+                                           <comboitem label="@load(each)"/>
+                                           </template>
+                                          </combobox>
+               </row>
+               <row >
+                                          <label value="Platz:" width="150px"/>
+                                          <combobox  width="50px" selectedItem="@bind(mevm.platz)" readonly="true" model="@load(mevm.platzList)" >
+                                                                                     <template name="model" >
+                                                                                     <comboitem label="@load(each)"/>
+                                                                                     </template>
+                                          </combobox>
+               </row>
+               <row >
+                                          <label value="Wert:" width="150px"/>
+                                         <textbox value="@bind(mevm.wert)" width="150px"/>
+               </row>
+               <row >
+                                          <label value="Beschreibung:" width="150px"/>
+                                          <textbox value="@bind(mevm.beschreibung)" width="150px"/>
+               </row>
+
+           </rows>
+
+       </grid>
+       <button mold="trendy"  label="Vytvorit"
+                   onClick="@command('generateNewRelay')"/>
+       <!--button mold="trendy"  label="Vytvorit davku"
+                          onClick="@command('addBatch')"/-->
+     </groupbox>
+    <separator bar="true"/>
+  <!--button mold="trendy"  label="Exportovat do pdf"
+                         onClick="@command('exportToPdf')"/-->
+  <button mold="trendy"  label="Exportovat do excelu"
+                         onClick="@command('exportToExcel')"/>
+
+ <groupbox  closable="false" mold="3d">
+ <caption  height="15px" >
+                 <div align="center" >
+                 <label value="Optoautomat"  style="font-size:12pt" />
+                 </div>
+                 </caption>
+    <listbox id="relaisListbox" model="@load(mevm.relaisList)" mold="paging"  selectedItem="@bind(mevm.selectedRelay)" height="600px">
+
+        <auxhead sclass="category-center">
+            <auxheader colspan="1">
+                <textbox  width="90%" value="@bind(mevm.id)" />
+            </auxheader>
+            <auxheader colspan="1">
+                <textbox  width="90%" value="@bind(mevm.sachNrBestSearch)" onOK="@command('search')"/>
+            </auxheader>
+            <auxheader colspan="1">
+                <textbox width="90%" value="@bind(mevm.sachNrLieferantSearch)" onOK="@command('search')"/>
+            </auxheader>
+            <auxheader colspan="1">
+                                        <textbox width="90%" value="@bind(mevm.prodGruppeSearch)" onOK="@command('search')"/>
+            </auxheader>
+            <auxheader colspan="1">
+                                        <textbox width="90%" value="@bind(mevm.ausfuehrungSearch)" onOK="@command('search')"/>
+                        </auxheader>
+            <auxheader colspan="1">
+                                                    <combobox  onSelect="@command('search')" model="@load(mevm.boxListSearch)" selectedItem="@bind(mevm.boxSearch)" readonly="true">
+                                                                                                                                      <template name="model" >
+                                                                                                                                      <comboitem label="@load(each)"/>
+                                                                                                                                      </template>
+                                                                                             </combobox>
+
+
+
+
+
+                                    </auxheader>
+            <auxheader colspan="1">
+                                                    <combobox width="50px" onSelect="@command('search')" model="@load(mevm.platzListSearch)" selectedItem="@bind(mevm.platzSearch)" readonly="true">
+                                                                                                                                                                                          <template name="model" >
+                                                                                                                                                                                          <comboitem label="@load(each)"/>
+                                                                                                                                                                                          </template>
+                                                                                                                                                 </combobox>
+                                    </auxheader>
+            <auxheader colspan="1">
+                                                    <textbox instant="true" width="90%" value="@bind(mevm.wertSearch)" onOK="@command('search')"/>
+                                    </auxheader>
+            <auxheader colspan="1">
+
+                    </auxheader>
+            <auxheader colspan="2" align="center">
+                              <button image="images/search.png" mold="trendy"  onClick="@command('search')"/>
+                              <button image="images/cancel.png" mold="trendy"  onClick="@command('cancelSearch')"/>
+                                            </auxheader>
+        </auxhead>
+        <listhead menupopup="auto">
+                    <listheader label="Id" align="center" sort="auto(id)" width="5%"/>
+                    <listheader label="Sach Nr" align="center" sort="auto(moduls.sachNrBest)" width="10%"/>
+                    <listheader label="Lieferant Nr" align="center" sort="auto(moduls.sachNrLieferant)" width="10%"/>
+                    <listheader label="Prod Gruppe" align="center" sort="auto(moduls.prodGruppe)" width="10%"/>
+                    <listheader label="Ausfuehrung" align="center" sort="auto(moduls.ausfuehrung)" width="5%"/>
+                    <listheader label="Box" align="center" sort="auto(box)" width="10%"/>
+                    <listheader label="Platz" align="center" sort="auto(platz)" width="5%"/>
+                    <listheader label="Wert" align="center" sort="auto(wert)" width="10%"/>
+                    <listheader label="Beschreibung" align="center" sort="auto(beschreibung)" width="10%"/>
+                    <listheader label="Kopirovat" align="center" width="15%"/>
+                    <listheader label="Zmazat" align="center" width="10%"/>
+                </listhead>
+        <template name="model">
+            <listitem>
+                <listcell label="@load(each.id)"/>
+                <listcell label="@load(each.moduls.sachNrBest)" />
+                <listcell label="@load(each.moduls.sachNrLieferant)"/>
+                <listcell label="@load(each.moduls.prodGruppe)" />
+                <listcell label="@load(each.moduls.ausfuehrung)"/>
+                <listcell label="@load(each.box)"/>
+                <listcell label="@load(each.platz)"/>
+                <listcell label="@load(each.wert)"/>
+                <listcell label="@load(each.beschreibung)"/>
+                <listcell>
+                     <button image="images/copy.png" if="${sec:isAllGranted('ROLE_AV')}" mold="trendy"  onClick="@command('copyRelay', relay=each)"/>
+                </listcell>
+                <listcell>
+                                    <button image="images/delete.png" if="${sec:isAllGranted('ROLE_AV')}" mold="trendy"  onClick="@command('deleteRelay', relay=each)"/>
+                </listcell>
+            </listitem>
+        </template>
+    </listbox>
+<separator bar="true"/>
+  <grid  form="@id('fx') @load(mevm.selectedRelay) @save(mevm.selectedRelay, before='saveRelay')">
+           <auxhead>
+               <auxheader colspan="10" class="topic">Editovat</auxheader>
+           </auxhead>
+           <columns>
+                                  <column label="Id" align="center" width="5%"/>
+                                  <column label="Sach Nr" align="center" width="10%"/>
+                                  <column label="Lieferant Nr" align="center" width="10%"/>
+                                  <column label="Prod Gruppe" align="center" width="10%"/>
+                                  <column label="Ausfuehrung" align="center" width="10%"/>
+                                  <column label="Box" align="center" width="15%"/>
+                                  <column label="Platz" align="center" width="5%"/>
+                                  <column label="Wert" align="center" width="10%"/>
+                                  <column label="Beschreibung" align="center" width="10%"/>
+                                  <column label="Save" align="center"/>
+           </columns>
+               <rows>
+               <row>
+                   <label value="@load(fx.id)"/>
+                   <label value="@load(fx.moduls.sachNrBest)"/>
+                   <label value="@load(fx.moduls.sachNrLieferant)"/>
+                   <label value="@load(fx.moduls.prodGruppe)"/>
+                   <label value="@load(fx.moduls.ausfuehrung)"/>
+
+                   <combobox width="200px" model="@load(mevm.boxList)"
+                                                                                     selectedItem="@bind(fx.box)" value="@bind(fx.box)" readonly="true">
+                                                                               <template name="model">
+                                                                                   <comboitem label="@load(each)"/>
+                                                                               </template>
+
+                                                                           </combobox>
+                   <textbox width="50px" value="@bind(fx.platz)"/>
+                   <textbox width="100px" value="@bind(fx.wert)"/>
+                   <textbox value="@bind(fx.beschreibung)"/>
+               <button image="images/save.png" mold="trendy" onClick="@command('saveRelay', selectedData= mevm.selectedRelay)" />
+             </row>
+             </rows>
+       </grid>
+     </groupbox>
+<button label="Download sun.jpg">
+
+</button>
+</window>
+</zk>

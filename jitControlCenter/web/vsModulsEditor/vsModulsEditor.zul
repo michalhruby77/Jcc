@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+<?taglib uri="http://www.zkoss.org/zkspring/security" prefix="sec"?>
+<zk>
+<window apply="org.zkoss.bind.BindComposer" viewModel="@id('mevm') @init('com.leoni.viewModel.VsModulyViewModel')">
+ <timer id="timerKeepAliveSession" repeats="true" delay="3600000" onTimer=""/>
+<groupbox if="${sec:isAllGranted('ROLE_AV')}" title="Pridat novy zaznam" closable="true" open="false">
+
+  <grid width="700px" >
+          <rows>
+
+
+
+                             <row >
+                                          <label value="Lieferant Nr:" width="150px"/>
+                                          <combobox  width="150px" selectedItem="@bind(mevm.sachNrLieferantModul)"  model="@load(mevm.modulsList2)" onSelect="@command('updateSachNrBestModul')" onOk="@command('updateSachNrBestModul')" autodrop="true">
+                                                                                                       <template name="model" >
+                                                                                                       <comboitem label="@load(each.sachNrLieferant)"/>
+                                                                                                       </template>
+                                                                                                      </combobox>
+                             </row>
+                           <row >
+                                              <label value="Sach Nr:" width="150px"/>
+                                              <label value="@bind(mevm.sachNrBestModul.sachNrBest)" width="150px"/>
+                                           </row>
+
+              <row >
+                                         <label value="Vodic:" width="150px"/>
+                                         <textbox value="@bind(mevm.vodic)" width="150px"/>
+              </row>
+              <row >
+                                                       <label value="Prierez:" width="150px"/>
+                                                       <textbox value="@bind(mevm.prierez)" />
+              </row>
+              <row >
+                                                       <label value="Popis:" width="150px"/>
+                                                       <textbox value="@bind(mevm.popis)" width="150px"/>
+              </row>
+              <!--row >
+                                                       <label value="Id_vs:" width="150px"/>
+                                                       <textbox value="@bind(mevm.id_vs)" width="150px"/>
+              </row-->
+              <row>
+              <combobox width="150px" model="@load(mevm.vsList)" selectedItem="@bind(mevm.selectedVs)" readonly="true">
+                                                    <template name="model" >
+                                                        <comboitem label="@load(each.nazov)"/>
+                                                    </template>
+
+              </combobox>
+              </row>
+          </rows>
+
+      </grid>
+      <button mold="trendy"  label="Vytvorit"
+                  onClick="@command('generateNewVsModul')"/>
+    </groupbox>
+<separator bar="true"/>
+<button mold="trendy"  label="Exportovat do excelu"
+                         onClick="@command('exportToExcel')"/>
+<button mold="trendy"  label="Nahrat vs z excelu"
+                         onClick="@command('importFromExcel')"/>
+ <groupbox mold="3d" closable="false">
+ <caption  height="15px" >
+                 <div align="center" >
+                 <label value="Letovanie"  style="font-size:12pt" />
+                 </div>
+                 </caption>
+    <listbox id="vsModulGrid" model="@load(mevm.vsModulList)" mold="paging" selectedItem="@bind(mevm.selectedVsModul)" height="600px">
+
+        <auxhead sclass="category-center">
+            <auxheader colspan="1">
+                <textbox  width="90%" value="@bind(mevm.id)"  />
+            </auxheader>
+            <auxheader colspan="1">
+                <textbox   width="90%" value="@bind(mevm.sachNrBestSearch)" onOK="@command('search')"/>
+            </auxheader>
+            <auxheader colspan="1">
+                <textbox  width="90%" value="@bind(mevm.sachNrLieferantSearch)" onOK="@command('search')"/>
+            </auxheader>
+            <auxheader colspan="1">
+                                        <textbox  width="90%" value="@bind(mevm.prodGruppeSearch)" onOK="@command('search')"/>
+            </auxheader>
+            <auxheader colspan="1">
+                                        <textbox  width="90%" value="@bind(mevm.ausfuehrungSearch)" onOK="@command('search')"/>
+            </auxheader>
+            <auxheader colspan="1">
+                                                    <textbox  width="90%" value="@bind(mevm.vodicSearch)" onOK="@command('search')"/>
+                        </auxheader>
+            <auxheader colspan="1">
+
+                    </auxheader>
+            <auxheader colspan="1">
+
+                                    </auxheader>
+            <auxheader colspan="1">
+                                      <textbox  width="90%" value="@bind(mevm.vsSearch)" onOK="@command('search')"/>
+                                </auxheader>
+            <auxheader colspan="1" align="center">
+                               <button image="images/search.png" mold="trendy"  onClick="@command('search')"/>
+                               <button image="images/cancel.png" mold="trendy"  onClick="@command('cancelSearch')"/>
+                                            </auxheader>
+        </auxhead>
+        <listhead menupopup="auto">
+                    <listheader label="Id" align="center" sort="auto(Id)" width="10%"/>
+                    <listheader label="Sach Nr" align="center" sort="auto(moduls.sachNrBest)" width="10%"/>
+                    <listheader label="Lieferant Nr" align="center" sort="auto(moduls.sachNrLieferant)" width="10%"/>
+                    <listheader label="Prod Gruppe" align="center" sort="auto(moduls.prodGruppe)" width="6%"/>
+                    <listheader label="Ausfuehrung" align="center" sort="auto(moduls.ausfuehrung)" width="6%"/>
+                    <listheader label="Vodic" align="center" sort="auto(vodic)" width="10%"/>
+                    <listheader label="Prierez" align="center" sort="auto(prierez)" width="10%"/>
+                    <listheader label="Farba" align="center" sort="auto(popis)" width="15%"/>
+                    <listheader label="VS" align="center" sort="auto(vs)" width="15%"/>
+                    <listheader label="Delete" align="center" width="15%"/>
+                </listhead>
+        <template name="model">
+            <listitem>
+
+                <listcell label="@load(each.id)"/>
+                <listcell label="@load(each.moduls.sachNrBest)" />
+                <listcell label="@load(each.moduls.sachNrLieferant)"/>
+                <listcell label="@load(each.moduls.prodGruppe)" />
+                <listcell label="@load(each.moduls.ausfuehrung)"/>
+                <listcell label="@load(each.vodic)"/>
+                <listcell label="@load(each.prierez)"/>
+                <listcell>
+                <image content="@load(each.vs.vsFarby.obrazok) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                </listcell>
+                <listcell label="@load(each.vs.nazov)"/>
+
+                <listcell>
+                                    <button image="images/delete.png" if="${sec:isAllGranted('ROLE_AV')}" mold="trendy"  onClick="@command('deleteVsModul', vsModul=each)"/>
+                </listcell>
+            </listitem>
+        </template>
+    </listbox>
+<separator bar="true"/>
+<grid if="${sec:isAllGranted('ROLE_AV')}" form="@id('fx') @load(mevm.selectedVsModul) @save(mevm.selectedVsModul, before='saveVsModul')">
+           <auxhead>
+               <auxheader colspan="10" class="topic">Editovat</auxheader>
+           </auxhead>
+           <columns>
+                                  <column label="Id" align="center" width="10%"/>
+                                  <column label="Sach Nr" align="center" width="10%"/>
+                                  <column label="Lieferant Nr" align="center" width="10%"/>
+                                  <column label="Prod Gruppe" align="center" width="5%"/>
+                                  <column label="Ausfuehrung" align="center" width="5%"/>
+                                  <column label="Vodic" align="center" width="15%"/>
+                                  <column label="Prierez" align="center" width="10%"/>
+                                  <column label="Popis" align="center" width="15%"/>
+                                  <column label="VS" align="center" width="15%"/>
+                                  <column label="Save" align="center" width="15%"/>
+           </columns>
+               <rows>
+               <row>
+                   <label value="@load(fx.id)"/>
+                   <label value="@load(fx.moduls.sachNrBest)"/>
+                   <label value="@load(fx.moduls.sachNrLieferant)"/>
+                   <label value="@load(fx.moduls.prodGruppe)"/>
+                   <label value="@load(fx.moduls.ausfuehrung)"/>
+                   <textbox value="@bind(fx.vodic)"/>
+                   <textbox value="@bind(fx.prierez)"/>
+                   <textbox value="@bind(fx.popis)"/>
+                    <combobox width="120px" model="@load(mevm.vsList)"
+                                                                                     selectedItem="@bind(fx.vs)" value="@bind(fx.vs.nazov)" readonly="true">
+                                                                               <template name="model">
+                                                                                   <comboitem label="@load(each.nazov)"/>
+                                                                               </template>
+
+                                                                           </combobox>
+               <button image="images/save.png" mold="trendy" onClick="@command('saveVsModul', selectedData= mevm.selectedVsModul)" />
+             </row>
+             </rows>
+       </grid>
+</groupbox>
+
+</window>
+</zk>

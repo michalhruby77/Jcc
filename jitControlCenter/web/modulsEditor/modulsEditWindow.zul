@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+
+<window id="modulsEditorWindow" title="Moduls Editor" closable="true" width="500px" apply="org.zkoss.bind.BindComposer"
+        viewModel="@id('mewvm') @init('com.leoni.jcc.modulsEditor.ModulsEditWindow')"
+        form="@id('fx') @load(mewvm.editedModuls) @save(mewvm.editedModuls, before='submit') @validator('com.leoni.jcc.modulsEditor.ModulsEditWindowValidator')"
+        validationMessages="@id('vmsgs')">
+
+    <grid width="99%">
+        <columns>
+            <column width="30%">Attribute</column>
+            <column width="59%">Value</column>
+        </columns>
+        <rows>
+            <row>
+                <label value="Id"/>
+                <textbox value="@bind(fx.id)" width="99%" disabled="true"/>
+            </row>
+            <row>
+                <label value="Sach nr best"/>
+                <textbox value="@bind(fx.sachNrBest)" width="99%"
+                         constraint= "@load(mewvm.sachNrBestRegexp)"/>
+            </row>
+            <row>
+                <label value="Sach nr lieferant"/>
+                <textbox value="@bind(fx.sachNrLieferant)" width="99%" constraint='@load(mewvm.sachNrLieferantRegexp)'/>
+            </row>
+            <row>
+                <label value="Prod gruppe"/>
+                <hbox>
+                    <listbox selectedItem="@bind(fx.prodGruppe)" mold="select">
+                        <listitem label="991" value="991" selected="true"/>
+                        <listitem label="981" value="981"/>
+                        <listitem label="9X1" value="9X1"/>
+                    </listbox>
+                    <label style="color:red;" value="@load(vmsgs['prodGruppe'])"/>
+                </hbox>
+            </row>
+            <row>
+                <label value="Kabelsatz kz"/>
+                <hbox>
+                    <listbox selectedItem="@bind(fx.kabelsatzKz)" mold="select">
+                        <listitem label="F" value="F"/>
+                        <listitem label="C" value="C"/>
+                        <listitem label="T" value="T"/>
+                        <listitem label="U" value="U"/>
+                        <listitem label="E" value="E"/>
+                        <listitem label="R" value="R"/>
+                    </listbox>
+                    <label style="color:red;" value="@load(vmsgs['kabelsatzKz'])"/>
+                </hbox>
+            </row>
+            <row>
+                <label value="Ausfuehrung"/>
+                <hbox>
+                <listbox selectedItem="@bind(fx.ausfuehrung)" mold="select">
+                    <listitem label="LL" value="LL"/>
+                    <listitem label="RL" value="RL"/>
+                    <listitem label="XL" value="XL"/>
+                </listbox>
+                    <label style="color:red;" value="@load(vmsgs['ausfuehrung'])"/>
+                </hbox>
+            </row>
+            <row>
+                <label value="Grund"/>
+                <checkbox checked="@bind(fx.grund)"/>
+            </row>
+            <row>
+                <label value="Block"/>
+                <checkbox checked="@bind(fx.block)"/>
+            </row>
+            <row>
+                <label value="Commentary"/>
+                <textbox value="@bind(fx.commentary)" width="99%" rows="8"/>
+            </row>
+            <row>
+                <label value="Create time"/>
+                <datebox format="yyyyMMdd HHmm" value="@bind(fx.createTime)" mold="rounded" disabled="true"
+                         width="99%"/>
+            </row>
+            <row>
+                <label value="Create person"/>
+                <textbox value="@bind(fx.createPerson)" width="99%" disabled="true"/>
+            </row>
+        </rows>
+    </grid>
+    <toolbar>
+        <button label="Save" onClick="@command('submit') @global-command('refreshModuls')"/>
+        <button label="Cancel" onClick="@command('cancel')"/>
+    </toolbar>
+</window>

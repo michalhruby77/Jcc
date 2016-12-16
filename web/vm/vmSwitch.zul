@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+<?taglib uri="/WEB-INF/security.tld" prefix="sec"?>
+<zk>
+<window apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.leoni.viewModel.vm.VmSwitchVM')">
+ <timer id="timerKeepAliveSession" repeats="true" delay="3600000" onTimer=""/>
+<groupbox title="Pridat novy zaznam" if="${sec:isAllGranted('ROLE_AV')}" closable="true" open="false">
+  <vlayout>
+  <grid width="700px" >
+          <rows>
+              <row >
+                               <label value="Nazov:" width="150px"/>
+                               <textbox value="@bind(vm.name)" width="150px"/>
+
+              </row>
+              <row >
+                 <label value="Adresa:" width="150px"/>
+                 <textbox value="@bind(vm.address)" width="150px"/>
+
+              </row>
+              <row >
+                               <label value="Status:" width="150px"/>
+                               <checkbox checked="@bind(vm.status)" />
+
+              </row>
+              <row >
+                               <label value="Doska:" width="150px"/>
+                               <combobox width="250px" model="@load(vm.brettList)" selectedItem="@bind(vm.selectedBrett)" readonly="true">
+                                                <template name="model" >
+                                                 <comboitem label="@load(each.name.trim())"/>
+                                                </template>
+                               </combobox>
+              </row>
+
+              <row >
+                                             <label value="Klip:" width="150px"/>
+                                             <combobox width="250px" model="@load(vm.clipList)" selectedItem="@bind(vm.selectedClip)" readonly="true">
+                                                              <template name="model" >
+                                                               <comboitem label="@load(each.name.trim())"/>
+                                                              </template>
+                                             </combobox>
+              </row>
+
+          </rows>
+
+  </grid>
+
+       </vlayout>
+    <button mold="trendy"  label="Vytvorit"
+                      onClick="@command('generateNew')"/>
+    </groupbox>
+<separator bar="true"/>
+
+ <groupbox mold="3d" closable="false">
+    <caption  height="15px" >
+                    <div align="center" >
+                    <label value="VM Switche"  style="font-size:12pt" />
+                    </div>
+                    </caption>
+    <listbox id="ColorGrid" model="@load(vm.switchList)" mold="paging" selectedItem="@bind(vm.selectedSwitch)" height="600px">
+
+
+        <listhead menupopup="auto">
+                    <listheader label="Nazov" align="center" sort="auto(name)" width="20%"/>
+                    <listheader label="Adresa" align="center" sort="auto(name)" width="20%"/>
+                    <listheader label="Status" align="center" sort="auto(name)" width="10%"/>
+                    <listheader label="Doska" align="center" sort="auto(name)" width="20%"/>
+                    <listheader label="Klip" align="center" sort="auto(name)" width="20%"/>
+                    <listheader label="Zmazat" align="center" width="10%"/>
+                </listhead>
+        <template name="model">
+            <listitem>
+                <listcell label="@load(each.name)"/>
+                <listcell label="@load(each.address)"/>
+                <listcell>
+                   <checkbox checked="@load(each.status)" disabled="true"/>
+                </listcell>
+                <listcell label="@load(each.vmBrett.name)"/>
+                <listcell label="@load(each.vmClip.name)"/>
+                <listcell>
+                  <button image="images/delete.png" if="${sec:isAllGranted('ROLE_AV')}" mold="trendy"  onClick="@command('deleteSwitch', switch = each)"/>
+                </listcell>
+            </listitem>
+        </template>
+    </listbox>
+<separator bar="true"/>
+<grid if="${sec:isAllGranted('ROLE_AV')}" form="@id('fx') @load(vm.selectedSwitch) @save(vm.selectedSwitch, before='saveSwitch')">
+           <auxhead>
+               <auxheader colspan="6" class="topic">Edit</auxheader>
+           </auxhead>
+           <columns>
+                                  <column label="Nazov" align="center" width="20%"/>
+                                  <column label="Adresa" align="center" width="20%"/>
+                                  <column label="Status" align="center" width="10%"/>
+                                  <column label="Doska" align="center" width="20%"/>
+                                  <column label="Klip" align="center" width="20%"/>
+                                  <column label="Ulozit" align="center" width="10%"/>
+           </columns>
+               <rows>
+               <row>
+                   <textbox value="@bind(fx.name)"/>
+                   <textbox value="@bind(fx.address)"/>
+                   <checkbox checked="@init(false)@load(true and fx.status)@save(fx.status)"/>
+                   <combobox width="150px" model="@load(vm.brettList)" value="@bind(fx.vmBrett.name)" selectedItem="@bind(vm.selectedBrettSave)" readonly="true">
+                                       <template name="model" >
+                                         <comboitem label="@load(each.name.trim())"/>
+                                       </template>
+                   </combobox>
+                   <combobox width="150px" model="@load(vm.clipList)" value="@bind(fx.vmClip.name)" selectedItem="@bind(vm.selectedClipSave)" readonly="true">
+                                                          <template name="model" >
+                                                            <comboitem label="@load(each.name.trim())"/>
+                                                          </template>
+                   </combobox>
+                  <button image="images/save.png" mold="trendy" onClick="@command('saveSwitch', selectedData= vm.selectedSwitch)" />
+               </row>
+             </rows>
+       </grid>
+</groupbox>
+
+</window>
+</zk>

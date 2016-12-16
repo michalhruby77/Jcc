@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+<?page title="Jit Control Center"?>
+
+<?taglib uri="http://www.zkoss.org/zkspring/security" prefix="sec"?>
+<?variable-resolver class="org.zkoss.spring.DelegatingVariableResolver"?>
+
+<zk>
+    <borderlayout apply="com.leoni.jcc.IndexComposer">
+        <north title="Jit Control Center"/>
+        <west>
+            <vbox>
+                <menubar id="menuBar" width="200px" orient="vertical">
+                    <menu label="Project">
+                        <menupopup>
+                            <menuitem label="First" value="firstWindow.zul"/>
+                            <menuitem label="Person Editor" value="personEditor.zul"/>
+                            <menuitem label="Moduls Editor" value="modulsEditor.zul"/>
+                            <menuitem label="Info" value="modulsEditor/listModuls.zul"/>
+                            <menuseparator/>
+                            <menuitem label="Exit"/>
+                        </menupopup>
+                    </menu>
+                    <menu label="Help">
+                        <menupopup>
+                            <menuitem label="Index"/>
+                            <menu label="About">
+                                <menupopup>
+                                    <menuitem label="About ZK"/>
+                                    <menuitem label="About Potix"/>
+                                </menupopup>
+                            </menu>
+                        </menupopup>
+                    </menu>
+                    <menu>
+                        <menupopup>
+                            <menuitem label="Index"/>
+                        </menupopup>
+                    </menu>
+                    <menuitem label="Logout " href="/j_spring_security_logout"
+                              if="${!sec:isAllGranted('ROLE_ANONYMOUS')}"/>
+                </menubar>
+
+                <toolbar orient="vertical">
+                    <label value="${authentication.name}"/>
+                    <label value="AUTHORITIES:"/>
+                    <label value="${each.authority}" forEach="${authentication.principal.authorities}"/>
+                </toolbar>
+
+            </vbox>
+        </west>
+        <center>
+            <div id="contentContainer">
+                <include src="modulsEditor/listModuls.zul"/>
+            </div>
+        </center>
+    </borderlayout>
+</zk>

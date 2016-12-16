@@ -1,0 +1,28 @@
+<zk>
+<window id="modalDialog" title="Vzory modulov" border="normal"
+     apply="org.zkoss.bind.BindComposer" viewModel="@id('mvm') @init('com.leoni.viewModel.FoamWorkplaceModulsVM',
+     vlayout=vlayout,vlayout2=vlayout2,vlayout3=vlayout3,vlayout4=vlayout4,vlayout5=vlayout5,vlayout6=vlayout6)"
+    position="center,center" closable="true"
+    action="show: slideDown;hide: slideUp">
+ <timer id="timerKeepAliveSession" repeats="true" delay="3600000" onTimer=""/>
+<vlayout>
+
+<groupbox>
+
+                 <hlayout>
+                    <vlayout id="vlayout"/>
+                    <vlayout id="vlayout2"/>
+                    <vlayout id="vlayout3"/>
+                     <vlayout id="vlayout4"/>
+                     <vlayout id="vlayout5"/>
+                     <vlayout id="vlayout6"/>
+                </hlayout>
+                <button mold="trendy"  label="+"  onClick="@command('addTextBoxVert', vlayout=vlayout,vlayout2=vlayout2,
+                vlayout3=vlayout3,vlayout4=vlayout4,vlayout5=vlayout5,vlayout6=vlayout6)"/>
+
+      </groupbox>
+      <button mold="trendy"  label="Ulozit"
+                        onClick="@command('submit')"/>
+</vlayout>
+</window>
+</zk>

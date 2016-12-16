@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+<?page title="Jit Control Center"?>
+<?link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico"?>
+<?link rel="icon" type="image/x-icon" href="images/favicon.ico"?>
+<?taglib uri="/WEB-INF/security.tld" prefix="sec"?>
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c"?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+    <style>
+        .z-loading { top: 30% !important; left: 40% !important; align:
+        center; vertical-align: middle; }
+        .z-loading-icon {
+        background-image: url(${c:encodeURL('~./zk/img/working4.gif')});
+        width: 300px; height: 300px;
+        }
+    </style>
+    <!--style>
+        .z-loading {
+        background-color:#808080;
+        border:1px outset #A0A0A0;
+        font-weight: bold;
+        padding:2px;
+        }
+        .z-loading-indicator {
+        color: gray;
+        border:0 none;
+        }
+        .z-loading-icon {
+        background-image: url(${c:encodeURL('~./zk/img/proggress3.gif')});
+        }
+    </style-->
+<borderlayout apply="org.zkoss.bind.BindComposer" viewModel="@id('ivm') @init('com.leoni.viewModel.IndexVM')" >
+        <north height="80px" >
+            <hbox  width="100%" pack="left" align="left" style="background-color: #D6F5FF">
+            <hbox  pack="center" align="center">
+            <image src="images/bupag.jpg"/>
+            </hbox>
+            <hbox  pack="center" align="center">
+            <image src="images/headerJit2.jpg"/>
+            </hbox>
+            <hbox pack="center" align="center">
+            <image src="images/leoni.png"/>
+            </hbox>
+            </hbox>
+        </north>
+        <west>
+            <vbox height="100%"  style="background-color: #D6F5FF">
+                <tabbox id="tb" width="200px" mold="accordion" style="overflow:auto;">
+                    <tabs id="tabs">
+                        <tab label="UZIVATEL"/>
+
+                    </tabs>
+                    <tabpanels id="tabpanels">
+                        <tabpanel width="200px">
+                                                                            <menubar orient="vertical">
+                                                                                <!--menu label="aaa">
+                                                                                <menupopup>
+                                                                                <menu label="bbb">
+                                                                                <menupopup>
+                                                                                <menuitem label="Submenu"/>
+                                                                                </menupopup>
+                                                                                </menu>
+
+
+                                                                                </menupopup>
+                                                                                </menu-->
+                                                                                <menuitem label="Zmena hesla"  value="user/changePassword.zul" onClick="@command('open', pageName='user/changePassword.zul')"/>
+                                                                                <menuseparator/>
+                                                                                <menuitem label="Odhlasit" href="/j_spring_security_logout"/>
+                                                                            </menubar>
+                        </tabpanel>
+
+                    </tabpanels>
+                </tabbox>
+                <!--splitter collapse="after" open="false"/>
+                <toolbar orient="vertical" width="200px">
+                    <label value="${authentication.name}"/>
+                    <zk if="${!sec:isAllGranted('ROLE_ANONYMOUS')}">
+                        <toolbarbutton label="Logout " href="/j_spring_security_logout"/>
+                        <label value="AUTHORITIES:"/>
+                        <label value="${each}" forEach="${authentication.principal}"/>
+                    </zk>
+                </toolbar-->
+
+            </vbox>
+
+        </west>
+        <center autoscroll="true">
+            <div id="contentContainer">
+                <zk if="${sec:isAllGranted('ROLE_FOREMAN')}">
+                    <include src="presence/presenceEditor.zul"/>
+                </zk>
+            </div>
+
+        </center>
+    </borderlayout>
+
+</zk>

@@ -1,0 +1,29 @@
+<window id="modalDialog" title="New modul" border="normal" width="460px"
+     apply="org.zkoss.bind.BindComposer" viewModel="@id('tvm') @init('com.leoni.viewModel.EditModulViewModel')"
+    position="center,center" closable="true"
+    action="show: slideDown;hide: slideUp">
+    <vlayout>
+         <grid>
+
+                    <rows>
+                        <row>
+                            <label value="Sach Nr" width="150px" />
+                            <hlayout>
+                                <textbox value="@bind(tvm.sachNrBest)"
+                                    width="150px" tabindex="1" />
+                            </hlayout>
+
+                        </row>
+                        <row>
+                            Lieferant Nr
+                            <textbox value="@bind(tvm.sachNrLieferant)"
+                                width="150px" tabindex="2" />
+
+                        </row>
+
+                    </rows>
+         </grid>
+
+        <button id="closeBtn" label="Save" onClick="@command('save')"/>
+    </vlayout>
+</window>

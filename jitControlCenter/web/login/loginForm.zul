@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+
+<zk>
+    <!-- this form-login-page form is also used as the
+         form-error-page to ask for a login again. -->
+    <!--audio id="audio" src="/test.mp3" width="200px" height="20px"  autoplay="true"/-->
+
+                        <div align="center">
+                            <image id="image" src="/test.gif" width="200px" height="200px" />
+                        </div>
+
+    <groupbox closable="false">
+        <caption>Login</caption>
+        <html style="color:red" if="${not empty param.login_error}">
+            <![CDATA[
+            Your login attempt was not successful, try again.<br/>
+            Reason: ${SPRING_SECURITY_LAST_EXCEPTION.message}
+           ]]>
+        </html>
+        <h:form id="f" name="f" action="../j_spring_security_check" method="POST" xmlns:h="native">
+            <grid>
+                <rows>
+                    <row>User:
+                        <textbox id="u" name="j_username"/>
+                    </row>
+                    <row>Password:
+                        <textbox id="p" type="password" name="j_password"/>
+                    </row>
+                    <row><checkbox id="r" name="j_spring_security_remember_me"/>Don't ask for my password for two weeks
+                    </row>
+                    <row spans="2">
+                        <hbox>
+                            <button type="submit" label="Submit" />
+                            <button type="reset" label="Reset" />
+                        </hbox>
+                    </row>
+                </rows>
+
+            </grid>
+        </h:form>
+    </groupbox>
+
+</zk>

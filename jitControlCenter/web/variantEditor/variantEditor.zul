@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+<?taglib uri="http://www.zkoss.org/zkspring/security" prefix="sec"?>
+<zk>
+<?taglib uri="http://www.zkoss.org/zkspring/security" prefix="sec"?>
+<window  apply="org.zkoss.bind.BindComposer" viewModel="@id('mevm') @init('com.leoni.viewModel.VariantViewModel')">
+ <timer id="timerKeepAliveSession" repeats="true" delay="3600000" onTimer=""/>
+<button mold="trendy" image="images/add.png"  onClick="@command('addNewVariant')"/>
+<!--groupbox title="Pridat novy zazmam" closable="true" open="false" >
+  <hlayout>
+  <grid width="700px">
+          <rows>
+
+              <row>
+                 <label value="Nazov:" width="150px"/>
+                 <textbox value="@bind(mevm.name)" width="300px"/>
+
+              </row>
+              <row>
+                               <label value="Popis:" width="150px"/>
+                               <textbox value="@bind(mevm.description)" width="300px"/>
+
+              </row>
+
+              <row>
+                               <label value="Skenovat retazec:" width="150px"/>
+                               <textbox value="@bind(mevm.scanString)" width="300px"/>
+
+                            </row>
+              <row>
+                                             <label value="Typ:" width="150px"/>
+                                             <textbox value="@bind(mevm.typ)" width="300px"/>
+
+                                          </row>
+              <row>
+                                                                     <label value="Skenovat?" width="150px"/>
+                                                                     <checkbox checked="@bind(mevm.scanRequired)" />
+              </row>
+
+              <row>
+                              <label value="Vyber farbu:" width="150px"/>
+                              <hlayout>
+                                  <combobox width="150px" model="@load(mevm.colorList)" selectedItem="@bind(mevm.selectedColor)" readonly="true">
+                                      <template name="model" >
+                                          <comboitem label="@load(each.name)"/>
+                                      </template>
+
+                                  </combobox>
+                              </hlayout>
+
+              </row>
+              <row>
+                                            <label value="Vyber workplace:" width="150px"/>
+                                            <hlayout>
+                                                <combobox width="150px" model="@load(mevm.workplaceList)" selectedItem="@bind(mevm.selectedWorkplace)" readonly="true">
+                                                    <template name="model" >
+                                                        <comboitem label="@load(each.name)"/>
+                                                    </template>
+                                                </combobox>
+                                            </hlayout>
+              </row>
+
+
+          </rows>
+
+      </grid>
+      <groupbox  title="Moduly vo variante"  >
+
+               <vlayout id="vlayout">
+
+
+
+
+
+               </vlayout>
+                <button mold="trendy"  label="+"  visible="@bind(not mevm.modul61Vis)"
+                                                                    onClick="@command('addTextBoxVert', vlayout=vlayout)"/>
+
+      </groupbox>
+      </hlayout>
+      <button mold="trendy"  label="Vytvorit"
+                  onClick="@command('generateNewVariant', vlayout=vlayout)"/>
+    </groupbox-->
+<separator bar="true"/>
+<button mold="trendy"  label="Exportovat do excelu"
+                         onClick="@command('exportToExcel')"/>
+ <groupbox mold="3d" closable="false" >
+   <caption  height="15px" >
+                   <div align="center" >
+                   <label value="Varianty"  style="font-size:12pt" />
+                   </div>
+                   </caption>
+    <listbox id="VariantGrid" model="@load(mevm.variantList)"  selectedItem="@bind(mevm.selectedVariant)" height="600px">
+      <auxhead sclass="category-center">
+                  <auxheader colspan="1">
+                                    <textbox  width="90%" value="@bind(mevm.nameSearch)" onOK="@command('search')"/>
+                                    </auxheader>
+                  <auxheader colspan="1">
+                             <textbox  width="90%" value="@bind(mevm.descriptionSearch)" onOK="@command('search')"/>
+                             </auxheader>
+                  <auxheader colspan="1">
+                             <textbox  width="90%" value="@bind(mevm.scanStringSearch)" onOK="@command('search')"/>
+                             </auxheader>
+                  <auxheader colspan="3"/>
+                  <auxheader colspan="1">
+                             <!--textbox  width="90%" value="@bind(mevm.workplaceSearch)" onOK="@command('search')"/-->
+                             </auxheader>
+                  <auxheader colspan="1">
+                             <!--combobox  width="90%" selectedItem="@bind(mevm.typSearch)" readonly="true" model="@load(mevm.typList)" onSelect="@command('search')">
+                                                                        <template name="model" >
+                                                                        <comboitem label="@load(each)"/>
+                                                                        </template>
+                             </combobox-->
+                  </auxheader>
+                  <auxheader colspan="1">
+                      <textbox  width="90%" value="@bind(mevm.sachNrLieferantSearch)" onOK="@command('search')"/>
+                  </auxheader>
+
+
+                  <auxheader colspan="1"/>
+
+                  <auxheader colspan="3" align="center">
+                  <button image="images/search.png" mold="trendy"  onClick="@command('search')"/>
+                  <button image="images/cancel.png" mold="trendy"  onClick="@command('cancelSearch')"/>
+                                                  </auxheader>
+              </auxhead>
+
+        <listhead menupopup="auto">
+                    <!--listheader label="Id" align="center" sort="auto(id)" width="3%"/-->
+                    <listheader label="Nazov" align="center" sort="auto(name)" width="16%"/>
+                    <listheader label="Popis" align="center" sort="auto(description)" width="16%"/>
+                    <listheader align="center" sort="auto(scanString)" width="21%">
+                    <label value="Sken retazec" tooltip="scanStringTooltip" style="font-weight:bold"/>
+                    </listheader>
+                    <listheader label="Sken?" align="center" sort="auto(scanRequired)" width="3%"/>
+                    <listheader label="Pocet" align="center" sort="auto(modulsCount)" width="3%"/>
+                    <listheader label="Farba" align="center" sort="auto(color.name)" width="4%"/>
+                    <listheader label="Workplace" align="center" sort="auto(workplace.name)" width="7%"/>
+                    <listheader label="Typ" align="center" sort="auto(typ)" width="5%"/>
+                    <listheader label="Moduly" align="center" width="5%"/>
+                    <listheader label="Upravit" align="center" width="5%"/>
+                    <listheader label="Kopirovat" align="center" width="5%"/>
+                    <listheader label="Vymazat" align="center" width="5%"/>
+                    <listheader label="Tlacit" align="center" width="5%"/>
+                </listhead>
+        <template name="model">
+            <listitem>
+                <!--listcell label="@load(each.id)" /-->
+                <listcell label="@load(each.name)"/>
+                <listcell label="@load(each.description)"/>
+                <listcell label="@load(each.scanString)"/>
+                <listcell>
+                                <checkbox checked="@load(each.scanRequired)" disabled="true"/>
+                                </listcell>
+                <listcell label="@load(each.modulsCount)"/>
+                <listcell label="@load(each.color.name)"/>
+                <listcell label="@load(each.workplace.name)"/>
+                <listcell label="@load(each.typ)"/>
+                <listcell>
+                         <!--button image="images/list.png" mold="trendy"  onClick="@command('showModuls', variant=each)" popup="detail_${harnesstype.id}, position=end_before" style="cursor:pointer"/-->
+                         <image src="images/list.png" style="cursor:pointer" popup="detail_${harnesstype.id}, position=end_before" onClick="@command('showModuls', variant=each)"/>
+                                            <!--grid zclass="none"  model="@load(each.modulsSet)">
+                                              <template name="model">
+                                                <row zclass="none" >
+                                                <label  value="${each.sachNrLieferant}" />
+                                                </row>
+                                              </template>
+                                            </grid-->
+                </listcell>
+
+                <listcell>
+                                   <button image="images/edit.png" mold="trendy"  onClick="@command('editModuls', variant=each)"/>
+                </listcell>
+                <listcell>
+                   <button image="images/copy.png" mold="trendy"  onClick="@command('copyVariant', variant=each)"/>
+                </listcell>
+                <listcell>
+                   <button image="images/delete.png" mold="trendy"  onClick="@command('deleteVariant', variant=each)"/>
+                </listcell>
+                <listcell>
+                        <button image="images/print.png" mold="trendy"  onClick="@command('printVariant', variant=each)"/>
+                </listcell>
+            </listitem>
+        </template>
+    </listbox>
+<separator bar="true"/>
+<!--label value="test"  /-->
+<grid form="@id('fx') @load(mevm.selectedVariant) @save(mevm.selectedVariant, before='saveVariant')" if="${sec:isAllGranted('ROLE_AV')}">
+           <auxhead>
+               <auxheader colspan="9" class="topic">Edit</auxheader>
+           </auxhead>
+           <columns>
+                                  <!--column label="Id" align="center" width="5%"/-->
+                                  <column label="Nazov" align="center" width="17%"/>
+                                  <column label="Popis" align="center" width="25%"/>
+                                  <column label="Sken retazec" align="center" width="20%"/>
+                                  <column label="Sken?" align="center" width="3%"/>
+                                  <!--column label="Moduls count" align="center" width="5%"/-->
+                                  <column label="Farba" align="center" width="8%"/>
+                                  <column label="Workplace" align="center" width="10%"/>
+                                  <column label="Typ" align="center" width="7%"/>
+                                  <column label="Ulozit" align="center" width="10%"/>
+           </columns>
+               <rows>
+               <row>
+
+                   <!--label value="@load(fx.id)"/-->
+                   <textbox width="200px" value="@bind(fx.name)"/>
+                   <textbox width="350px" value="@bind(fx.description)"/>
+                   <textbox width="300px" value="@bind(fx.scanString)"/>
+                   <checkbox checked="@init(false)@load(true and fx.scanRequired)@save(fx.scanRequired)"/>
+                   <!--textbox width="50px" value="@bind(fx.modulsCount)"/-->
+                   <combobox width="120px" model="@load(mevm.colorList)"
+                                                                  selectedItem="@bind(fx.color)" value="@bind(fx.color.name)" readonly="true">
+                                                            <template name="model">
+                                                                <comboitem label="@load(each.name)"/>
+                                                            </template>
+
+                                                        </combobox>
+                   <combobox width="150px" model="@load(mevm.workplaceList)"
+                                                                  selectedItem="@bind(fx.workplace)" value="@bind(fx.workplace.name)" readonly="true">
+                                                            <template name="model">
+                                                                <comboitem label="@load(each.name)"/>
+                                                            </template>
+
+                                                        </combobox>
+                   <textbox width="100px" value="@bind(fx.typ)"/>
+               <button image="images/save.png" mold="trendy" onClick="@command('saveVariant', selectedData= mevm.selectedVariant)" />
+             </row>
+             </rows>
+       </grid>
+</groupbox>
+<popup id="scanStringTooltip">
+        <html><![CDATA[
+            Retazec ktory sa ma skenovat.<br />
+        ]]></html>
+    </popup>
+</window>
+
+</zk>

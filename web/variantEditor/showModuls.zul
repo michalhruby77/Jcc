@@ -1,0 +1,9 @@
+<window apply="org.zkoss.bind.BindComposer"  viewModel="@id('vm') @init('com.leoni.viewModel.ShowModulsVM')"  width="5%"  position="center,right">
+<grid zclass="none"  model="@load(vm.modulsSet)">
+                                              <template name="model">
+                                                <row zclass="none" >
+                                                <label  value="${each.sachNrLieferant}" />
+                                                </row>
+                                              </template>
+                                            </grid>
+</window>

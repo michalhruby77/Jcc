@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+<?taglib uri="/WEB-INF/security.tld" prefix="sec"?>
+<zk>
+<window apply="org.zkoss.bind.BindComposer" viewModel="@id('fwvm') @init('com.leoni.viewModel.FoamWorkplaceVM')">
+ <timer id="timerKeepAliveSession" repeats="true" delay="3600000" onTimer=""/>
+<groupbox title="Pridat novy zaznam" if="${sec:isAllGranted('ROLE_AV')}" closable="true" open="false">
+  <hlayout>
+  <grid width="700px" >
+          <rows>
+
+
+                             <row >
+                                          <label value="Cislo pracoviska:" width="150px"/>
+                                          <textbox value="@bind(fwvm.workplace)" width="150px"/>
+                             </row>
+                                          <row >
+                                                             <label value="Forma:" width="150px"/>
+                                                             <textbox value="@bind(fwvm.form)" width="150px"/>
+                                                          </row>
+
+              <row >
+                                         <label value="Template:" width="150px"/>
+                                         <textbox value="@bind(fwvm.template)" width="150px"/>
+              </row>
+              <row >
+                                                       <label value="Workplace nazov:" width="150px"/>
+                                                       <textbox value="@bind(fwvm.workplaceName)" width="150px"/>
+              </row>
+              <row >
+                                                       <label value="Popis:" width="150px"/>
+                                                       <textbox value="@bind(fwvm.description)" width="150px"/>
+              </row>
+          </rows>
+
+      </grid>
+      <groupbox  title="Moduly vzor" width="700px" >
+
+                     <vlayout id="vlayout">
+
+                     </vlayout>
+                      <button mold="trendy"  label="+"  onClick="@command('addTextBoxVert', vlayout=vlayout)"/>
+
+            </groupbox>
+            </hlayout>
+      <button mold="trendy"  label="Vytvorit"
+                  onClick="@command('submit', vlayout=vlayout)"/>
+    </groupbox>
+<separator bar="true"/>
+
+ <groupbox mold="3d" closable="false">
+    <caption  height="15px" >
+                    <div align="center" >
+                    <label value="Zapenovacka pracoviska"  style="font-size:12pt" />
+                    </div>
+                    </caption>
+
+    <listbox id="foamWorkplaceGrid" model="@load(fwvm.foamWorkplaceList)" mold="paging" selectedItem="@bind(fwvm.selectedFoamWorkplace)" height="600px">
+        <auxhead sclass="category-center">
+
+            <auxheader colspan="3">
+
+            </auxheader>
+            <auxheader colspan="1">
+                <textbox  width="90%" value="@bind(fwvm.wpNazov)" onOK="@command('refreshFoamWorkplace')"/>
+            </auxheader>
+            <auxheader colspan="1">
+
+            </auxheader>
+            <auxheader colspan="1">
+                <textbox  width="90%" value="@bind(fwvm.modul)" onOK="@command('refreshFoamWorkplace')"/>
+            </auxheader>
+
+            <auxheader colspan="2" align="center">
+                <button image="images/search.png" mold="trendy"  onClick="@command('refreshFoamWorkplace')"/>
+                <button image="images/cancel.png" mold="trendy"  onClick="@command('cancelSearch')"/>
+            </auxheader>
+        </auxhead>
+
+        <listhead menupopup="auto">
+                    <listheader label="Workplace" align="center"  width="10%"/>
+                    <listheader label="Form" align="center"  width="10%"/>
+                    <listheader label="Template" align="center"  width="10%"/>
+                    <listheader label="Wp nazov" align="center"  width="10%"/>
+                    <listheader label="Popis" align="center"  width="10%"/>
+                    <listheader label="Moduly vzor" align="center"  width="30%"/>
+                    <listheader label="Upravit moduly" align="center"  width="10%"/>
+                    <listheader label="Zmazat" align="center" width="10%"/>
+                </listhead>
+        <template name="model">
+            <listitem>
+                <listcell label="@load(each.workplace)" />
+                <listcell label="@load(each.form)"/>
+                <listcell label="@load(each.template)"/>
+                <listcell label="@load(each.workplaceName)"/>
+                <listcell label="@load(each.description)"/>
+                <listcell>
+                    <image src="images/list.png" style="cursor:pointer" popup="position=end_before" onClick="@command('showModuls', foamWorkplace=each)"/>
+                </listcell>
+                <listcell>
+                                   <button label="Upravit" if="${sec:isAllGranted('ROLE_AV')}" mold="trendy"  onClick="@command('editModuls', foamWorkplace=each)"/>
+                </listcell>
+                <listcell>
+                                    <button label="Vymazat" if="${sec:isAllGranted('ROLE_AV')}" mold="trendy"  onClick="@command('deleteFoamWorkplace', foamWorkplace=each)"/>
+                </listcell>
+            </listitem>
+        </template>
+    </listbox>
+<separator bar="true"/>
+<grid if="${sec:isAllGranted('ROLE_AV')}" form="@id('fx') @load(fwvm.selectedFoamWorkplace) @save(fwvm.selectedFoamWorkplace, before='saveFoamWorkplace')">
+           <auxhead>
+               <auxheader colspan="9" class="topic">Editovat</auxheader>
+           </auxhead>
+           <columns>
+                                  <column label="Workplace" align="center" width="10%"/>
+                                  <column label="Form" align="center" width="10%"/>
+                                  <column label="Template" align="center" width="10%"/>
+                                  <column label="Wp nazov" align="center" width="10%"/>
+                                  <column label="Popis" align="center" width="10%"/>
+                                  <column label="" align="center" width="40%"/>
+                                  <column label="Save" align="center" width="10%"/>
+           </columns>
+               <rows>
+               <row>
+
+                   <label value="@load(fx.workplace)"/>
+                   <textbox value="@bind(fx.form)" width="90%"/>
+                   <textbox value="@bind(fx.template)" width="90%"/>
+                   <textbox value="@bind(fx.workplaceName)" width="90%"/>
+                   <textbox value="@bind(fx.description)" width="90%"/>
+                   <label/>
+                   <button label="Ulozit" mold="trendy" onClick="@command('saveFoamWorkplace', selectedData= fwvm.selectedFoamWorkplace)" />
+             </row>
+             </rows>
+       </grid>
+</groupbox>
+
+</window>
+</zk>

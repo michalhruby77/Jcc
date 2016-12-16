@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+<?taglib uri="/WEB-INF/security.tld" prefix="sec"?>
+<zk>
+    <window apply="org.zkoss.bind.BindComposer" viewModel="@id('mevm') @init('com.leoni.viewModel.ModulsEditorViewModel')">
+        <timer id="timerKeepAliveSession" repeats="true" delay="3600000" onTimer=""/>
+
+
+        <groupbox  closable="false" mold="3d" width = "600px">
+            <caption  height="15px" >
+                <div align="center" >
+                    <label value="Tlac z kanban karty"  style="font-size:12pt" />
+                </div>
+            </caption>
+            <image id="image"/>
+            <grid>
+                <columns>
+                    <column width="50%" />
+                    <column width="40%" />
+                    <column width="10%" />
+                </columns>
+                <rows sclass="narrow">
+
+                    <row>
+                        <label   width="90%" value="@load(mevm.kanbanInfo)" />
+                        <textbox   width="90%" value="@bind(mevm.kanbanSearch)" onOK="@command('searchKanban')" />
+                        <button image="images/delete.png" mold="trendy"  onClick="@command('clearKanban')"/>
+                    </row>
+                </rows>
+            </grid>
+
+        </groupbox>
+        <groupbox  closable="false" mold="3d">
+            <caption  height="15px" >
+                <div align="center" >
+                    <label value="Moduly"  style="font-size:12pt" />
+                </div>
+            </caption>
+            <listbox id="modulsGrid" model="@load(mevm.modulsList)" mold="paging"  pageSize="7" selectedItem="@bind(mevm.selectedModul)"
+                     height="400px" > <!--itemRenderer="com.leoni.viewModel.ModulsEditRnd"-->
+                <!--auxhead sclass="category-center">
+
+                                    <auxheader colspan="16">
+                                                           <label   width="90%" value="Tlac z kanban karty" />
+                                    </auxheader>
+
+                        </auxhead>
+                <auxhead sclass="category-center">
+
+                            <auxheader colspan="1">
+                                                   <label   width="90%" value="@load(mevm.kanbanInfo)" />
+                            </auxheader>
+
+                            <auxheader colspan="1">
+                                <textbox   width="90%" value="@bind(mevm.kanbanSearch)" onOK="@command('searchKanban')" />
+                            </auxheader>
+
+                            <auxheader colspan="14">
+
+                                    </auxheader>
+
+                </auxhead-->
+                <!--auxhead sclass="category-center">
+                                            <auxheader colspan="16">
+                                            <label   width="90%" value="Vyhladavanie" />
+                                                    </auxheader>
+
+                </auxhead-->
+                <auxhead sclass="category-center">
+
+                    <auxheader colspan="1">
+                        <textbox   width="90%" value="@bind(mevm.sachNrBestSearch)" onOK="@command('search')" />
+                    </auxheader>
+                    <auxheader colspan="1">
+                        <textbox  width="90%" value="@bind(mevm.sachNrLieferantSearch)" onOK="@command('search')"/>
+                    </auxheader>
+                    <auxheader colspan="1">
+                        <textbox  width="90%" value="@bind(mevm.prodGruppeSearch)" onOK="@command('search')"/>
+                    </auxheader>
+                    <auxheader colspan="1">
+                        <textbox  width="90%" value="@bind(mevm.ausfuehrungSearch)" onOK="@command('search')"/>
+                    </auxheader>
+
+                    <auxheader colspan="3">
+                        <button image="images/search.png" mold="trendy"  onClick="@command('search')"/>
+                        <button image="images/cancel.png" mold="trendy"  onClick="@command('cancelSearch')"/>
+
+                    </auxheader>
+                    <auxheader colspan="2" align="center">
+                        <button mold="trendy"  image="images/exporttoexcel.png"  if="${sec:isAllGranted('ROLE_AV')}"
+                                onClick="@command('exportToExcel')"/>
+                    </auxheader>
+                </auxhead>
+                <listhead menupopup="auto">
+                    <listheader label="Sach Nr" align="center" sort="auto(SachNrBest)" width="25%"/>
+                    <listheader label="Lieferant Nr" align="center" sort="auto(SachNrLieferant)" width="25%"/>
+                    <listheader label="Prod Grupa" align="center" sort="auto(prodGruppe)" width="10%"/>
+                    <listheader label="Ausfuehrung" align="center" sort="auto(ausfuehrung)" width="10%"/>
+                    <listheader label="Typ" align="center" sort="auto(kabelsatzKz)" width="10%"/>
+                    <listheader label="Grund" align="center" sort="auto(grund)" width="5%"/>
+                    <listheader label="Blokovany" align="center" sort="auto(block)" width="5%"/>
+                    <listheader label="Tlacit" align="center" sort="auto(commentary)" width="10%"/>
+                </listhead>
+                <template name="model">
+                    <listitem>
+                        <listcell label="@load(each.sachNrBest)" />
+                        <listcell label="@load(each.sachNrLieferant)"/>
+                        <listcell label="@load(each.prodGruppe)"/>
+                        <listcell label="@load(each.ausfuehrung)"/>
+                        <listcell label="@load(each.kabelsatzKz)"/>
+                        <listcell>
+                            <checkbox checked="@load(each.grund)" disabled="true"/>
+                        </listcell>
+                        <listcell>
+                            <checkbox checked="@load(each.block)" disabled="true"/>
+                        </listcell>
+                        <listcell>
+                            <button image="images/print.png" if="${sec:isAllGranted('ROLE_MODUL_ASSEMBLY')}" mold="trendy"  onClick="@command('print', modul=each)"/>
+                        </listcell>
+                    </listitem>
+                </template>
+            </listbox>
+
+        </groupbox>
+
+    </window>
+</zk>

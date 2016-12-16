@@ -1,0 +1,9 @@
+<zk>
+    <library-property>
+        <name>org.zkoss.theme.preferred</name>
+        <value>sapphire</value> <!-- or silvertail, atlantic -->
+    </library-property>
+    <session-config>
+        <timer-keep-alive>true</timer-keep-alive>
+    </session-config>
+</zk>

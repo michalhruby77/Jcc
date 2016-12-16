@@ -1,0 +1,21 @@
+<zk>
+<window id="modalDialog" title="Varianty" border="normal" width="500px"
+     apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.leoni.viewModel.vm.EditBrettVM',vlayout=vlayout)"
+    position="center,center" closable="true"
+    action="show: slideDown;hide: slideUp">
+ <timer id="timerKeepAliveSession" repeats="true" delay="3600000" onTimer=""/>
+<vlayout>
+
+<groupbox>
+
+               <vlayout id="vlayout">
+
+               </vlayout>
+                <button mold="trendy"  label="+"  onClick="@command('addCombobox', vlayout=vlayout)"/>
+
+      </groupbox>
+      <button mold="trendy"  image="images/yes.png"
+                        onClick="@command('submit', vlayout=vlayout)"/>
+</vlayout>
+</window>
+</zk>

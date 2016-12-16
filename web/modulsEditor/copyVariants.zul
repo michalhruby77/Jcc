@@ -1,0 +1,37 @@
+<window id="modalDialog2" title="Novy modul" border="normal" width="1000px"
+     apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.leoni.viewModel.CopyVariantsVM')"
+    position="center,center" closable="true"
+    action="show: slideDown;hide: slideUp">
+     <groupbox mold="3d" closable="false">
+     <caption  height="15px" >
+                     <div align="center" >
+                     <label value="Nakopirovat varianty"  style="font-size:12pt" />
+                     </div>
+                     </caption>
+        <listbox id="listbox" model="@load(vm.variantList)" mold="paging" checkmark="true" multiple="true" height="600px">
+
+
+            <listhead menupopup="auto">
+                        <listheader label="Vsetky" align="center"  width="10%"/>
+                        <listheader label="Name" align="center" sort="auto(name)" width="30%"/>
+                        <listheader label="Description" align="center" sort="auto(description)" width="30%"/>
+                        <listheader align="center" sort="auto(scanString)" width="30%">
+                           <label value="Scan string" tooltip="scanStringTooltip" style="font-weight:bold"/>
+                        </listheader>
+                    </listhead>
+            <template name="model">
+                <listitem>
+                    <listcell/>
+                    <listcell label="@load(each.name)"/>
+                    <listcell label="@load(each.description)"/>
+                    <listcell>
+                    <textbox value = "@bind(each.scanString)"/>
+                    </listcell>
+                </listitem>
+            </template>
+        </listbox>
+
+    </groupbox>
+
+    <button mold="trendy"  label="Ok" onClick="@command('copyInVariants')"/>
+</window>

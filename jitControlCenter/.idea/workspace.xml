@@ -1,0 +1,1885 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="JitControlCenter" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="51a1259a-9695-4f44-bd5c-bd0d64e203bd" name="Default" comment="" />
+    <ignored path="JitControlCenter.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <file path="/web.xml" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1428664566768" ignored="false" />
+    <file path="/Harness.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1396427657962" ignored="false" />
+    <file path="/BandViewModel.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1396866089392" ignored="false" />
+    <file path="/BandManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1391154072876" ignored="false" />
+    <file path="/springContext.xml" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1432120652905" ignored="false" />
+    <file path="/band.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1396866592488" ignored="false" />
+    <file path="/HarnessDao.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1386833981724" ignored="false" />
+    <file path="/HarnessImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1386833992222" ignored="false" />
+    <file path="/GenericManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1429259788113" ignored="false" />
+    <file path="/BandManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1396515747795" ignored="false" />
+    <file path="/springSecurityContext.xml" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1433159289312" ignored="false" />
+    <file path="/PersonViewModel.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1387273611222" ignored="false" />
+    <file path="/personEditor.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1387273277360" ignored="false" />
+    <file path="/ModulsViewModel.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1387277634347" ignored="false" />
+    <file path="/ModulsEditorViewModel.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1433146456141" ignored="false" />
+    <file path="/modulsEditor.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1428501256453" ignored="false" />
+    <file path="/ModulsManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1405321216192" ignored="false" />
+    <file path="C:/_emo_develop/web/jobOrder.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1387373808926" ignored="false" />
+    <file path="/ModulsManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1405319049870" ignored="false" />
+    <file path="/test.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1426668561679" ignored="false" />
+    <file path="/TestViewModel.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1389871461707" ignored="false" />
+    <file path="/GenericManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1429096636566" ignored="false" />
+    <file path="/Foam.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1401177996453" ignored="false" />
+    <file path="/FoamManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1405319157399" ignored="false" />
+    <file path="/SchrittModulRm9X1Wrm.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1401445299264" ignored="false" />
+    <file path="/SchrittModulRm9X1WrmManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1405942176086" ignored="false" />
+    <file path="/SchrittModulRm9X1WrmManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1406006418365" ignored="false" />
+    <file path="/Sicherungenrelais9X1WrmManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1405317783821" ignored="false" />
+    <file path="/SicherungenRelaisVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1389600593224" ignored="false" />
+    <file path="/ModulClipListWrm.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1432728428838" ignored="false" />
+    <file path="/ModulClipListWrmManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1405320969470" ignored="false" />
+    <file path="/ModulClipListWrmManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1406007857919" ignored="false" />
+    <file path="/VsModulyWrm.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1406182644520" ignored="false" />
+    <file path="/VsModulyWrmManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1428480035018" ignored="false" />
+    <file path="/VsModulyWrmManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1428480086587" ignored="false" />
+    <file path="/sicherungenEditor.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1421831219211" ignored="false" />
+    <file path="/SicherungenRelaisViewModel.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1425289561058" ignored="false" />
+    <file path="/SicherungenRelais9X1WrmManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1406010691890" ignored="false" />
+    <file path="/schrittEditor.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1428483568589" ignored="false" />
+    <file path="/SchrittViewModel.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1414418362367" ignored="false" />
+    <file path="/ModulClipViewModel.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1414418243835" ignored="false" />
+    <file path="/modulClipEditor.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1428501411534" ignored="false" />
+    <file path="/VsModulyViewModel.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1428479957918" ignored="false" />
+    <file path="/vsModulsEditor.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1428479774168" ignored="false" />
+    <file path="/FoamManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1405320234309" ignored="false" />
+    <file path="/FoamViewModel.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1414418148263" ignored="false" />
+    <file path="/foamEditor.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1421831312661" ignored="false" />
+    <file path="/index.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1432208326229" ignored="false" />
+    <file path="/popup.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1389871423953" ignored="false" />
+    <file path="/editModul.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1390222002065" ignored="false" />
+    <file path="/PopupViewModel.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1414738478821" ignored="false" />
+    <file path="/presenceEditor.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1429605248346" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Jit/.idea/workspace.xml" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1392104874879" ignored="false" />
+    <file path="/PresenceVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1396875612130" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/web/WEB-INF/web.xml" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1397547717446" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/web/WEB-INF/springContext.xml" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1402907977742" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/web/index.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1403525238592" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/src/com/leoni/data/models/Vyrobca.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1392733589667" ignored="false" />
+    <file path="/Vyrobca.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1392733571063" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/src/com/leoni/data/models/Podklad.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1392737190569" ignored="false" />
+    <file path="/Podklad.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1392737190569" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/src/com/leoni/data/models/Report.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1397656238185" ignored="false" />
+    <file path="/Report.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1397656237726" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/src/com/leoni/data/models/Polozka.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1392815081593" ignored="false" />
+    <file path="/Polozka.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1392818786538" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/src/com/leoni/data/models/Item.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1400151255522" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/src/com/leoni/data/models/ItemType.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1392816915162" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/src/com/leoni/data/models/Vyrobok.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1400484004189" ignored="false" />
+    <file path="/Vyrobok.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1400483995722" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/src/com/leoni/data/models/managers/ItemManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1392900890498" ignored="false" />
+    <file path="/ItemManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1393403413330" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/src/com/leoni/data/managers/ItemManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1393403413739" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/src/com/leoni/data/managers/ItemManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1413872770832" ignored="false" />
+    <file path="/ItemManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1393403465458" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/src/com/leoni/data/ItemVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1392905751838" ignored="false" />
+    <file path="/ItemVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1392908544900" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/src/com/leoni/viewmodels/ItemVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1392966396582" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/src/com/leoni/data/viewmodels/ItemVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1392906471217" ignored="false" />
+    <file path="/Item.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1400151254779" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/src/com/leoni/viewmodels/ReportVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1393404245386" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/src/com/leoni/data/managers/ReportManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1397119032142" ignored="false" />
+    <file path="/ReportManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1426583874335" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/src/com/leoni/data/managers/ReportManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1413872648695" ignored="false" />
+    <file path="/ReportManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1413872647959" ignored="false" />
+    <file path="/ReportVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1393404439893" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/web/reports.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1423576029562" ignored="false" />
+    <file path="/reports.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1423576029562" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/src/com/leoni/viewmodels/EditReportVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1400661998228" ignored="false" />
+    <file path="/EditReportVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1400661990439" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/web/editReport.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1423063297096" ignored="false" />
+    <file path="/editReport.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1412160017302" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/web/WEB-INF/addItem.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1393315239507" ignored="false" />
+    <file path="/addItem.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1393398474396" ignored="false" />
+    <file path="/AddItemVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1393409244466" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/src/com/leoni/viewmodels/AddItemVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1393409244900" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/src/com/leoni/data/managers/VyrobokManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1400754747296" ignored="false" />
+    <file path="/VyrobokManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1400754746582" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/src/com/leoni/data/managers/VyrobokManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1413872726046" ignored="false" />
+    <file path="/VyrobokManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1400754860406" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/web/addItem.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1393398474396" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/web/editItem.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1397130564516" ignored="false" />
+    <file path="/editItem.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1397130564820" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/src/com/leoni/viewmodels/EditItemVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1393409324624" ignored="false" />
+    <file path="/EditItemVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1393403530797" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/src/com/leoni/viewmodels/ReportsVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1423576962941" ignored="false" />
+    <file path="/ReportsVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1423576348862" ignored="false" />
+    <file path="/PrintManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1393499825185" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/src/com/leoni/data/managers/PdfManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1403510690172" ignored="false" />
+    <file path="/PdfManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1423052532540" ignored="false" />
+    <file path="/Workplace.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1430813738173" ignored="false" />
+    <file path="/Color.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1393921483989" ignored="false" />
+    <file path="/WorkplaceManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1429097425592" ignored="false" />
+    <file path="/ColorManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1393922156461" ignored="false" />
+    <file path="/WorkplaceManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1429099311052" ignored="false" />
+    <file path="/ColorManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1393922554061" ignored="false" />
+    <file path="/ColorViewModel.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1393932003653" ignored="false" />
+    <file path="/WorkplaceViewModel.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1395913293285" ignored="false" />
+    <file path="/workplaceEditor.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1421831356840" ignored="false" />
+    <file path="/colorEditor.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1421831389023" ignored="false" />
+    <file path="/Variant.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1432733156117" ignored="false" />
+    <file path="/VariantManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1432799310168" ignored="false" />
+    <file path="/VariantManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1433137983515" ignored="false" />
+    <file path="/VariantViewModel.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1432733540437" ignored="false" />
+    <file path="/variantEditor.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1427105091247" ignored="false" />
+    <file path="/Moduls.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1432733080268" ignored="false" />
+    <file path="/copyModul.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1414738455987" ignored="false" />
+    <file path="/modulsVariantEditor.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1400245407012" ignored="false" />
+    <file path="/ModulsVariantViewModel.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1395298736005" ignored="false" />
+    <file path="/Hlayer.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1395317701598" ignored="false" />
+    <file path="/MyHlayout.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1427200052058" ignored="false" />
+    <file path="/a.dummy" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1426061667466" ignored="false" />
+    <file path="/XMLBuilder.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1414590756789" ignored="false" />
+    <file path="/fragment.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1421402618366" ignored="false" />
+    <file path="/VariantModulsViewModel.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1429181299557" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1402027584557" ignored="false" />
+    <file path="/copyVariant.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1427180885028" ignored="false" />
+    <file path="/VariantCopyViewModel.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1426856730068" ignored="false" />
+    <file path="/Lpab62.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1432642766449" ignored="false" />
+    <file path="/Lpab62Manager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1410953843311" ignored="false" />
+    <file path="/Lpab62ManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1432717068430" ignored="false" />
+    <file path="/Lpab62ViewModel.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1414418214499" ignored="false" />
+    <file path="/lpab62.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1397045400454" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/src/com/leoni/data/managers/ZakaznikManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1397550295616" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/src/com/leoni/viewmodels/AddReportVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1399281088622" ignored="false" />
+    <file path="/AddReportVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1399281027961" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/web/addReport.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1397119527677" ignored="false" />
+    <file path="/addReport.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1397119527677" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/src/com/leoni/data/managers/PdfManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1423053685162" ignored="false" />
+    <file path="/PdfManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1423125381174" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/src/com/leoni/viewmodels/VyrobkyVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1404823825826" ignored="false" />
+    <file path="/VyrobkyVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1404823665099" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/web/vyrobky.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1402920508674" ignored="false" />
+    <file path="/vyrobky.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1400754227251" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/src/com/leoni/IndexComposer.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1397547770061" ignored="false" />
+    <file path="/ZakaznikManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1397550295616" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/src/com/leoni/data/managers/ZakaznikManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1413872734301" ignored="false" />
+    <file path="/ZakaznikManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1397550464832" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/src/com/leoni/viewmodels/ZakaznikVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1397551925808" ignored="false" />
+    <file path="/ZakaznikVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1397551106988" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/web/WEB-INF/zakaznik.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1397551687543" ignored="false" />
+    <file path="/zakaznik.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1397552405122" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/web/zakaznik.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1397552435942" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/src/com/leoni/viewmodels/PdfVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1398670145697" ignored="false" />
+    <file path="/PdfVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1398670128912" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/web/pdf.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1398670297434" ignored="false" />
+    <file path="/pdf.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1398670297434" ignored="false" />
+    <file path="/GrundVarianteModule.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1398846965363" ignored="false" />
+    <file path="/GrundVarianteModuleImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1398846992003" ignored="false" />
+    <file path="/GrundVarianteModuleManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1405927546113" ignored="false" />
+    <file path="/OverwievViewModel.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1414394746129" ignored="false" />
+    <file path="/overwiev.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1399639641316" ignored="false" />
+    <file path="/addBatch.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1401264848855" ignored="false" />
+    <file path="/SicherungenRelais9X1Wrm.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1432727117098" ignored="false" />
+    <file path="/VsModulyWrmId.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1401282877154" ignored="false" />
+    <file path="/Users.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1414662119208" ignored="false" />
+    <file path="/UserRole.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1414480489188" ignored="false" />
+    <file path="/UsersManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1414661908825" ignored="false" />
+    <file path="/UserRoles.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1401346560003" ignored="false" />
+    <file path="/UserRolesManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1414480661807" ignored="false" />
+    <file path="/UsersManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1414661889810" ignored="false" />
+    <file path="/UserRolesManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1414480626481" ignored="false" />
+    <file path="/UsersVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1414661932993" ignored="false" />
+    <file path="/usersEditor.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1414483434315" ignored="false" />
+    <file path="/NewModules.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1401878518981" ignored="false" />
+    <file path="/springContext2.xml" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1401885926827" ignored="false" />
+    <file path="/AbruMaske.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1401953471285" ignored="false" />
+    <file path="/GenericManagerOld.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1401965053030" ignored="false" />
+    <file path="/GenericManagerOldImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1413283289202" ignored="false" />
+    <file path="/TestManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1422449455271" ignored="false" />
+    <file path="/TestManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1422521609128" ignored="false" />
+    <file path="/Jitpab62.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1417011416997" ignored="false" />
+    <file path="/ProdNrLog.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1433154860871" ignored="false" />
+    <file path="/ProdNrManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1402053350681" ignored="false" />
+    <file path="/ProdNrLogManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1433140782116" ignored="false" />
+    <file path="/ProdNrLogManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1433155577039" ignored="false" />
+    <file path="/Lpab62Id.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1402298432614" ignored="false" />
+    <file path="/Lpab64.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1402298996586" ignored="false" />
+    <file path="/Lpab64Id.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1417075505691" ignored="false" />
+    <file path="/FindHarnessVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1418724654320" ignored="false" />
+    <file path="/findHarness.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1418724380187" ignored="false" />
+    <file path="/GestellManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1402476095214" ignored="false" />
+    <file path="/GestellManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1410335904516" ignored="false" />
+    <file path="/GestellVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1402476651389" ignored="false" />
+    <file path="/gestell.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1405069823389" ignored="false" />
+    <file path="/NewModuleManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1402493194917" ignored="false" />
+    <file path="/NewModulesManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1405401425200" ignored="false" />
+    <file path="/NewModulesVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1405400934309" ignored="false" />
+    <file path="/newModulesEditor.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1421831470124" ignored="false" />
+    <file path="/NewModulesManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1405400907250" ignored="false" />
+    <file path="/AbruMaskeManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1402560229753" ignored="false" />
+    <file path="/AbruMaskeManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1413283310991" ignored="false" />
+    <file path="/ControlNewModulesVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1404894624359" ignored="false" />
+    <file path="/JitTsji.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1402563423831" ignored="false" />
+    <file path="/JitTsjiManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1404894073228" ignored="false" />
+    <file path="/JitTsjiManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1404894413422" ignored="false" />
+    <file path="/JitAuftManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1404894065323" ignored="false" />
+    <file path="/JitAuftManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1404894337835" ignored="false" />
+    <file path="/CriticalNewModul.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1404449894757" ignored="false" />
+    <file path="/JitAbru.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1404387313928" ignored="false" />
+    <file path="/JitAbruManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1404796167739" ignored="false" />
+    <file path="/JitAbruManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1404892805172" ignored="false" />
+    <file path="/newModulesCheck.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1404450042645" ignored="false" />
+    <file path="/JitAuft.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1402655374632" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/src/com/leoni/viewmodels/SendReportsVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1423577800206" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/src/com/leoni/data/managers/EmailManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1423577734177" ignored="false" />
+    <file path="/EmailManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1403520740171" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/src/com/leoni/data/managers/EmailManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1423577757219" ignored="false" />
+    <file path="/EmailManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1423577756577" ignored="false" />
+    <file path="/SendReportsVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1404885982888" ignored="false" />
+    <file path="/JitAbruId.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1404387385675" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/src/com/leoni/data/models/Zakaznik.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1404823704060" ignored="false" />
+    <file path="/Zakaznik.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1404823699988" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/web/sendReports.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1404886723033" ignored="false" />
+    <file path="/sendReports.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1404886381574" ignored="false" />
+    <file path="/log4j.properties" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1431689184341" ignored="false" />
+    <file path="/loginForm.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1432194725446" ignored="false" />
+    <file path="/ExportManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1405081101934" ignored="false" />
+    <file path="/ExportManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1405317289083" ignored="false" />
+    <file path="/changePassword.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1405334276985" ignored="false" />
+    <file path="/PwChangeVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1414489920894" ignored="false" />
+    <file path="/zk.xml" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1405338135258" ignored="false" />
+    <file path="/loginPage.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1415970445335" ignored="false" />
+    <file path="/harnessProduction.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1428478517611" ignored="false" />
+    <file path="/HarnessProductionVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1432124340955" ignored="false" />
+    <file path="/GrundVarianteModuleManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1405927558576" ignored="false" />
+    <file path="/GrundVarianteName.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1405930515009" ignored="false" />
+    <file path="/GrundVarianteNameManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1405930841325" ignored="false" />
+    <file path="/GrundVarianteManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1405930925868" ignored="false" />
+    <file path="/DmeVarianteName.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1407826428105" ignored="false" />
+    <file path="/DmeVarianteNameManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1405934242819" ignored="false" />
+    <file path="/DmeVarianteNameManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1407832764129" ignored="false" />
+    <file path="/TuelleVarianteNameManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1405936667337" ignored="false" />
+    <file path="/TuelleBugVarianteNameManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1405936758519" ignored="false" />
+    <file path="$USER_HOME$/Desktop/ExcelApp/src/com/leoni/entityManager/ReportManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1426584007712" ignored="false" />
+    <file path="$USER_HOME$/Desktop/ExcelApp/src/com/leoni/FileChooserDemo.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1408709221558" ignored="false" />
+    <file path="$USER_HOME$/Desktop/ExcelApp/src/com/leoni/models/ReportItem.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1408709176722" ignored="false" />
+    <file path="/ReportItem.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1408709137146" ignored="false" />
+    <file path="/FileChooserDemo.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1408709220052" ignored="false" />
+    <file path="$USER_HOME$/Desktop/ExcelApp/src/com/leoni/entityManager/DodavateliaManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1407828305283" ignored="false" />
+    <file path="/DodavateliaManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1407827655701" ignored="false" />
+    <file path="/ServletController.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1407840472810" ignored="false" />
+    <file path="/ServletControllerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1407841603551" ignored="false" />
+    <file path="/ServletGetData.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1433137832314" ignored="false" />
+    <file path="/dispatcher-servlet.xml" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1413809925956" ignored="false" />
+    <file path="/ServletManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1407933950031" ignored="false" />
+    <file path="/ServletManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1407934008234" ignored="false" />
+    <file path="/InsertHarnessToBandVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1408350721769" ignored="false" />
+    <file path="/insertHarnessToBand.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1408352498975" ignored="false" />
+    <file path="/Customer.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1408344652626" ignored="false" />
+    <file path="/CustomerManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1408344864742" ignored="false" />
+    <file path="/CustomerManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1408344988092" ignored="false" />
+    <file path="/InsertNewHarnessVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1411384411168" ignored="false" />
+    <file path="/insertNewHarness.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1410957763005" ignored="false" />
+    <file path="/ExcelDocumentManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1430895902589" ignored="false" />
+    <file path="/ExcelDocumentManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1429704021057" ignored="false" />
+    <file path="/MyRenderer.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1412159751181" ignored="false" />
+    <file path="/CustomRow.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1409732578262" ignored="false" />
+    <file path="/Lpab64Manager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1411024859698" ignored="false" />
+    <file path="/Lpab64ManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1411024930089" ignored="false" />
+    <file path="/RegExpManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1409743002760" ignored="false" />
+    <file path="/ModulGroup.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1409739396259" ignored="false" />
+    <file path="/ProdGroup.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1409905595465" ignored="false" />
+    <file path="/GroupDeriveManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1409905785009" ignored="false" />
+    <file path="/GroupDeriveManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1409906502421" ignored="false" />
+    <file path="$PROJECT_DIR$/../versandLabelsClient/src/labelsClient.properties" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1421824840991" ignored="false" />
+    <file path="/CustomHarnessVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1410957188029" ignored="false" />
+    <file path="/customHarness.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1421831521029" ignored="false" />
+    <file path="/PrintingManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1426586929744" ignored="false" />
+    <file path="/PrintingManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1426581789109" ignored="false" />
+    <file path="/CustomHarnessModulsVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1411027711138" ignored="false" />
+    <file path="/editModuls.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1412931529626" ignored="false" />
+    <file path="/tskGenerator.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1411451210997" ignored="false" />
+    <file path="/TskGeneratorVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1432120729482" ignored="false" />
+    <file path="/LwadrKenn.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1411105808998" ignored="false" />
+    <file path="/LwadrKennManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1411451385637" ignored="false" />
+    <file path="/LwadrKennManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1411453000167" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/src/com/leoni/viewmodels/MyRenderer.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1412159775870" ignored="false" />
+    <file path="/FoamWorkplace.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1416294229672" ignored="false" />
+    <file path="/FoamWorkplaceModuls.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1412923012533" ignored="false" />
+    <file path="/FoamWorkplaceManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1416294324083" ignored="false" />
+    <file path="/FoamWorkplaceModulsManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1412942321216" ignored="false" />
+    <file path="/FoamWorkplaceManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1416294403519" ignored="false" />
+    <file path="/FoamWorkplaceModulsManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1413187792984" ignored="false" />
+    <file path="/FoamWorkplaceModulsVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1413189988586" ignored="false" />
+    <file path="/foamWorkplace.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1421831658571" ignored="false" />
+    <file path="/FoamWorkplaceVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1416294536378" ignored="false" />
+    <file path="/WebSocketController.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1413277673208" ignored="false" />
+    <file path="/WebSocketConfig.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1414137452213" ignored="false" />
+    <file path="/index.html" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1413367375346" ignored="false" />
+    <file path="/GreetingController.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1415963869051" ignored="false" />
+    <file path="/EchoHandler.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1413375522258" ignored="false" />
+    <file path="/WsConfig.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1413377203641" ignored="false" />
+    <file path="/HelloMessage.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1424856769222" ignored="false" />
+    <file path="/Greeting.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1424856696494" ignored="false" />
+    <file path="$USER_HOME$/Desktop/spring-mvc-websockets-master/WSclient/src/com/leoni/Main.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1414673436648" ignored="false" />
+    <file path="/Main.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1424770678522" ignored="false" />
+    <file path="$USER_HOME$/Desktop/spring-mvc-websockets-master/WSclient/src/com/leoni/UserThread.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1413795106467" ignored="false" />
+    <file path="/UserThread.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1413791273176" ignored="false" />
+    <file path="$USER_HOME$/Desktop/spring-mvc-websockets-master/WSclient/src/com/leoni/Client.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1413887073170" ignored="false" />
+    <file path="/LieferDate.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1417092745243" ignored="false" />
+    <file path="/CustomAuthenticationProvider.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1416303658704" ignored="false" />
+    <file path="/CustomAuthenticationProviderImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1432038893055" ignored="false" />
+    <file path="/CustomRolesCombobox.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1414487800933" ignored="false" />
+    <file path="/EditUserVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1414661876830" ignored="false" />
+    <file path="/editUser.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1414500106755" ignored="false" />
+    <file path="/RoleComboboxRenderer.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1414501155157" ignored="false" />
+    <file path="/Roles.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1415009036231" ignored="false" />
+    <file path="/IndexComposer.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1414573572102" ignored="false" />
+    <file path="/IndexVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1429259028365" ignored="false" />
+    <file path="/XmlManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1421918004468" ignored="false" />
+    <file path="/XmlManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1414654997452" ignored="false" />
+    <file path="/sendungs.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1414671033694" ignored="false" />
+    <file path="/SendungsVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1414672208233" ignored="false" />
+    <file path="/LieferTabelle.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1414668587054" ignored="false" />
+    <file path="/LieferTableManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1414668813729" ignored="false" />
+    <file path="/LieferTableManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1416921556915" ignored="false" />
+    <file path="/LieferTable.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1414670697582" ignored="false" />
+    <file path="/LieferTableId.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1414670795610" ignored="false" />
+    <file path="$USER_HOME$/Desktop/spring-mvc-websockets-master/WSclient/src/com/leoni/Cls1.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1414673278720" ignored="false" />
+    <file path="$USER_HOME$/Desktop/spring-mvc-websockets-master/WSclient/src/com/leoni/StompWebSocketLoadTestClient.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1414677186425" ignored="false" />
+    <file path="/StompWebSocketLoadTestClient.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1414745325870" ignored="false" />
+    <file path="/CopyRelayVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1414740368193" ignored="false" />
+    <file path="/copyRelay.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1414738696333" ignored="false" />
+    <file path="$USER_HOME$/Desktop/spring-mvc-websockets-master/WSclient/src/org/springframework/samples/portfolio/web/standalone/TestTradeService.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1414741580945" ignored="false" />
+    <file path="$USER_HOME$/Desktop/WSclient/src/com/leoni/StompWebSocketLoadTestClient.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1415280494492" ignored="false" />
+    <file path="$USER_HOME$/Desktop/WSclient/src/org/springframework/samples/portfolio/web/context/ContextPortfolioControllerTests.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1414747427626" ignored="false" />
+    <file path="/updateHarness.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1415100682237" ignored="false" />
+    <file path="/UpdateHarnessVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1416905966613" ignored="false" />
+    <file path="/a.txt" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1415346704142" ignored="false" />
+    <file path="$USER_HOME$/Desktop/WSclient2/src/com/company/Main.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1415269240139" ignored="false" />
+    <file path="/Initializer.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1415963815655" ignored="false" />
+    <file path="/WebAppSecurityConfig.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1423647494259" ignored="false" />
+    <file path="/WebAppConfig.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1422008509853" ignored="false" />
+    <file path="/SpringSecurityInitializer.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1415791924275" ignored="false" />
+    <file path="/SpringMvcInitializer.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1432037003242" ignored="false" />
+    <file path="/MyUserDetailsService.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1415887555004" ignored="false" />
+    <file path="$USER_HOME$/Desktop/STOMPclient/src/com/leoni/Main.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1416829154492" ignored="false" />
+    <file path="/DataGeneratorVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1432120982971" ignored="false" />
+    <file path="/dataGenerator.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1416553011919" ignored="false" />
+    <file path="$USER_HOME$/Desktop/STOMPclient/src/com/leoni/StompClient.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1416473790615" ignored="false" />
+    <file path="$USER_HOME$/Desktop/stilts-master/stilts-master/.idea/modules.xml" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1416475513754" ignored="false" />
+    <file path="$USER_HOME$/Desktop/stilts-master/stilts-master/.idea/workspace.xml" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1416476013782" ignored="false" />
+    <file path="$USER_HOME$/Desktop/stilts-master/stilts-master/.idea/compiler.xml" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1416475516129" ignored="false" />
+    <file path="$USER_HOME$/Desktop/stilts-master/stilts-master/.idea/misc.xml" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1416475616365" ignored="false" />
+    <file path="$USER_HOME$/Desktop/stilts-master/stilts-master/.gitignore" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1416475513754" ignored="false" />
+    <file path="$USER_HOME$/Desktop/stilts-master/stilts-master/Main.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1416475513754" ignored="false" />
+    <file path="$USER_HOME$/Desktop/stilts-master/stilts-master/.idea/vcs.xml" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1416475513754" ignored="false" />
+    <file path="$USER_HOME$/Desktop/stilts-master/stilts-master/.idea/encodings.xml" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1416475516129" ignored="false" />
+    <file path="$USER_HOME$/Desktop/stilts-master/stilts-master/pom.xml" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1416475513754" ignored="false" />
+    <file path="$USER_HOME$/Desktop/stilts-master/stilts-master/.idea/uiDesigner.xml" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1416475513754" ignored="false" />
+    <file path="$USER_HOME$/Desktop/stilts-master/stilts-master/stomp-client/src/main/java/org/projectodd/stilts/stomp/client/Main.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1416475997463" ignored="false" />
+    <file path="/servlet.properties" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1416565033460" ignored="false" />
+    <file path="/PropertiesConfig.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1416560350397" ignored="false" />
+    <file path="/jcc.properties" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1416569471879" ignored="false" />
+    <file path="/janzmgrp.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1418635340344" ignored="false" />
+    <file path="/JanzmgrpVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1418636944611" ignored="false" />
+    <file path="/Jitpab62Manager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1417613355926" ignored="false" />
+    <file path="/Jitpab62ManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1418636090245" ignored="false" />
+    <file path="/Jitpab64.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1417439128046" ignored="false" />
+    <file path="/Jitpab62Id.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1417011355073" ignored="false" />
+    <file path="/Jitpab64Manager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1417167529989" ignored="false" />
+    <file path="/Jitpab64ManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1417517921126" ignored="false" />
+    <file path="/JanzmgrpObj.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1417505376734" ignored="false" />
+    <file path="/addVsModuls.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1417764123003" ignored="false" />
+    <file path="/AddVsModulsVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1417764381541" ignored="false" />
+    <file path="/CustomRowVsModul.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1417686231404" ignored="false" />
+    <file path="/VsFarby.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1418801472487" ignored="false" />
+    <file path="/Vs.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1428478656976" ignored="false" />
+    <file path="/VsFarbyManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1427792524727" ignored="false" />
+    <file path="/VsFarbyManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1418894236643" ignored="false" />
+    <file path="/VsManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1418738469024" ignored="false" />
+    <file path="/VsFarbyVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1418894871921" ignored="false" />
+    <file path="/vsFarbyEditor.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1418894638089" ignored="false" />
+    <file path="/ClipStatus.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1421064351767" ignored="false" />
+    <file path="/ClipPosition.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1421240236368" ignored="false" />
+    <file path="/ClipPositionManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1421314175802" ignored="false" />
+    <file path="/ClipStatusManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1421333465905" ignored="false" />
+    <file path="/ClipPositionManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1421241529748" ignored="false" />
+    <file path="/ClipStatusManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1421333509690" ignored="false" />
+    <file path="/ClipStatusVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1421333421094" ignored="false" />
+    <file path="/ClipPositionVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1421314112157" ignored="false" />
+    <file path="/clipStatusEditor.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1421333258596" ignored="false" />
+    <file path="/clipPositionEditor.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1421310965603" ignored="false" />
+    <file path="$PROJECT_DIR$/META-INF/persistence.xml" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1421394073595" ignored="false" />
+    <file path="/hibernate.cfg.xml" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1421396009240" ignored="false" />
+    <file path="/NacharbeitEntity.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1421402869614" ignored="false" />
+    <file path="/nacharbeitViewer.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1422013343519" ignored="false" />
+    <file path="/NacharbeitViewVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1422621335697" ignored="false" />
+    <file path="/Nacharbeit.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1422005932883" ignored="false" />
+    <file path="/NacharbeitId.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1421671756564" ignored="false" />
+    <file path="/NacharbeitManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1422007764648" ignored="false" />
+    <file path="/NacharbeitManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1422008222560" ignored="false" />
+    <file path="/editVariant.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1429181283534" ignored="false" />
+    <file path="/TestTab.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1422520965876" ignored="false" />
+    <file path="/CopyModulVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1428904804333" ignored="false" />
+    <file path="/CopyVariants.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1422283418359" ignored="false" />
+    <file path="/copyVariants.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1422362578691" ignored="false" />
+    <file path="/CopyVariantsVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1422352597710" ignored="false" />
+    <file path="/printVariant.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1423129091899" ignored="false" />
+    <file path="/PrintVariantVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1423129422280" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/src/com/leoni/data/managers/ExcelManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1423576926355" ignored="false" />
+    <file path="/ExcelManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1423576924747" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/src/com/leoni/data/managers/ExcelManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1423576836560" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/web/WEB-INF/sebdReportsExcel.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1423576498187" ignored="false" />
+    <file path="/sebdReportsExcel.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1423576498187" ignored="false" />
+    <file path="$USER_HOME$/Desktop/Liferschein/src/com/leoni/viewmodels/SendReportsExcelVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1423577786177" ignored="false" />
+    <file path="/SendReportsExcelVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1423576870777" ignored="false" />
+    <file path="/versandScanning.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1423730591869" ignored="false" />
+    <file path="/showModuls.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1423740727688" ignored="false" />
+    <file path="/ShowModulsVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1423734898231" ignored="false" />
+    <file path="$USER_HOME$/Desktop/WebSocketClient/src/com/leoni/Main.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1424771225893" ignored="false" />
+    <file path="$USER_HOME$/Desktop/WebSocketClient/src/com/leoni/WebsocketClientEndpoint.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1424763496931" ignored="false" />
+    <file path="/WebsocketEndpoint.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1424770741488" ignored="false" />
+    <file path="/VersandHarness.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1425301180122" ignored="false" />
+    <file path="/VersandModulsVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1429002809132" ignored="false" />
+    <file path="/export.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1426505797080" ignored="false" />
+    <file path="/VersandExport.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1425384381712" ignored="false" />
+    <file path="/VersandModul.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1426236032585" ignored="false" />
+    <file path="/VersandExportManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1425478745695" ignored="false" />
+    <file path="/VersandModulManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1427116965394" ignored="false" />
+    <file path="/VersandExportManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1425478803963" ignored="false" />
+    <file path="/VersandModulManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1427117139962" ignored="false" />
+    <file path="/VersandModuls.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1425478416646" ignored="false" />
+    <file path="/versandModuls.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1426235051037" ignored="false" />
+    <file path="/VersandExportVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1429704177996" ignored="false" />
+    <file path="/VersandModulsRenderer.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1426237774269" ignored="false" />
+    <file path="/VersandExportRenderer.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1426503746961" ignored="false" />
+    <file path="/variantyBRANY991RL.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1426758147792" ignored="false" />
+    <file path="/variantyBRANY981RL.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1426670369488" ignored="false" />
+    <file path="/variantyHLRE991LL.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1426670404348" ignored="false" />
+    <file path="/variantyHLRE991RL.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1426670435426" ignored="false" />
+    <file path="/variantyKARROSERIE981LL.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1426670452478" ignored="false" />
+    <file path="/variantyKARROSERIE981RL.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1426670528590" ignored="false" />
+    <file path="/variantyTB9X1LL.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1426670550406" ignored="false" />
+    <file path="/variantyTB9X1RL.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1426670561894" ignored="false" />
+    <file path="/variantyTH981LL.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1426670572944" ignored="false" />
+    <file path="/variantyTH981RL.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1426670596192" ignored="false" />
+    <file path="/variantyLWL.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1426686483923" ignored="false" />
+    <file path="/variantyRELAISTRAEG.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1426686899456" ignored="false" />
+    <file path="/addVariant.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1429174107460" ignored="false" />
+    <file path="/AddVariantVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1431426947661" ignored="false" />
+    <file path="/persnrScreen.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1427116342017" ignored="false" />
+    <file path="/PersnrScreenVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1427114444669" ignored="false" />
+    <file path="/VsFarbyNewManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1427802425452" ignored="false" />
+    <file path="/VsFarbyNewManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1427798060061" ignored="false" />
+    <file path="/VsNewManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1427369264459" ignored="false" />
+    <file path="/VsNew.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1427361775247" ignored="false" />
+    <file path="/VsNewManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1427960932825" ignored="false" />
+    <file path="/VsModulyWrmNew.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1427369453133" ignored="false" />
+    <file path="/VsModulyNewManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1427363981582" ignored="false" />
+    <file path="/VsModulyWrmNewManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1427364063287" ignored="false" />
+    <file path="$USER_HOME$/Desktop/SI-Versand/src/com/leoni/controllers/config/WebSocketConfig.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1428654241476" ignored="false" />
+    <file path="$USER_HOME$/Desktop/SI-Versand/src/com/leoni/controllers/servlet/ServletGetData.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1432208303717" ignored="false" />
+    <file path="$USER_HOME$/Desktop/SI-Versand/src/com/leoni/models/Greeting.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1428655377118" ignored="false" />
+    <file path="$USER_HOME$/Desktop/SI-Versand/src/com/leoni/models/HelloMessage.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1428655391607" ignored="false" />
+    <file path="$USER_HOME$/Desktop/SI-Versand/web/WEB-INF/applicationContext.xml" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1429098408245" ignored="false" />
+    <file path="$USER_HOME$/Desktop/SI-Versand/web/WEB-INF/web.xml" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1432197235158" ignored="false" />
+    <file path="$USER_HOME$/Desktop/SI-Versand/src/com/leoni/models/HarnessType.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1429095433863" ignored="false" />
+    <file path="/HarnessType.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1429095071383" ignored="false" />
+    <file path="$USER_HOME$/Desktop/SI-Versand/src/com/leoni/models/Workplace.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1430813763898" ignored="false" />
+    <file path="$USER_HOME$/Desktop/SI-Versand/src/com/leoni/managers/GenericManagerImp.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1429096463657" ignored="false" />
+    <file path="/GenericManagerImp.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1429098867928" ignored="false" />
+    <file path="$USER_HOME$/Desktop/SI-Versand/src/com/leoni/managers/GenericManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1429259788464" ignored="false" />
+    <file path="$USER_HOME$/Desktop/SI-Versand/src/com/leoni/managers/GenericManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1429096743723" ignored="false" />
+    <file path="$USER_HOME$/Desktop/SI-Versand/src/com/leoni/managers/WorkplaceManager.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1429097430194" ignored="false" />
+    <file path="$USER_HOME$/Desktop/SI-Versand/src/com/leoni/managers/WorkplaceManaerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1429097533748" ignored="false" />
+    <file path="/WorkplaceManaerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1429097533748" ignored="false" />
+    <file path="$USER_HOME$/Desktop/SI-Versand/src/com/leoni/managers/WorkplaceManagerImpl.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1429099361549" ignored="false" />
+    <file path="$USER_HOME$/Desktop/SI-Versand/src/com/leoni/viewModels/IndexVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1429259029685" ignored="false" />
+    <file path="$USER_HOME$/Desktop/SI-Versand/web/index.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1432208326229" ignored="false" />
+    <file path="$USER_HOME$/Desktop/SI-Versand/src/com/leoni/viewModels/ShowHtVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1429258495174" ignored="false" />
+    <file path="/ShowHtVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1429258479002" ignored="false" />
+    <file path="$USER_HOME$/Desktop/SI-Versand/web/showHt.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1429258593061" ignored="false" />
+    <file path="/showHt.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1429258593061" ignored="false" />
+    <file path="/variantyKARROSERIE991RL.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1430374374046" ignored="false" />
+    <file path="$USER_HOME$/Desktop/SI-Versand/web/WEB-INF/springSecurityContext.xml" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1432198099471" ignored="false" />
+    <file path="/HarnessTypeEditor.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1432276711811" ignored="false" />
+    <file path="$USER_HOME$/Desktop/SI-Versand/web/HarnessTypeEditor.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1432276711811" ignored="false" />
+    <file path="$USER_HOME$/Desktop/SI-Versand/web/PersonEditor.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1432276738080" ignored="false" />
+    <file path="/PersonEditor.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1432276738080" ignored="false" />
+    <file path="$USER_HOME$/Desktop/SI-Versand/web/Workplace.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1432276865476" ignored="false" />
+    <file path="/Workplace.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1432276799147" ignored="false" />
+    <file path="$USER_HOME$/Desktop/kamera/src/com/leoni/CamForm.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1433156549161" ignored="false" />
+    <file path="/CamForm.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1433156531945" ignored="false" />
+    <file path="$USER_HOME$/Desktop/kamera/src/com/leoni/ServerConnector.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1432643270154" ignored="false" />
+    <file path="/ServerConnector.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1432643258730" ignored="false" />
+    <file path="$USER_HOME$/Desktop/kamera/src/com/leoni/properties/config.properties" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1432818844306" ignored="false" />
+    <file path="/config.properties" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1432817479516" ignored="false" />
+    <file path="/foamReport.zul" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1433149764055" ignored="false" />
+    <file path="/FoamReportVM.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1433155658193" ignored="false" />
+    <file path="$USER_HOME$/Desktop/kamera/config.properties" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1432902148388" ignored="false" />
+    <file path="/ProdNrLogId.java" changelist="51a1259a-9695-4f44-bd5c-bd0d64e203bd" time="1433154884852" ignored="false" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="DatabaseView">
+    <flatten value="false" />
+    <groupTables value="false" />
+    <sortChildren value="false" />
+  </component>
+  <component name="DebuggerManager">
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <breakpoint_rules />
+    <ui_properties />
+  </component>
+  <component name="ErrorTreeViewConfiguration">
+    <option name="autoscrollToSource" value="true" />
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="true" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="JitControlCenter" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="jcc.properties" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/classes/jcc.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="1" selection-start="63" selection-end="63" vertical-scroll-proportion="0.029310346">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FoamReportVM.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/leoni/viewModel/FoamReportVM.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="95" column="42" selection-start="3598" selection-end="3598" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProdNrLogManagerImpl.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/leoni/data/manager/ProdNrLogManagerImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="78" column="66" selection-start="3255" selection-end="3270" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#2280#2298#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProdNrLogManager.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/leoni/data/manager/ProdNrLogManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="81" selection-start="847" selection-end="847" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Lpab62.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/leoni/data/models/Lpab62.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="24" selection-start="252" selection-end="276" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProdNrLog.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/leoni/data/models/ProdNrLog.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="29" selection-start="431" selection-end="654" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Lpab62Id.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/leoni/data/models/Lpab62Id.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="34" selection-start="386" selection-end="386" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProdNrLogId.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/leoni/data/models/ProdNrLogId.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="26" selection-start="294" selection-end="294" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Lpab64.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/leoni/data/models/Lpab64.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="13" selection-start="314" selection-end="314" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="springSecurityContext.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/springSecurityContext.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="9" selection-start="855" selection-end="855" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/web/variantEditor/variantyALL.zul" />
+        <option value="$PROJECT_DIR$/src/com/leoni/viewModel/NacharbeitViewVM.java" />
+        <option value="$PROJECT_DIR$/src/com/leoni/viewModel/VersandExportVM.java" />
+        <option value="$PROJECT_DIR$/src/com/leoni/viewModel/HarnessProductionVM.java" />
+        <option value="$PROJECT_DIR$/src/com/leoni/controllers/Servlet/ServletGetData.java" />
+        <option value="$PROJECT_DIR$/src/com/leoni/data/manager/VariantManagerImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/leoni/viewModel/VariantViewModel.java" />
+        <option value="$PROJECT_DIR$/src/com/leoni/viewModel/ModulsEditorViewModel.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/classes/jcc.properties" />
+        <option value="$PROJECT_DIR$/web/foamReport/foamReport.zul" />
+        <option value="$PROJECT_DIR$/src/com/leoni/data/models/ProdNrLog.java" />
+        <option value="$PROJECT_DIR$/src/com/leoni/data/models/ProdNrLogId.java" />
+        <option value="$PROJECT_DIR$/src/com/leoni/data/manager/ProdNrLogManagerImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/leoni/data/manager/ProdNrLogManager.java" />
+        <option value="$PROJECT_DIR$/src/com/leoni/viewModel/FoamReportVM.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/springSecurityContext.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="false" />
+    <option name="FILTER_DEBUG" value="false" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1920" />
+    <option name="width" value="1920" />
+    <option name="height" value="1160" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Abstraction issues</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <OptionsSetting value="true" id="Undo Check Out" />
+    <OptionsSetting value="true" id="Get Latest Version" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JitControlCenter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JitControlCenter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jitControlCenter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JitControlCenter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jitControlCenter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JitControlCenter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jitControlCenter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JitControlCenter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jitControlCenter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="classes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JitControlCenter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jitControlCenter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="foamReport" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JitControlCenter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jitControlCenter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dataGeneratorStations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JitControlCenter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jitControlCenter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JitControlCenter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jitControlCenter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="leoni" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="viewModel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JitControlCenter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jitControlCenter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="leoni" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="viewModel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="oldJit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JitControlCenter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jitControlCenter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="leoni" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JitControlCenter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jitControlCenter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="leoni" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jcc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JitControlCenter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jitControlCenter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="leoni" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JitControlCenter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jitControlCenter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="leoni" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="oldJIT" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JitControlCenter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jitControlCenter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="leoni" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JitControlCenter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jitControlCenter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="leoni" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JitControlCenter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jitControlCenter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="leoni" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Servlet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JitControlCenter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jitControlCenter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.lastSelected" value="File.Encoding" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="recentsLimit" value="5" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/libs/spring-security-4" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="Database.TableEditor.Splitter" value="0.9" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="FullScreen" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="dynamic.classpath" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\_jit_develop\jitControlCenter\web\login" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.leoni.data.models" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\_jit_develop\jitControlCenter\web\WEB-INF/classes" />
+      <recent name="C:\_jit_develop\jitControlCenter\web\band" />
+      <recent name="C:\_jit_develop\jitControlCenter\web\lpab62" />
+      <recent name="C:\_jit_develop\jitControlCenter\web\modulsEditor" />
+      <recent name="C:\_jit_develop\jitControlCenter\web\foamEditor" />
+    </key>
+    <key name="ImportMappingsDialog.RecentPackages">
+      <recent name="com.leoni.data.models" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat 7">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TomeeConfiguration" factoryName="Local">
+      <deployment />
+      <server-settings />
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TomeeConfiguration" factoryName="Remote">
+      <option name="LOCAL" value="false" />
+      <deployment />
+      <server-settings>
+        <data>
+          <option name="transportHostId" />
+        </data>
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="50568" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="false" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="com.intellij.persistence.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
+      <option name="VM_PARAMETERS" value="" />
+      <option name="USER_CFG_CLASS" />
+      <option name="CONTEXT_PROVIDER" />
+      <method />
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Remote" APPLICATION_SERVER_NAME="Tomcat 7.0">
+      <option name="LOCAL" value="false" />
+      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
+      <deployment>
+        <artifact name="JitControlCenter">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <data>
+          <option name="stagingRemotePath" value="" />
+          <option name="transportStagingTarget">
+            <TransportTarget>
+              <option name="id" value="cfad55c9-4329-4a7f-8119-f9e1a925900d" />
+            </TransportTarget>
+          </option>
+        </data>
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="50508" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="false" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method>
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="JitControlCenter" />
+        </option>
+      </method>
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="JitControlCenter">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+        <artifact name="JitControlCenter:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="_JitControlCenter" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Cover" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="50633" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method>
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="JitControlCenter" />
+          <artifact name="JitControlCenter:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Tomcat 7" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="JitControlCenter">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_JitControlCenter" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Cover" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="50633" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method>
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="JitControlCenter" />
+        </option>
+      </method>
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Tomcat Server.Tomcat 7" />
+    </list>
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="51a1259a-9695-4f44-bd5c-bd0d64e203bd" name="Default" comment="" />
+      <created>1386664978359</created>
+      <updated>1386664978359</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1920" y="0" width="1920" height="1160" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21077909" sideWeight="0.15732546" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32743362" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.6912488" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39823008" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36896878" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3046953" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21077909" sideWeight="0.29596853" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32940018" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284169" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32238966" sideWeight="0.62637365" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37362638" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_NEW_TODO" value="true" />
+    <option name="myTodoPanelSettings">
+      <value>
+        <are-packages-shown value="false" />
+        <are-modules-shown value="false" />
+        <flatten-packages value="false" />
+        <is-autoscroll-to-source value="false" />
+      </value>
+    </option>
+    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
+    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
+    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
+    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
+    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
+    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
+    <option name="SHORT_DIFF_HORIZONTALLY" value="true" />
+    <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
+    <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
+    <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
+    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
+    <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
+    <option name="LIMIT_HISTORY" value="true" />
+    <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
+    <option name="UPDATE_FILTER_SCOPE_NAME" />
+    <option name="USE_COMMIT_MESSAGE_MARGIN" value="false" />
+    <option name="COMMIT_MESSAGE_MARGIN_SIZE" value="72" />
+    <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
+    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
+    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
+    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
+    <option name="ACTIVE_VCS_NAME" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
+    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
+    <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
+    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
+    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="JitControlCenter" />
+        <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="jitControlCenter" />
+        <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+      </PATH_ELEMENT>
+    </PATH>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/com/leoni/viewModel/ModulsEditorViewModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="248" column="22" selection-start="10042" selection-end="10042" vertical-scroll-proportion="0.5132275">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/leoni/controllers/Servlet/ServletGetData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="92" column="74" selection-start="3460" selection-end="3460" vertical-scroll-proportion="2.1214643">
+          <folding>
+            <element signature="e#3209#3218#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/leoni/data/manager/Sicherungenrelais9X1WrmManagerImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="122" column="24" selection-start="5266" selection-end="6240" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/leoni/viewModel/HarnessProductionVM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="320" column="90" selection-start="15297" selection-end="15297" vertical-scroll-proportion="0.15476191">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/foamReport/foamReport.zul">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="49" selection-start="2218" selection-end="2218" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/springContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/leoni/data/models/Lpab64.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="13" selection-start="314" selection-end="314" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/leoni/data/models/Lpab62.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="24" selection-start="252" selection-end="276" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/leoni/data/models/ProdNrLog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="29" selection-start="431" selection-end="654" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/leoni/data/models/ProdNrLogId.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="26" selection-start="294" selection-end="294" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/leoni/data/models/Lpab62Id.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="34" selection-start="386" selection-end="386" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/leoni/data/manager/ProdNrLogManagerImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="66" selection-start="3255" selection-end="3270" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#2280#2298#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/leoni/data/manager/ProdNrLogManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="81" selection-start="847" selection-end="847" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/leoni/viewModel/FoamReportVM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="95" column="42" selection-start="3598" selection-end="3598" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/springSecurityContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="9" selection-start="855" selection-end="855" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/classes/jcc.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="1" selection-start="63" selection-end="63" vertical-scroll-proportion="0.029310346">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>JitControlCenter:war exploded</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Detection</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>zk</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>JitControlCenter</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
+

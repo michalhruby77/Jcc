@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+<?taglib uri="/WEB-INF/security.tld" prefix="sec"?>
+<zk>
+    <window apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.leoni.viewModel.Foam2ReportVM')" height="100%" width="100%" >
+        <timer id="timerKeepAliveSession" repeats="true" delay="3600000" onTimer=""/>
+        <vbox width="100%" height = "700px"  >
+            <grid width="500px"  >
+
+                <auxhead>
+                    <auxheader colspan="3" label="Report zapenovania" />
+                </auxhead>
+                <columns>
+                    <column width="10%"/>
+                    <column width="45%">Polozka</column>
+                    <column width="45%">Hodnota</column>
+                </columns>
+                <rows>
+                    <row>
+                        <label/>
+                        <label value="Datum" width="50px" />
+                        <datebox value="@bind(vm.date)" />
+                    </row>
+                </rows>
+            </grid>
+            <button  label="Ok" mold="trendy" onClick="@command('submit')"/>
+            <!--label value="Vysledok:"/>
+            <label value="@bind(vm.result)"/-->
+
+            <listbox id="modulsGrid" model="@load(vm.foamReportObjList)" mold="paging"
+                     width="500px" height="500px"> <!--itemRenderer="com.leoni.viewModel.ModulsEditRnd"-->
+
+
+                <listhead menupopup="auto">
+                    <listheader label="Tester id" align="center" width="50%"/>
+                    <listheader label="Pocet" align="center" width="50%"/>
+                </listhead>
+                <template name="model">
+                    <listitem>
+                        <listcell label="@load(each.testerId)" />
+                        <listcell label="@load(each.count)"/>
+                    </listitem>
+                </template>
+            </listbox>
+        </vbox>
+
+
+    </window>
+</zk>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+<?taglib uri="http://www.zkoss.org/zkspring/security" prefix="sec"?>
+<zk>
+<window apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.leoni.viewModel.oldJit.JanzmgrpVM')">
+<hbox>
+<grid width="500px">
+
+                    <rows>
+
+                        <row>
+                                                 <label value="Cislo zakaznika:" width="50px"/>
+                                                 <combobox  width="150px" selectedItem="@bind(vm.selectedKunde)" value = "@bind(vm.selectedKunde)" readonly="true" autodrop="true">
+                                                  <comboitem label="323350" value="323350"/>
+                                                  <comboitem label="323357" value="323357"/>
+                                                  <comboitem label="*" value="*"/>
+                                                 </combobox>
+                        </row>
+
+                        <row>
+                                                    <label value="Datum od" width="150px" />
+                                                       <datebox value="@bind(vm.dateFrom)" />
+                        </row>
+                        <row>
+                                                    <label value="Datum do" width="150px" />
+
+                                                        <datebox value="@bind(vm.dateTo)" />
+                        </row>
+
+                    </rows>
+
+         </grid>
+<button label="OK" mold="trendy" onClick="@command('submit',rows=rows)" width="100px" />
+</hbox>
+<separator/>
+<grid width="500px">
+<columns>
+            <column>Grupa</column>
+            <column>KsKz</column>
+            <column>Ausfuehrung</column>
+            <column>Pocet</column>
+</columns>
+<rows id = "rows"/>
+</grid>
+</window>
+</zk>

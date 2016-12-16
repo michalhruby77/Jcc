@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+
+<window title="Poistky - Relatka"
+        apply="org.zkoss.bind.BindComposer"
+        viewModel="@id('vm') @init('com.leoni.jcc.sicherungenRelais.SicherungenRelaisVM')"
+        hflex="1" vflex="1">
+
+    <listbox id="sicherungenRelaisList" model="@load(vm.sicherungenRelaisListModel)" onSelect="@command('selectionChanged', sicherungRelais=self.selectedIndex)">
+        <auxhead sclass="category-center">
+            <auxheader colspan="1">
+                <textbox instant="true" width="90%"
+                         onChange="@command('filterChanged', column='id', criterion='eq', value1=self.value)"/>
+            </auxheader>
+            <auxheader colspan="1">
+                <textbox instant="true" width="90%"
+                         onChange="@command('filterChanged', column='moduls.sachNrBest', criterion='like', value1=self.value)"/>
+            </auxheader>
+            <auxheader colspan="1">
+                <textbox instant="true" width="90%"
+                         onChange="@command('filterChanged', column='moduls.sachNrLieferant', criterion='like', value1=self.value)"/>
+            </auxheader>
+            <auxheader colspan="1">
+                <listbox width="90%" mold="select" model="@load(vm.sicherungenRelais9X1WrmManager.boxList)"
+                         onSelect="@command('boxSelectionChanged', selectedValue=self.selectedItem.value)"> <!--@command('filterChanged', column='box', criterion='eq', value1=self.selectedItem.value)-->
+                    <listitem label="" value=""/>
+                    <template name="model">
+                        <listitem label="@load(each)" value="@load(each)"/>
+                    </template>
+                </listbox>
+            </auxheader>
+            <auxheader colspan="1">
+                <listbox width="90%" mold="select" model="@bind(vm.platzList)"
+                         onSelect="@command('filterChanged', column='platz', criterion='eq', value1=self.selectedItem.value)">
+                    <template name="model">
+                        <listitem label="@load(each)" value="@load(each)"/>
+                    </template>
+                </listbox>
+            </auxheader>
+            <auxheader colspan="1">
+                <textbox instant="true" width="90%"
+                         onChange="@command('filterChanged', column='wert', criterion='eq', value1=self.value)"/>
+            </auxheader>
+            <auxheader colspan="1">
+                <textbox width="90%"
+                         onChange="@command('filterChanged', column='beschreibung', criterion='eq', value1=self.value)"/>
+                <button label="Clear Filter" onClick="@command('clearFilter')"/>
+            </auxheader>
+        </auxhead>
+
+        <listhead menupopup="auto" sizable="true">
+            <listheader label="Id" align="center" sort="auto(id)" width="3%"/>
+            <listheader label="Sach Nr" align="center" sort="auto(moduls.sachNrBest)" width="10%"/>
+            <listheader label="Lieferant Nr" align="center" sort="auto(moduls.sachNrLieferant)" width="10%"/>
+            <listheader label="Box" align="center" sort="auto(box)" width="10%"/>
+            <listheader label="Platz" align="center" sort="auto(platz)" width="5%"/>
+            <listheader label="Wert" align="center" sort="auto(wert)" width="15%"/>
+            <listheader label="Commentary" align="center" sort="auto(beschreibung)"/>
+        </listhead>
+
+        <template name="model">
+            <listitem>
+                <listcell label="${each.id}"/>
+                <listcell label="${each.moduls.sachNrBest}"/>
+                <listcell label="${each.moduls.sachNrLieferant}"/>
+                <listcell label="${each.box}"/>
+                <listcell label="${each.platz}"/>
+                <listcell label="${each.wert}"/>
+                <listcell label="${each.beschreibung}"/>
+            </listitem>
+        </template>
+    </listbox>
+    <vbox width="100%">
+        <paging id="pagingSichRrel" hflex="1" vflex="1"/>
+        <toolbar hflex="1" vflex="1">
+            <button label="New" onClick="@command('createSicherungRelais')"/>
+            <button label="Copy" onClick="@command('copySicherungRelais')"/>
+            <button label="Edit" onClick="@command('editSicherungRelais')"/>
+            <button label="Delete" onClick="@command('deleteSicherungRelais')"/>
+        </toolbar>
+    </vbox>
+</window>

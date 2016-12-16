@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="JitControlCenter:war">
+    <output-path>$PROJECT_DIR$/out/artifacts/JitControlCenter_war</output-path>
+    <root id="archive" name="JitControlCenter_war.war">
+      <element id="artifact" artifact-name="JitControlCenter:war exploded" />
+    </root>
+  </artifact>
+</component>

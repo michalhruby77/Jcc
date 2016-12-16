@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+<?taglib uri="http://www.zkoss.org/zkspring/security" prefix="sec"?>
+<zk>
+<window apply="org.zkoss.bind.BindComposer" viewModel="@id('nmvm') @init('com.leoni.viewModel.NewModulesVM')">
+ <timer id="timerKeepAliveSession" repeats="true" delay="3600000" onTimer=""/>
+<groupbox title="Pridat novy zaznam" if="${sec:isAllGranted('ROLE_AV')}" closable="true" open="false">
+
+  <grid width="700px" >
+          <rows>
+
+              <row>
+                 <label value="Sach nr best (viac modulov oddelte +):" width="150px"/>
+                 <textbox value="@bind(nmvm.sachNrBest)" width="150px"/>
+
+              </row>
+              <row>
+                                         <label value="Poznamka:" width="150px"/>
+                                         <textbox value="@bind(nmvm.notiz)" width="150px"/>
+              </row>
+          </rows>
+      </grid>
+      <button mold="trendy"  label="Vytvorit"
+                  onClick="@command('generateNewModule')"/>
+    </groupbox>
+<separator bar="true"/>
+
+ <groupbox mold="3d" closable="false">
+    <caption  height="15px" >
+                    <div align="center" >
+                    <label value="Nove moduly"  style="font-size:12pt" />
+                    </div>
+                    </caption>
+    <listbox id="NmGrid" model="@load(nmvm.nmList)" mold="paging" selectedItem="@bind(nmvm.selectedNewModule)" height="600px">
+
+        <auxhead sclass="category-center">
+                    <auxheader colspan="1" align="center">
+                        <textbox  width="20%"  value="@bind(nmvm.sachNrBestSearch)" onOK="@command('search')" />
+                    </auxheader>
+                    <auxheader colspan="1"/>
+                    <auxheader colspan="1" align="center">
+                                <button image="images/search.png" mold="trendy"  onClick="@command('search')"/>
+                                <button image="images/cancel.png" mold="trendy"  onClick="@command('cancelSearch')"/>
+                                        </auxheader>
+                </auxhead>
+        <listhead menupopup="auto">
+                    <listheader label="Sach nr best" align="center" sort="auto(sachNrBest)" width="50%"/>
+                    <listheader label="Notiz" align="center" sort="auto(notiz)" width="35%"/>
+                    <listheader label="Delete" align="center" width="15%"/>
+                </listhead>
+        <template name="model">
+            <listitem>
+                <listcell label="@load(each.sachNrBest)" />
+                <listcell label="@load(each.notiz)"/>
+                <listcell>
+                                    <button image="images/delete.png" if="${sec:isAllGranted('ROLE_AV')}" mold="trendy"  onClick="@command('deleteNewModule', newModule=each)"/>
+                </listcell>
+            </listitem>
+        </template>
+    </listbox>
+<separator bar="true"/>
+<grid if="${sec:isAllGranted('ROLE_AV')}" form="@id('fx') @load(nmvm.selectedNewModule) @save(nmvm.selectedNewModule, before='saveNewModule')">
+           <auxhead>
+               <auxheader colspan="3" class="topic">Edit</auxheader>
+           </auxhead>
+           <columns>
+                                  <column label="Sach nr best" align="center" width="50%"/>
+                                  <column label="Notiz" align="center" width="35%"/>
+                                  <column label="Save" align="center" width="15%"/>
+           </columns>
+               <rows>
+               <row>
+
+                   <textbox value="@bind(fx.sachNrBest)"/>
+                   <textbox value="@bind(fx.notiz)"/>
+               <button image="images/save.png" mold="trendy" onClick="@command('saveNewModule', selectedData= nmvm.selectedNewModule)" />
+             </row>
+             </rows>
+       </grid>
+</groupbox>
+
+</window>
+</zk>

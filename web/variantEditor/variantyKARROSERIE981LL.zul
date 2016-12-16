@@ -1,0 +1,3 @@
+<window>
+    <include arg1="KARROSERIE" arg2="981" arg3="LL" src="variantEditor/variantEditor.zul"/>
+</window>

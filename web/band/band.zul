@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+
+<zk>
+<window apply="org.zkoss.bind.BindComposer" viewModel="@id('mevm') @init('com.leoni.viewModel.BandVM')">
+  <timer id="timerKeepAliveSession" repeats="true" delay="3600000" onTimer=""/>
+  <groupbox title="Pridat novy zaznam" if="${sec:isAllGranted('ROLE_ADMIN')}" closable="true" open="false">
+
+   <grid width="700px" >
+           <rows>
+
+               <row >
+                  <label value="Board type:" width="150px"/>
+                  <textbox value="@bind(mevm.boardType)"  width="150px"/>
+
+               </row>
+               <row >
+                            <label value="Board id:" width="150px"/>
+                            <textbox value="@bind(mevm.boardId)" width="150px"/>
+               </row>
+               <row >
+                                                        <label value="Band name:" width="150px"/>
+                                                        <textbox value="@bind(mevm.bandName)" />
+               </row>
+           </rows>
+
+       </grid>
+       <button mold="trendy"  label="Vytvorit"
+                   onClick="@command('create')"/>
+     </groupbox>
+    <separator bar="true"/>
+<button label="Obnovit" mold="trendy" onClick="@command('refreshBand')" width="70px" height="30px"/>
+ <groupbox mold="3d" closable="false" >
+   <caption  height="15px" >
+                       <div align="center" >
+                       <label value="@load(mevm.bandName)"  style="font-size:12pt" />
+                       </div>
+   </caption>
+    <listbox id = "listbox"  model="@load(mevm.harnessList)" height="700px"
+    itemRenderer="com.leoni.viewModel.BandRenderer"  selectedItem="@bind(mevm.selectedHarness)"
+     onSelect = "@command('showEdit', editRow=editRow)">
+
+
+        <listhead menupopup="auto">
+                    <listheader label="Typ dosky" align="center" sort="auto(bretttype)" width="10%"/>
+                    <listheader label="ID dosky" align="center" sort="auto(brettid)" width="10%"/>
+                    <listheader label="Cas nabehu" align="center" sort="auto(busytime)" width="10%"/>
+                    <listheader label="Aktivna" align="center"  width="10%"/>
+                    <listheader label="Prod. cislo" align="center" sort="auto(prod_nr)" width="20%"/>
+                    <listheader label="StranaA krok" align="center" width="10%"/>
+                    <listheader label="StranaB krok" align="center" width="10%"/>
+                    <listheader label="Zhodit z pasu" align="center" width="5%"/>
+                    <listheader label="Vratit do kontajnera" align="center" width="5%"/>
+                    <listheader label="Presunut" align="center" width="5%"/>
+                    <listheader label="Vymazat" align="center" width="5%"/>
+
+                </listhead>
+        <template name="model">
+            <listitem >
+                <listcell label="@load(each.bretttype)"/>
+                <listcell label="@load(each.brettid)" />
+
+                <listcell>
+                                   <datebox value="@load(each.busytime)" format="yyyy/MM/dd HH:mm" disabled="true" mold="rounded" width="90%"/>
+                </listcell>
+
+
+                <listcell>
+                  <label value = "@load(each.prod_nr)" style="font-weight:bold; color:#CC0099; font-size:16pt"/>
+                </listcell>
+                <listcell label="@load(each.side_a_step)"/>
+                <listcell label="@load(each.side_b_step)"/>
+                <listcell>
+                     <button image="images/delete.png" if="${sec:isAllGranted('ROLE_ADMIN')}" mold="trendy" onClick="@command('deleteFromBand', harness=each)" />
+                </listcell>
+                <listcell>
+                     <button image="images/container.png" if="${sec:isAllGranted('ROLE_ADMIN')}" mold="trendy"
+                     onClick="@command('backToContainer', harness=each)" />
+                </listcell>
+
+
+            </listitem>
+        </template>
+    </listbox>
+
+<separator bar="true"/>
+ <grid form="@id('fx')"  >
+         <auxhead>
+             <auxheader colspan="10" class="topic">Editovat</auxheader>
+         </auxhead>
+         <columns>
+                                <column label="Typ dosky" align="center" width="10%"/>
+                                <column label="Id dosky" align="center" width="10%"/>
+                                <column label="Cas nabehu" align="center" width="15%"/>
+                                <column label="Aktivna" align="center" width="5%"/>
+                                <column label="Prod. cislo" align="center" width="15%"/>
+                                <column label="Ks kz" align="center" width="5%"/>
+                                <column label="Strana A" align="center" width="10%"/>
+                                <column label="Strana B" align="center" width="10%"/>
+                                <column label="Pas" align="center" width="10%"/>
+                                <column label="Ulozit" align="center" width="10%"/>
+         </columns>
+             <rows>
+             <row id = "editRow"/>
+           </rows>
+     </grid>
+  </groupbox>
+</window>
+</zk>

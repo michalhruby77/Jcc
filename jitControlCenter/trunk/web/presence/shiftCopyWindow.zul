@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+
+<window apply="org.zkoss.bind.BindComposer"
+        viewModel="@id('scwvm') @init('com.leoni.jcc.presence.ShiftCopyWindowVM')"
+        title="Kopirovanie smeny" border="normal" width="460px" position="center,center" closable="true">
+    <grid>
+        <columns>
+            <column width="30%">Attribute</column>
+            <column width="59%">Value</column>
+        </columns>
+        <rows>
+            <row>
+                <label value="Pas: "/>
+                <listbox mold="select" model="@load(scwvm.presenceManager.bandNames)"
+                         selectedItem="@bind(scwvm.bandName)">
+                    <template name="model">
+                        <listitem label="${each}" value=""/>
+                    </template>
+                </listbox>
+            </row>
+            <row>
+                <label value="Od: "/>
+                <hlayout>
+                    <datebox format="dd.MM.yyyy" value="@bind(scwvm.shiftBeginDate)"/>
+                    <timebox format="HH:mm" value="@bind(scwvm.shiftBeginTime)" buttonVisible="false"/>
+                </hlayout>
+            </row>
+            <row>
+                <label value="Do: "/>
+                <hlayout>
+                    <datebox format="dd.MM.yyyy" value="@bind(scwvm.shiftEndDate)"/>
+                    <timebox format="HH:mm" value="@bind(scwvm.shiftEndTime)" buttonVisible="false"/>
+                </hlayout>
+            </row>
+            <row>
+                <label value="Farba: "/>
+                <listbox mold="select" model="@load(scwvm.presenceManager.shiftNames)"
+                         selectedItem="@bind(scwvm.shiftName)">
+                    <template name="model">
+                        <listitem label="${each}" value=""/>
+                    </template>
+                </listbox>
+            </row>
+        </rows>
+    </grid>
+    <toolbar>
+        <button label="Save" onClick="@command('save')"/>
+        <button label="Cancel" onClick="@command('close')"/>
+    </toolbar>
+</window>

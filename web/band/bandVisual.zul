@@ -1,0 +1,50 @@
+<window  apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.leoni.viewModel.BandVisualVM')">
+    <label  value="@bind(vm.bandName)"  style="font-weight:bold; font-size:25pt"/>
+    <button label="Obnovit" mold="trendy" onClick="@command('refresh')" width="70px" height="30px"/>
+    <grid height="600px">
+     <rows>
+        <row>
+            <cell  zclass="none" height="80px"/>
+            <cell id = "cell23" zclass="none" height="80px" style="background-color: #FFFF66"/>
+            <cell id = "cell33" zclass="none" height="80px" style="background-color: #FFFF66"/>
+            <cell id = "cell43" zclass="none" height="80px" style="background-color: #FFFF66"/>
+            <cell id = "cell53" zclass="none" height="80px" style="background-color: #FFFF66"/>
+            <cell id = "cell63" zclass="none" height="80px" style="background-color: #FFFF66"/>
+            <cell id = "cell73" zclass="none" height="80px" style="background-color: #FFFF66"/>
+            <cell id = "cell83" zclass="none" height="80px" style="background-color: #FFFF66"/>
+            <cell id = "cell93" zclass="none" height="80px" style="background-color: #FFFF66"/>
+            <cell id = "cell103" zclass="none" height="80px" style="background-color: #FFFF66"/>
+            <cell id = "cell113" zclass="none" height="80px" style="background-color: #FFFF66"/>
+            <cell zclass="none" height="80px"/>
+        </row>
+        <row>
+            <cell id = "cell12" zclass="none" height="80px" style="background-color: #FFFF66"/>
+            <cell zclass="none" height="80px"/>
+            <cell zclass="none" height="80px"/>
+            <cell zclass="none" height="80px"/>
+            <cell zclass="none" height="80px"/>
+            <cell zclass="none" height="80px"/>
+            <cell zclass="none" height="80px"/>
+            <cell zclass="none" height="80px"/>
+            <cell zclass="none" height="80px"/>
+            <cell zclass="none" height="80px"/>
+            <cell zclass="none" height="80px"/>
+            <cell id = "cell122" zclass="none" height="80px" style="background-color: #FFFF66"/>
+        </row>
+        <row>
+            <cell  zclass="none" height="80px"/>
+            <cell id = "cell21" zclass="none" height="80px" style="background-color: #FFFF66"/>
+            <cell id = "cell31" zclass="none" height="80px" style="background-color: #FFFF66"/>
+            <cell id = "cell41" zclass="none" height="80px" style="background-color: #FFFF66"/>
+            <cell id = "cell51" zclass="none" height="80px" style="background-color: #FFFF66"/>
+            <cell id = "cell61" zclass="none" height="80px" style="background-color: #FFFF66"/>
+            <cell id = "cell71" zclass="none" height="80px" style="background-color: #FFFF66"/>
+            <cell id = "cell81" zclass="none" height="80px" style="background-color: #FFFF66"/>
+            <cell id = "cell91" zclass="none" height="80px" style="background-color: #FFFF66"/>
+            <cell id = "cell101" zclass="none" height="80px" style="background-color: #FFFF66"/>
+            <cell id = "cell111" zclass="none" height="80px" style="background-color: #FFFF66"/>
+            <cell zclass="none" height="80px"/>
+        </row>
+     </rows>
+    </grid>
+</window>

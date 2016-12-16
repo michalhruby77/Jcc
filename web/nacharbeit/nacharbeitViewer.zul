@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+<?taglib uri="/WEB-INF/security.tld" prefix="sec"?>
+<zk>
+<window apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.leoni.viewModel.NacharbeitViewVM')" height="100%" width="100%" >
+  <timer id="timerKeepAliveSession" repeats="true" delay="3600000" onTimer=""/>
+         <vbox width="100%"  >
+
+         <groupbox  mold="3d" >
+         <caption  height="15px" >
+                  <div align="center" >
+                  <label  value="Nacharbeit viewer"  style="font-size:12pt" />
+                  </div>
+         </caption>
+         <vbox>
+         <label  value="Opravy podla prod. cisla alebo od-do datumu"  style="font-size:12pt"/>
+         <vbox >
+                             <radiogroup id="sv1" />
+                             <radio label="Vyhladat podla prod. cisla" radiogroup="sv1"  onCheck="@command('generateProdNr')" checked = "@bind(vm.generateProdNrVis)"/>
+                             <radio label="Vyhladat podla casoveho obodbia" radiogroup="sv1"  onCheck="@command('generateDate')" checked = "@bind(vm.generateDateVis)"/>
+         </vbox>
+
+         <grid width="400px" visible = "@bind(vm.generateProdNrVis)">
+                     <rows>
+                      <row >
+                       <label value="Prod. c.:" width="150px"/>
+                       <textbox value="@bind(vm.prodNr)" width="150px"/>
+                      </row>
+                      <row>
+                         <label value="Kabelsatz:" width="50px"/>
+                         <combobox  width="50px" selectedItem="@bind(vm.selectedKs)" value = "@bind(vm.selectedKs)"  model="@load(vm.kabelsatzList)"  readonly="true" autodrop="true">
+                          <template name="model" >
+                           <comboitem label="@load(each)"/>
+                          </template>
+                         </combobox>
+                      </row>
+                      <row>
+                                            <label value="Modus:" width="150px"/>
+                                            <combobox  width="150px" selectedItem="@bind(vm.selectedModus)" value = "@bind(vm.selectedModus)"  model="@load(vm.modusList)"  readonly="true" autodrop="true">
+                                                                      <template name="model" >
+                                                                       <comboitem label="@load(each)"/>
+                                                                      </template>
+                                            </combobox>
+                      </row>
+                     </rows>
+         </grid>
+         <grid width="400px" visible = "@bind(vm.generateDateVis)">
+                     <rows>
+                      <row>
+                                                               <label value="Datum od [rrrrmmdd]" width="150px" />
+                                                               <textbox value="@bind(vm.dateFrom)"
+                                                               width="150px" tabindex="2" />
+                      </row>
+                      <row>
+                                                               <label value="Datum do [rrrrmmdd]" width="150px" />
+                                                               <textbox value="@bind(vm.dateTo)" width="150px" tabindex="2" />
+                      </row>
+                      <row >
+                                             <label value="Kabelsatz:" width="150px"/>
+                                             <combobox  width="50px" selectedItem="@bind(vm.selectedKs2)" value = "@bind(vm.selectedKs2)" model="@load(vm.kabelsatzList)" readonly="true"  autodrop="true">
+                                                                       <template name="model" >
+                                                                        <comboitem label="@load(each)"/>
+                                                                       </template>
+                                                                      </combobox>
+                      </row>
+                      <row>
+                      <label value="Modus:" width="150px"/>
+                      <combobox  width="150px" selectedItem="@bind(vm.selectedModus)" value = "@bind(vm.selectedModus)"  model="@load(vm.modusList)"  readonly="true" autodrop="true">
+                                                <template name="model" >
+                                                 <comboitem label="@load(each)"/>
+                                                </template>
+                      </combobox>
+                      </row>
+                     </rows>
+         </grid>
+         </vbox>
+         <button label="Generuj" mold="trendy" onClick="@command('submit')" />
+         </groupbox>
+         </vbox>
+         <button mold="trendy"  label="Exportovat do excelu"
+                                   onClick="@command('exportToExcel')"/>
+         <!--button mold="trendy"  label="test"
+                                            onClick="@command('test')"/-->
+         <groupbox title="Zoznam" closable="false">
+             <listbox id="grid" model="@load(vm.nacharbeitList)" mold="paging"  height="500px">
+
+
+                 <listhead menupopup="auto">
+                             <listheader label="Prod nr" align="center" sort="auto(prodNr)" width="10%"/>
+                             <listheader label="Kabelsatz" align="center" sort="auto(kabelsatzKz)" width="5%"/>
+                             <listheader label="Grupa" align="center" sort="auto(prodGruppe)" width="5%"/>
+                             <listheader label="Ausfuehrung" align="center" sort="auto(ausfuhrung)" width="5%"/>
+                             <listheader label="Datum" align="center" sort="auto(logDate)" width="10%"/>
+                             <listheader label="Cas" align="center" sort="auto(logTime)" width="5%"/>
+                             <listheader label="Tester" align="center" width="10%"/>
+                             <listheader label="Kod chyby" align="center" width="10%"/>
+                             <listheader label="Popis chyby" align="center" width="20%"/>
+                             <listheader label="Cas opravy" align="center" width="20%"/>
+                         </listhead>
+                 <template name="model">
+                     <listitem>
+                         <listcell label="@load(each.prodNr)" />
+                         <listcell label="@load(each.kabelsatzKz)"/>
+                         <listcell label="@load(each.prodGruppe)"/>
+                         <listcell label="@load(each.ausfuhrung)"/>
+                         <listcell label="@load(each.logdate)"/>
+                         <listcell label="@load(each.logtime)"/>
+                         <listcell label="@load(each.testerId)"/>
+                         <listcell>
+                         <label value = "@load(each.fehlKod1)"/>
+                         <label id="lb1" pre="true"/>
+                         <label value = "@load(each.fehlKod2)"/>
+                         <label id="lb2" pre="true"/>
+                         <label value = "@load(each.fehlKod3)"/>
+                         <label id="lb3" pre="true"/>
+                         <label value = "@load(each.fehlKod4)"/>
+                         <label id="lb4" pre="true"/>
+                         <label value = "@load(each.fehlKod5)"/>
+                         <label id="lb5" pre="true"/>
+                         <label value = "@load(each.fehlKod6)"/>
+                         <label id="lb6" pre="true"/>
+                         <label value = "@load(each.fehlKod7)"/>
+                         <label id="lb7" pre="true"/>
+                         <label value = "@load(each.fehlKod8)"/>
+                         <label id="lb8" pre="true"/>
+                         <label value = "@load(each.fehlKod9)"/>
+                         <label id="lb9" pre="true"/>
+                         <label value = "@load(each.fehlKod10)"/>
+                         </listcell>
+                         <zscript><![CDATA[
+                                    if (!each.fehlKod1.equals("   ")) {lb1.value = "\n";}
+                                    if (!each.fehlKod2.equals("   ")) {lb2.value = "\n";}
+                                    if (!each.fehlKod3.equals("   ")) {lb3.value = "\n";}
+                                    if (!each.fehlKod4.equals("   ")) {lb4.value = "\n";}
+                                    if (!each.fehlKod5.equals("   ")) {lb5.value = "\n";}
+                                    if (!each.fehlKod6.equals("   ")) {lb6.value = "\n";}
+                                    if (!each.fehlKod7.equals("   ")) {lb7.value = "\n";}
+                                    if (!each.fehlKod8.equals("   ")) {lb8.value = "\n";}
+                                    if (!each.fehlKod9.equals("   ")) {lb9.value = "\n";}
+                                 ]]></zscript>
+                         <listcell>
+                         <label value = "@load(each.fehlerText1)"/>
+                         <label id="lb11" pre="true"/>
+                         <label value = "@load(each.fehlerText2)"/>
+                         <label id="lb12" pre="true"/>
+                         <label value = "@load(each.fehlerText3)"/>
+                         <label id="lb13" pre="true"/>
+                         <label value = "@load(each.fehlerText4)"/>
+                         <label id="lb14" pre="true"/>
+                         <label value = "@load(each.fehlerText5)"/>
+                         <label id="lb15" pre="true"/>
+                         <label value = "@load(each.fehlerText6)"/>
+                         <label id="lb16" pre="true"/>
+                         <label value = "@load(each.fehlerText7)"/>
+                         <label id="lb17" pre="true"/>
+                         <label value = "@load(each.fehlerText8)"/>
+                         <label id="lb18" pre="true"/>
+                         <label value = "@load(each.fehlerText9)"/>
+                         <label id="lb19" pre="true"/>
+                         <label value = "@load(each.fehlerText10)"/>
+                         </listcell>
+                         <zscript><![CDATA[
+                                                          if (!each.fehlKod1.equals("   ")) {lb11.value = "\n";}
+                                                                                              if (!each.fehlKod2.equals("   ")) {lb12.value = "\n";}
+                                                                                              if (!each.fehlKod3.equals("   ")) {lb13.value = "\n";}
+                                                                                              if (!each.fehlKod4.equals("   ")) {lb14.value = "\n";}
+                                                                                              if (!each.fehlKod5.equals("   ")) {lb15.value = "\n";}
+                                                                                              if (!each.fehlKod6.equals("   ")) {lb16.value = "\n";}
+                                                                                              if (!each.fehlKod7.equals("   ")) {lb17.value = "\n";}
+                                                                                              if (!each.fehlKod8.equals("   ")) {lb18.value = "\n";}
+                                                                                              if (!each.fehlKod9.equals("   ")) {lb19.value = "\n";}
+                                                          ]]></zscript>
+                         <listcell>
+                         <label value = "@load(each.fehlTime1)"/>
+                         <label id="lb21" pre="true"/>
+                         <label value = "@load(each.fehlTime2)"/>
+                         <label id="lb22" pre="true"/>
+                         <label value = "@load(each.fehlTime3)"/>
+                         <label id="lb23" pre="true"/>
+                         <label value = "@load(each.fehlTime4)"/>
+                         <label id="lb24" pre="true"/>
+                         <label value = "@load(each.fehlTime5)"/>
+                         <label id="lb25" pre="true"/>
+                         <label value = "@load(each.fehlTime6)"/>
+                         <label id="lb26" pre="true"/>
+                         <label value = "@load(each.fehlTime7)"/>
+                         <label id="lb27" pre="true"/>
+                         <label value = "@load(each.fehlTime8)"/>
+                         <label id="lb28" pre="true"/>
+                         <label value = "@load(each.fehlTime9)"/>
+                         <label id="lb29" pre="true"/>
+                         <label value = "@load(each.fehlTime10)"/>
+                         </listcell>
+                         <zscript><![CDATA[                if (!each.fehlKod1.equals("   ")) {lb21.value = "\n";}
+                                                                                               if (!each.fehlKod2.equals("   ")) {lb22.value = "\n";}
+                                                                                               if (!each.fehlKod3.equals("   ")) {lb23.value = "\n";}
+                                                                                               if (!each.fehlKod4.equals("   ")) {lb24.value = "\n";}
+                                                                                               if (!each.fehlKod5.equals("   ")) {lb25.value = "\n";}
+                                                                                               if (!each.fehlKod6.equals("   ")) {lb26.value = "\n";}
+                                                                                               if (!each.fehlKod7.equals("   ")) {lb27.value = "\n";}
+                                                                                               if (!each.fehlKod8.equals("   ")) {lb28.value = "\n";}
+                                                                                               if (!each.fehlKod9.equals("   ")) {lb29.value = "\n";}
+                                                          ]]></zscript>
+                     </listitem>
+                 </template>
+             </listbox>
+
+         </groupbox>
+
+</window>
+</zk>

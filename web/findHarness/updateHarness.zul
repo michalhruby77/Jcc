@@ -1,0 +1,27 @@
+<window id="modalDialog" title="Upravit status" border="normal" width="460px"
+     apply="org.zkoss.bind.BindComposer" viewModel="@id('tvm') @init('com.leoni.viewModel.UpdateHarnessVM')"
+    position="center,center" closable="true"
+    action="show: slideDown;hide: slideUp">
+ <timer id="timerKeepAliveSession" repeats="true" delay="3600000" onTimer=""/>
+    <vlayout>
+         <grid>
+
+                    <rows>
+                        <row>
+                                <label value="Hodnota" width="150px" />
+                                <textbox value="@bind(tvm.statusValue)"
+                                    width="150px" tabindex="1" />
+                        </row>
+                        <row>
+                               <label value="Kabelsatz:" width="50px"/>
+                                <textbox value="@bind(tvm.note)" width="150px" tabindex="1" />
+
+                        </row>
+
+
+                    </rows>
+         </grid>
+
+        <button label="OK" onClick="@command('submit')"/>
+    </vlayout>
+</window>

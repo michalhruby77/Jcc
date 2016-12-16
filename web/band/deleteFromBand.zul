@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+<?taglib uri="/WEB-INF/security.tld" prefix="sec"?>
+<zk>
+
+<window apply="org.zkoss.bind.BindComposer" title="Zhodit z pasu" border="normal"
+viewModel="@id('vm') @init('com.leoni.viewModel.DeleteFromBandVM')" position="center,center" closable="true">
+    <radiogroup id="rg1"/>
+    <grid width="700px">
+        <columns>
+            <column width="30%"/>
+            <column/>
+        </columns>
+        <rows>
+            <row style = "background-color: #ccffcc">
+               <cell colspan="2">
+                <radio  label="Zhodit z pasu(tabulka band) + Auslauf(lpab62 zapisat status Auslauf)"
+                        onCheck="@command('deleteFromBandSetAuslauf')" radiogroup="rg1"/>
+               </cell>
+            </row>
+            <row  style = "background-color: #ffff99">
+               <cell colspan="2">
+                <radio label="Zhodit z pasu(tabulka band)"  onCheck="@command('deleteFromBand')" radiogroup="rg1"/>
+               </cell>
+            </row>
+            <row >
+                <cell colspan="1">
+                    <radio label="" onCheck="@command('deleteFromBandAndEinlauf')"  radiogroup="rg1"/>
+                </cell>
+                <cell colspan="1"  style = "background-color: #ffff99">
+                    <label value="+ Zmazat Einlauf (lpab62 zmazat status Einlauf)"/>
+                </cell>
+            </row>
+        </rows>
+    </grid>
+
+    <!--radiogroup>
+        <vlayout>
+            <radio label="+ zhodit z pasu (tabulka band + DaB/auslauf/)" onCheck="@command('deleteFromBandSetAuslauf')"/>
+            <radio label="Zrusenie z dosky (iba tabulka band)"  onCheck="@command('deleteFromBand')"/>
+            <radio label="+ zrusenie statusu nabehu (tabulka band + lpab62/delEinlauf/)" onCheck="@command('deleteFromBandAndEinlauf')"/>
+        </vlayout>
+    </radiogroup-->
+  <button  image="images/yes.png"  onClick="@command('submit')"  />
+</window>
+</zk>

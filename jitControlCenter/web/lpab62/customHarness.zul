@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+<?taglib uri="http://www.zkoss.org/zkspring/security" prefix="sec"?>
+<zk>
+<window apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.leoni.viewModel.CustomHarnessVM')">
+
+ <button label="Vytvorit novu" mold="trendy"  onClick="@command('createCustomHarness')"/>
+ <groupbox mold="3d" closable="false">
+    <caption  height="15px" >
+                    <div align="center" >
+                    <label value="Facelift"  style="font-size:12pt" />
+                    </div>
+                    </caption>
+    <listbox model="@load(vm.harnessList)" mold="paging" height="600px">
+
+        <auxhead sclass="category-center">
+            <auxheader colspan="1">
+                            <textbox  width="90%" value="@bind(vm.prodNrSearch)" onOK="@command('search')"/>
+            </auxheader>
+            <auxheader colspan="1">
+                <combobox width="50px" onSelect="@command('search')"  selectedItem="@bind(vm.kabelsatzKzSearch)"  readonly="true">
+                                                                                      <comboitem label="F" value="F"/>
+                                                                                      <comboitem label="C" value="C"/>
+                                                                                      <comboitem label="T" value="T"/>
+                                                                                      <comboitem label="U" value="U"/>
+                                                                                      <comboitem label="E" value="E"/>
+                                                                                      <comboitem label="R" value="R"/>
+                </combobox>
+            </auxheader>
+            <auxheader colspan="1">
+                <textbox  width="90%" value="@bind(vm.kundenNrSearch)" onOK="@command('search')"/>
+            </auxheader>
+            <auxheader colspan="5">
+
+                    </auxheader>
+            <auxheader colspan="1" align="center">
+                                          <button label="Vyhladat" mold="trendy"  onClick="@command('search')"/>
+                                          <button label="Zrusit" mold="trendy"  onClick="@command('cancelSearch')"/>
+            </auxheader>
+            </auxhead>
+        <listhead menupopup="auto">
+                    <listheader label="Prod Nr" align="center" sort="auto(prodNr)" width="15%"/>
+                    <listheader label="Kabelsatz" align="center" sort="auto(kabelsatzKz)" width="10%"/>
+                    <listheader label="Kunden Nr" align="center" sort="auto(kundenNr)" width="10%"/>
+                    <listheader label="Prod group" align="center" sort="auto(prodgruppe)" width="10%"/>
+                    <listheader label="Ausfuehrung" align="center" sort="auto(ausfuehrung)" width="10%"/>
+                    <listheader label="Lief datum" align="center" sort="auto(lieferDatum)" width="15%"/>
+                    <listheader label="Edit moduls" align="center" width="10%"/>
+                    <listheader label="Tlac" align="center" width="10%"/>
+                    <listheader label="Tlac" align="center" width="10%"/>
+                </listhead>
+        <template name="model">
+            <listitem>
+                <listcell label="@load(each.prodNr)" />
+                <listcell label="@load(each.kabelsatzKz)"/>
+                <listcell label="@load(each.kundenNr)"/>
+                <listcell label="@load(each.prodgruppe)"/>
+                <listcell label="@load(each.ausfuehrung)"/>
+                <listcell label="@load(each.lieferDatum)"/>
+                <listcell>
+                                    <button label="Editovat"  mold="trendy"  onClick="@command('editModuls', harness=each)"/>
+                </listcell>
+                <listcell>
+                                                    <button label="Tlac ML"  mold="trendy" if="${each.kabelsatzKz=='F' or each.kabelsatzKz=='C'}" onClick="@command('printMl', harness=each)"/>
+                </listcell>
+                <listcell>
+                                                    <button label="Tlac etik."  mold="trendy" if="${each.kabelsatzKz=='F' or each.kabelsatzKz=='C'}" onClick="@command('printEtik', harness=each)"/>
+                </listcell>
+            </listitem>
+        </template>
+    </listbox>
+</groupbox>
+
+</window>
+</zk>

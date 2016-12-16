@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+<?taglib uri="/WEB-INF/security.tld" prefix="sec"?>
+<zk>
+    <window apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.leoni.viewModel.AloReportVM')" height="100%" width="100%" >
+        <timer id="timerKeepAliveSession" repeats="true" delay="3600000" onTimer=""/>
+        <vbox width="100%" height = "500px"  >
+            <grid width="300px"  >
+
+                <columns>
+                    <column  label="Alo report - generovanie" />
+
+                </columns>
+
+                <rows>
+                    <row>
+                        <label value="Datum" width="50px" />
+                        <datebox value="@bind(vm.date)" />
+                    </row>
+                </rows>
+            </grid>
+            <button  label="Ok" mold="trendy" onClick="@command('submit')"/>
+
+
+        </vbox>
+
+    </window>
+</zk>

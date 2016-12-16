@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+<?taglib uri="/WEB-INF/security.tld" prefix="sec"?>
+<zk>
+<window apply="org.zkoss.bind.BindComposer" viewModel="@id('mevm') @init('com.leoni.viewModel.ModulsEditorViewModel')">
+ <timer id="timerKeepAliveSession" repeats="true" delay="3600000" onTimer=""/>
+ <groupbox title="Pridat novy zaznam" if="${sec:isAllGranted('ROLE_AV')}" closable="true" open="false">
+
+  <grid width="700px" >
+          <rows>
+
+              <row >
+                 <label value="Sach Nr.:" width="150px"/>
+                 <textbox value="@bind(mevm.sachNrBest)"  width="150px"/>
+
+              </row>
+              <row >
+                           <label value="Lieferant Nr.:" width="150px"/>
+                           <textbox value="@bind(mevm.sachNrLieferant)" width="150px"/>
+              </row>
+              <row >
+                                         <label value="Prod. grupa:" width="150px"/>
+                                         <!--textbox value="@bind(mevm.prodGruppe)" width="150px"/-->
+                                         <combobox selectedItem="@bind(mevm.prodGruppe)"  readonly="true">
+                                                                                  <comboitem label="991" value="991"/>
+                                                                                  <comboitem label="981" value="981"/>
+                                                                                  <comboitem label="9X1" value="9X1"/>
+                                         </combobox>
+              </row>
+              <row >
+                                         <label value="Typ kablovky:" width="150px"/>
+                                         <combobox selectedItem="@bind(mevm.kabelSatz)"  readonly="true">
+                                                                                  <comboitem label="F" value="F"/>
+                                                                                  <comboitem label="C" value="C"/>
+                                                                                  <comboitem label="T" value="T"/>
+                                                                                  <comboitem label="U" value="U"/>
+                                                                                  <comboitem label="E" value="E"/>
+                                                                                  <comboitem label="R" value="R"/>
+                                         </combobox>
+                                         <!--textbox value="@bind(mevm.kabelSatz)" width="150px"/-->
+              </row>
+              <row >
+                                         <label value="Ausfuehrung:" width="150px"/>
+                                         <combobox selectedItem="@bind(mevm.ausfuehrung)"  readonly="true">
+                                                                              <comboitem label="LL" value="LL"/>
+                                                                              <comboitem label="RL" value="RL"/>
+
+                                         </combobox>
+              </row>
+              <row >
+                                         <label value="Grund:" width="150px"/>
+                                         <checkbox checked="@bind(mevm.grund)" />
+              </row>
+              <row >
+                                         <label value="Blokovany:" width="150px"/>
+                                         <checkbox checked="@bind(mevm.blocked)" />
+              </row>
+              <row >
+                                                       <label value="Vytvoril:" width="150px"/>
+                                                       <textbox value="@bind(mevm.createPerson)" />
+              </row>
+              <row >
+                                                       <label value="Koment:" width="150px"/>
+                                                       <textbox value="@bind(mevm.commentary)" />
+              </row>
+               <row >
+                                          <label value="Zap. forma:" width="150px"/>
+                                          <textbox value="@bind(mevm.foamForm)" />
+               </row>
+                <row >
+                                          <label value="Karoseria:" width="150px"/>
+                                          <textbox value="@bind(mevm.carBody)" />
+                </row>
+              <row >
+                  <label value="Cas montaze v minutach:" width="150px"/>
+                  <textbox value="@bind(mevm.assTime)" />
+              </row>
+
+                <row >
+                                          <label value="Farba:" width="150px"/>
+                                          <combobox width="150px" model="@load(mevm.colorList)"
+                                          selectedItem="@bind(mevm.selectedColor)" readonly="true"
+                                          itemRenderer="com.leoni.viewModel.ColorComboboxRenderer">
+                                          </combobox>
+                </row>
+
+                 <row >
+                    <label value="Narocnost:" width="150px"/>
+                    <combobox width="100px" readonly="true" selectedItem="@bind(mevm.difficulty)"
+                       model="@load(mevm.difficultyList)" itemRenderer="com.leoni.viewModel.DifficultyCbRenderer">
+                                                              <!--comboitem label="Lahka" value="1"/>
+                                                              <comboitem label="Stredna" value="2"/>
+                                                              <comboitem label="Tazka" value="3"/-->
+                                                              <comboitem label="@load(each)"/>
+                                                          </combobox>
+                 </row>
+          </rows>
+
+      </grid>
+      <button mold="trendy"  label="Vytvorit"
+                  onClick="@command('generateNewModul')"/>
+    </groupbox>
+   <separator bar="true"/>
+
+   <groupbox  closable="false" mold="3d" width = "600px">
+           <caption  height="15px" >
+                        <div align="center" >
+                        <label value="Tlac z kanban karty"  style="font-size:12pt" />
+                        </div>
+                        </caption>
+         <image id="image"/>
+         <grid>
+         <columns>
+                                          <column width="50%" />
+                                          <column width="40%" />
+                                          <column width="10%" />
+         </columns>
+         <rows sclass="narrow">
+
+                     <row>
+                         <label   width="90%" value="@load(mevm.kanbanInfo)" />
+                         <textbox   width="90%" value="@bind(mevm.kanbanSearch)" onOK="@command('searchKanban')" />
+                         <button image="images/delete.png" mold="trendy"  onClick="@command('clearKanban')"/>
+                     </row>
+         </rows>
+         </grid>
+
+   </groupbox>
+   <groupbox  closable="false" mold="3d">
+   <caption  height="15px" >
+                <div align="center" >
+                <label value="Moduly"  style="font-size:12pt" />
+                </div>
+                </caption>
+    <listbox id="modulsGrid" model="@load(mevm.modulsList)" mold="paging"  pageSize="7" selectedItem="@bind(mevm.selectedModul)"
+    height="400px" > <!--itemRenderer="com.leoni.viewModel.ModulsEditRnd"-->
+        <!--auxhead sclass="category-center">
+
+                            <auxheader colspan="16">
+                                                   <label   width="90%" value="Tlac z kanban karty" />
+                            </auxheader>
+
+                </auxhead>
+        <auxhead sclass="category-center">
+
+                    <auxheader colspan="1">
+                                           <label   width="90%" value="@load(mevm.kanbanInfo)" />
+                    </auxheader>
+
+                    <auxheader colspan="1">
+                        <textbox   width="90%" value="@bind(mevm.kanbanSearch)" onOK="@command('searchKanban')" />
+                    </auxheader>
+
+                    <auxheader colspan="14">
+
+                            </auxheader>
+
+        </auxhead-->
+        <!--auxhead sclass="category-center">
+                                    <auxheader colspan="16">
+                                    <label   width="90%" value="Vyhladavanie" />
+                                            </auxheader>
+
+        </auxhead-->
+        <auxhead sclass="category-center">
+
+            <auxheader colspan="1">
+                <textbox   width="90%" value="@bind(mevm.sachNrBestSearch)" onOK="@command('search')" />
+            </auxheader>
+            <auxheader colspan="1">
+                <textbox  width="90%" value="@bind(mevm.sachNrLieferantSearch)" onOK="@command('search')"/>
+            </auxheader>
+            <auxheader colspan="1">
+                            <textbox  width="90%" value="@bind(mevm.prodGruppeSearch)" onOK="@command('search')"/>
+            </auxheader>
+            <auxheader colspan="1">
+                            <textbox  width="90%" value="@bind(mevm.ausfuehrungSearch)" onOK="@command('search')"/>
+            </auxheader>
+
+            <auxheader colspan="11">
+                    <button image="images/search.png" mold="trendy"  onClick="@command('search')"/>
+                    <button image="images/cancel.png" mold="trendy"  onClick="@command('cancelSearch')"/>
+
+                    </auxheader>
+            <auxheader colspan="2" align="center">
+                        <button mold="trendy"  image="images/exporttoexcel.png"  if="${sec:isAllGranted('ROLE_AV')}"
+                                                    onClick="@command('exportToExcel')"/>
+                                </auxheader>
+        </auxhead>
+        <listhead menupopup="auto">
+                    <listheader label="SachNr" align="center" sort="auto(SachNrBest)" width="10%"/>
+                    <listheader label="LiefNr" align="center" sort="auto(SachNrLieferant)" width="10%"/>
+                    <listheader label="PrGrp" align="center" sort="auto(prodGruppe)" width="5%"/>
+                    <listheader label="Af" align="center" sort="auto(ausfuehrung)" width="5%"/>
+                    <listheader label="Typ" align="center" sort="auto(kabelsatzKz)" width="5%"/>
+                    <listheader label="Grund" align="center" sort="auto(grund)" width="3%"/>
+                    <listheader label="Blokovany" align="center" sort="auto(block)" width="3%"/>
+                    <listheader label="Cas vytv" align="center" sort="auto(createTime)" width="5%"/>
+                    <listheader label="Zapforma" align="center" sort="auto(createPerson)" width="5%"/>
+                    <listheader label="Karo" align="center" sort="auto(createPerson)" width="5%"/>
+                    <listheader label="Farba" align="center" sort="auto(commentary)" width="10%"/>
+                    <listheader label="Naroc" align="center" sort="auto(commentary)" width="5%"/>
+                    <listheader label="Tlac" align="center" sort="auto(commentary)" width="5%"/>
+                    <listheader label="Alias" align="center" sort="auto(commentary)" width="5%"/>
+                    <listheader label="Cas mont." align="center" sort="auto(commentary)" width="10%"/>
+
+                    <listheader label="Kopir" align="center" width="5%"/>
+                    <listheader label="Zmazat" align="center" width="5%"/>
+                </listhead>
+        <template name="model">
+            <listitem>
+                <listcell label="@load(each.sachNrBest)" />
+                <listcell label="@load(each.sachNrLieferant)"/>
+                <listcell label="@load(each.prodGruppe)"/>
+                <listcell label="@load(each.ausfuehrung)"/>
+                <listcell label="@load(each.kabelsatzKz)"/>
+                <listcell>
+                 <checkbox checked="@load(each.grund)" disabled="true"/>
+                </listcell>
+                <listcell>
+                 <checkbox checked="@load(each.block)" disabled="true"/>
+                </listcell>
+
+
+                <listcell>
+                   <datebox value="@load(each.createTime)" format="yyyy/MM/dd HH:mm" disabled="true" mold="rounded" width="90%"/>
+                </listcell>
+                <listcell label="@load(each.foamForm)"/>
+                <listcell label="@load(each.carBody)"/>
+                <listcell label="@load(each.color.name)"/>
+                <!--listcell label="@load(each.difficulty) @converter('com.leoni.viewModel.DifficultyConverter')"/-->
+                <listcell>
+                      <label value="@load(each.difficulty) @converter('com.leoni.viewModel.DifficultyConverter')"/>
+                </listcell>
+                <listcell>
+                  <button image="images/print.png" if="${sec:isAllGranted('ROLE_MODUL_ASSEMBLY')}" mold="trendy"  onClick="@command('print', modul=each)"/>
+                </listcell>
+                <listcell>
+                 <button image="images/alias.png"  if="${sec:isAllGranted('ROLE_AV')}" mold="trendy"  onMouseOver="@command('showAlias', modul=each)"
+                 onClick="@command('editAlias', modul=each)"/>
+                </listcell>
+                <listcell label="@load(each.assTime)"/>
+
+                <listcell>
+                                    <button image="images/copy.png" if="${sec:isAllGranted('ROLE_AV')}" mold="trendy"  onClick="@command('copyModul', modul=each)"/>
+                </listcell>
+                <listcell>
+                                                    <button image="images/delete.png" if="${sec:isAllGranted('ROLE_AV')}" mold="trendy"  onClick="@command('deleteModul', modul=each)"/>
+                </listcell>
+            </listitem>
+        </template>
+    </listbox>
+<separator bar="true"/>
+ <grid form="@id('fx') @load(mevm.selectedModul) @save(mevm.selectedModul, before='saveModul')" if="${sec:isAllGranted('ROLE_AV')}">
+         <auxhead>
+             <auxheader colspan="13" class="topic">Editovat</auxheader>
+         </auxhead>
+         <columns>
+                                <column label="Sach Nr" align="center" width="10%"/>
+                                <column label="Lieferant Nr" align="center" width="10%"/>
+                                <column label="Prod Grupa" align="center" width="5%"/>
+                                <column label="Ausfuehrung" align="center" width="5%"/>
+                                <column label="Typ" align="center" width="5%"/>
+                                <column label="Grund" align="center" width="4%"/>
+                                <column label="Blokovany" align="center" width="4%"/>
+                                <!--column label="Cas vytvorenia" align="center" width="10%"/-->
+                                <column label="Zap. forma" align="center" width="10%"/>
+                                <column label="Karoseria" align="center" width="10%"/>
+                                <column label="Farba" align="center" width="10%"/>
+                                <column label="Narocnost" align="center" width="10%"/>
+                                <column label="Cas mont." align="center" width="10%"/>
+
+                                <column label="Ulozit" align="center" width="7%"/>
+         </columns>
+             <rows>
+             <row>
+                 <textbox value="@bind(fx.sachNrBest)" width="90%"/>
+                 <textbox value="@bind(fx.sachNrLieferant)" width="90%"/>
+                 <combobox selectedItem="@bind(fx.prodGruppe)"  readonly="true" width="90%">
+                                         <comboitem label="991" value="991" />
+                                         <comboitem label="981" value="981"/>
+                                         <comboitem label="9X1" value="9X1"/>
+                 </combobox>
+                 <combobox selectedItem="@bind(fx.ausfuehrung)"  readonly="true" width="90%">
+                                                      <comboitem label="LL" value="LL"/>
+                                                      <comboitem label="RL" value="RL"/>
+                                                      <comboitem label="XL" value="XL"/>
+                                  </combobox>
+                 <combobox selectedItem="@bind(fx.kabelsatzKz)"  readonly="true" width="90%">
+                                         <comboitem label="F" value="F"/>
+                                         <comboitem label="C" value="C"/>
+                                         <comboitem label="T" value="T"/>
+                                         <comboitem label="U" value="U"/>
+                                         <comboitem label="E" value="E"/>
+                                         <comboitem label="R" value="R"/>
+                 </combobox>
+
+                 <checkbox checked="@init(false)@load(true and fx.grund)@save(fx.grund)"/>
+                 <checkbox checked="@init(false)@load(true and fx.block)@save(fx.block)"/>
+                 <!--datebox  value="@load(fx.createTime)" format="yyyy/MM/dd HH:mm" disabled="true" mold="rounded" width="90%"/-->
+                 <textbox value="@bind(fx.foamForm)" width="90%"/>
+                 <textbox value="@bind(fx.carBody)" width="90%"/>
+                 <combobox width="90%" model="@load(mevm.colorList)" selectedItem="@bind(fx.color)"  value="@bind(fx.color.name)" readonly="true"
+                                                           itemRenderer="com.leoni.viewModel.ColorComboboxRenderer">
+                                                           </combobox>
+                 <combobox width="90%" readonly="true" selectedItem="@bind(fx.difficulty)"
+                 model="@load(mevm.difficultyList)"  itemRenderer="com.leoni.viewModel.DifficultyCbRenderer">
+                                                                               <comboitem label="@load(each)"/>
+                                                                           </combobox>
+                 <textbox value="@bind(fx.assTime)" width="90%"/>
+
+             <button image="images/save.png" mold="trendy" onClick="@command('saveModul', selectedData= mevm.selectedModul)" />
+           </row>
+           </rows>
+     </grid>
+     </groupbox>
+
+</window>
+</zk>

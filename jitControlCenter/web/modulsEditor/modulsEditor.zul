@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+<?taglib uri="http://www.zkoss.org/zkspring/security" prefix="sec"?>
+<zk>
+<window apply="org.zkoss.bind.BindComposer" viewModel="@id('mevm') @init('com.leoni.viewModel.ModulsEditorViewModel')">
+ <timer id="timerKeepAliveSession" repeats="true" delay="3600000" onTimer=""/>
+ <groupbox title="Pridat novy zaznam" if="${sec:isAllGranted('ROLE_AV')}" closable="true" open="false">
+
+  <grid width="700px" >
+          <rows>
+
+              <row >
+                 <label value="Sach Nr.:" width="150px"/>
+                 <textbox value="@bind(mevm.sachNrBest)"  width="150px"/>
+
+              </row>
+              <row >
+                           <label value="Lieferant Nr.:" width="150px"/>
+                           <textbox value="@bind(mevm.sachNrLieferant)" width="150px"/>
+              </row>
+              <row >
+                                         <label value="Prod. grupa:" width="150px"/>
+                                         <!--textbox value="@bind(mevm.prodGruppe)" width="150px"/-->
+                                         <listbox selectedItem="@bind(mevm.prodGruppe)" mold="select">
+                                                                                  <listitem label="991" value="991" selected="true"/>
+                                                                                  <listitem label="981" value="981"/>
+                                                                                  <listitem label="9X1" value="9X1"/>
+                                         </listbox>
+              </row>
+              <row >
+                                         <label value="Typ kablovky:" width="150px"/>
+                                         <listbox selectedItem="@bind(mevm.kabelSatz)" mold="select">
+                                                                                  <listitem label="F" value="F"/>
+                                                                                  <listitem label="C" value="C"/>
+                                                                                  <listitem label="T" value="T"/>
+                                                                                  <listitem label="U" value="U"/>
+                                                                                  <listitem label="E" value="E"/>
+                                                                                  <listitem label="R" value="R"/>
+                                         </listbox>
+                                         <!--textbox value="@bind(mevm.kabelSatz)" width="150px"/-->
+              </row>
+              <row >
+                                         <label value="Ausfuehrung:" width="150px"/>
+                                         <!--textbox value="@bind(mevm.ausfuehrung)" width="150px"/-->
+                                         <listbox selectedItem="@bind(mevm.ausfuehrung)" mold="select">
+                                                                              <listitem label="LL" value="LL"/>
+                                                                              <listitem label="RL" value="RL"/>
+                                         </listbox>
+              </row>
+              <row >
+                                         <label value="Grund:" width="150px"/>
+                                         <checkbox checked="@bind(mevm.grund)" />
+              </row>
+              <row >
+                                         <label value="Blokovany:" width="150px"/>
+                                         <checkbox checked="@bind(mevm.blocked)" />
+              </row>
+              <row >
+                                                       <label value="Vytvoril:" width="150px"/>
+                                                       <textbox value="@bind(mevm.createPerson)" />
+              </row>
+              <row >
+                                                       <label value="Koment:" width="150px"/>
+                                                       <textbox value="@bind(mevm.commentary)" />
+              </row>
+          </rows>
+
+      </grid>
+      <button mold="trendy"  label="Vytvorit"
+                  onClick="@command('generateNewModul')"/>
+    </groupbox>
+   <separator bar="true"/>
+   <button mold="trendy"  label="Exportovat do excelu"
+                            onClick="@command('exportToExcel')"/>
+   <groupbox  closable="false" mold="3d">
+   <caption  height="15px" >
+                <div align="center" >
+                <label value="Moduly"  style="font-size:12pt" />
+                </div>
+                </caption>
+    <listbox id="modulsGrid" model="@load(mevm.modulsList)" mold="paging" selectedItem="@bind(mevm.selectedModul)" height="600px"> <!--model="@load(mevm.modulsList)"  "@{myListModel}"-->
+        <!--auxhead>
+            <auxheader colspan="12" align="center">Edit Moduls</auxheader>
+        </auxhead-->
+        <auxhead sclass="category-center">
+            <auxheader colspan="1">
+                <textbox  width="90%" value="@bind(mevm.id)" onOK="@command('search')" />
+            </auxheader>
+            <auxheader colspan="1">
+                <textbox   width="90%" value="@bind(mevm.sachNrBestSearch)" onOK="@command('search')" />
+            </auxheader>
+            <auxheader colspan="1">
+                <textbox  width="90%" value="@bind(mevm.sachNrLieferantSearch)" onOK="@command('search')"/>
+            </auxheader>
+            <auxheader colspan="1">
+                            <textbox  width="90%" value="@bind(mevm.prodGruppeSearch)" onOK="@command('search')"/>
+            </auxheader>
+            <auxheader colspan="1">
+                            <textbox  width="90%" value="@bind(mevm.ausfuehrungSearch)" onOK="@command('search')"/>
+            </auxheader>
+
+            <auxheader colspan="7">
+
+                    </auxheader>
+            <auxheader colspan="1" align="center">
+                        <button image="images/search.png" mold="trendy"  onClick="@command('search')"/>
+                        <button image="images/cancel.png" mold="trendy"  onClick="@command('cancelSearch')"/>
+                                </auxheader>
+        </auxhead>
+        <listhead menupopup="auto">
+                    <listheader label="Id" align="center" sort="auto(Id)" width="4%"/>
+                    <listheader label="Sach Nr" align="center" sort="auto(SachNrBest)" width="10%"/>
+                    <listheader label="Lieferant Nr" align="center" sort="auto(SachNrLieferant)" width="10%"/>
+                    <listheader label="Prod Grupa" align="center" sort="auto(prodGruppe)" width="5%"/>
+                    <listheader label="Ausfuehrung" align="center" sort="auto(ausfuehrung)" width="5%"/>
+                    <listheader label="Typ" align="center" sort="auto(kabelsatzKz)" width="5%"/>
+                    <listheader label="Grund" align="center" sort="auto(grund)" width="4%"/>
+                    <listheader label="Blokovany" align="center" sort="auto(block)" width="4%"/>
+                    <listheader label="Cas vytvorenia" align="center" sort="auto(createTime)" width="10%"/>
+                    <listheader label="Vytvoril" align="center" sort="auto(createPerson)" width="10%"/>
+                    <listheader label="Info dalsie tab." align="center" sort="auto(commentary)" width="13%"/>
+                    <listheader label="Kopirovat" align="center" width="10%"/>
+                    <listheader label="Zmazat" align="center" width="10%"/>
+                </listhead>
+        <template name="model">
+            <listitem>
+                <!--<combobox model="@load(vm.contributorTitles)"-->
+                    <!--selectedItem="@bind(vm.selectedContributor.title)" width="99%" />-->
+                <listcell label="@load(each.id)"/>
+                <listcell label="@load(each.sachNrBest)" />
+                <listcell label="@load(each.sachNrLieferant)"/>
+                <listcell label="@load(each.prodGruppe)"/>
+                <listcell label="@load(each.ausfuehrung)"/>
+                <listcell label="@load(each.kabelsatzKz)"/>
+                <listcell>
+                 <checkbox checked="@load(each.grund)" disabled="true"/>
+                </listcell>
+                <listcell>
+                 <checkbox checked="@load(each.block)" disabled="true"/>
+                </listcell>
+                <!--listcell label="@load(each.grund)"/>
+                <listcell label="@load(each.block)"/-->
+
+                <!--<label value="@load(each.createTime)"/>-->
+                <!--listcell  label="@load(each.createTime)" /-->
+                <listcell>
+                   <datebox value="@load(each.createTime)" format="yyyy/MM/dd HH:mm" disabled="true" mold="rounded" width="90%"/>
+                </listcell>
+                <listcell label="@load(each.createPerson)"/>
+                <!--listcell label="@load(each.commentary)"/-->
+                <listcell>
+                                                    <button image="images/information.png"  mold="trendy"  onClick="@command('showInfoModul', modul=each)"/>
+                                </listcell>
+                <listcell>
+                                    <button image="images/copy.png" if="${sec:isAllGranted('ROLE_AV')}" mold="trendy"  onClick="@command('copyModul', modul=each)"/>
+                </listcell>
+                <listcell>
+                                                    <button image="images/delete.png" if="${sec:isAllGranted('ROLE_AV')}" mold="trendy"  onClick="@command('deleteModul', modul=each)"/>
+                </listcell>
+            </listitem>
+        </template>
+    </listbox>
+<separator bar="true"/>
+ <grid form="@id('fx') @load(mevm.selectedModul) @save(mevm.selectedModul, before='saveModul')" if="${sec:isAllGranted('ROLE_AV')}">
+         <auxhead>
+             <auxheader colspan="12" class="topic">Editovat</auxheader>
+         </auxhead>
+         <columns>
+                                <column label="Id" align="center" width="4%"/>
+                                <column label="Sach Nr" align="center" width="10%"/>
+                                <column label="Lieferant Nr" align="center" width="10%"/>
+                                <column label="Prod Grupa" align="center" width="5%"/>
+                                <column label="Ausfuehrung" align="center" width="5%"/>
+                                <column label="Typ" align="center" width="5%"/>
+                                <column label="Grund" align="center" width="4%"/>
+                                <column label="Blokovana" align="center" width="4%"/>
+                                <column label="Cas vytvorenia" align="center" width="10%"/>
+                                <column label="Vytvoril" align="center" width="10%"/>
+                                <column label="Komentar" align="center"/>
+                                <column label="Ulozit" align="center"/>
+         </columns>
+             <rows>
+             <row>
+                 <label value="@load(fx.id)"/>
+                 <textbox value="@bind(fx.sachNrBest)"/>
+                 <textbox value="@bind(fx.sachNrLieferant)"/>
+                 <!--textbox value="@bind(fx.prodGruppe)"/-->
+
+                 <listbox selectedItem="@bind(fx.prodGruppe)" mold="select">
+                                         <listitem label="991" value="991" />
+                                         <listitem label="981" value="981"/>
+                                         <listitem label="9X1" value="9X1"/>
+                 </listbox>
+                 <!--textbox value="@bind(fx.kabelsatzKz)"/-->
+                 <listbox selectedItem="@bind(fx.ausfuehrung)" mold="select">
+                                                      <listitem label="LL" value="LL"/>
+                                                      <listitem label="RL" value="RL"/>
+                                  </listbox>
+                 <listbox selectedItem="@bind(fx.kabelsatzKz)" mold="select">
+                                         <listitem label="F" value="F"/>
+                                         <listitem label="C" value="C"/>
+                                         <listitem label="T" value="T"/>
+                                         <listitem label="U" value="U"/>
+                                         <listitem label="E" value="E"/>
+                                         <listitem label="R" value="R"/>
+                 </listbox>
+                 <!--textbox value="@bind(fx.ausfuehrung)"/-->
+
+                 <checkbox checked="@init(false)@load(true and fx.grund)@save(fx.grund)"/>
+                 <checkbox checked="@init(false)@load(true and fx.block)@save(fx.block)"/>
+                <datebox value="@load(fx.createTime)" format="yyyy/MM/dd HH:mm" disabled="true" mold="rounded" width="90%"/>
+                 <textbox value="@bind(fx.createPerson)"/>
+                 <textbox value="@bind(fx.commentary)"/>
+             <button image="images/save.png" mold="trendy" onClick="@command('saveModul', selectedData= mevm.selectedModul)" />
+           </row>
+           </rows>
+     </grid>
+     </groupbox>
+</window>
+</zk>

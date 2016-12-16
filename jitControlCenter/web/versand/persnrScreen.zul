@@ -1,0 +1,18 @@
+<window width="700px" title="Os. cislo" border="normal" viewModel="@id('vm') @init('com.leoni.viewModel.PersnrScreenVM')"
+ apply="org.zkoss.bind.BindComposer">
+
+    <grid>
+
+                        <rows>
+
+                            <row>
+                                <label value="Os. cislo" width="150px" />
+                                <textbox value="@bind(vm.persnr)"
+                                    width="150px" tabindex="2" onOK="@command('save')"/>
+
+                            </row>
+
+                        </rows>
+             </grid>
+    <button  label="Uloz" mold="trendy" onClick="@command('save')"/>
+</window>

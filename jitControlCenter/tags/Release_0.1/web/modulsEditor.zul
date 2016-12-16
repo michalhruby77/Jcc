@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+
+<zk>
+<window apply="org.zkoss.bind.BindComposer" viewModel="@id('mevm') @init('com.leoni.viewModel.ModulsEditorViewModel')">
+    <grid id="modulsGrid" model="@{myListModel}" mold="paging"> <!--model="@load(mevm.modulsList)"-->
+        <auxhead>
+            <auxheader colspan="11" align="center">Edit Moduls</auxheader>
+        </auxhead>
+        <auxhead sclass="category-center">
+            <auxheader colspan="1">
+                <textbox instant="true" width="90%" value="@bind(mevm.modulsFilter.id)" onChange="@command('changeFilter')" />
+            </auxheader>
+            <auxheader colspan="1">
+                <textbox instant="true"  width="90%" value="@bind(mevm.modulsFilter.sachNrBest)" onChange="@command('changeFilter')"/>
+            </auxheader>
+            <auxheader colspan="9">
+                <textbox instant="true" width="90%" value="@bind(mevm.modulsFilter.sachNrLieferant)" onChange="@command('changeFilter')"/>
+            </auxheader>
+        </auxhead>
+        <columns menupopup="auto">
+                    <column label="Id" align="center" sort="auto(Id)" width="2%"/>
+                    <column label="Sach Nr" align="center" sort="auto(SachNrBest)" width="10%"/>
+                    <column label="Lieferant Nr" align="center" sort="auto(SachNrLieferant)" width="10%"/>
+                    <column label="Prod Gruppe" align="center" sort="auto(prodGruppe)" width="5%"/>
+                    <column label="Kabelsatz kz" align="center" sort="auto(kabelsatzKz)" width="5%"/>
+                    <column label="Ausfuehrung" align="center" sort="auto(ausfuehrung)" width="5%"/>
+                    <column label="Grund" align="center" sort="auto(grund)" width="4%"/>
+                    <column label="Block" align="center" sort="auto(block)" width="4%"/>
+                    <column label="Create time" align="center" sort="auto(createTime)" width="10%"/>
+                    <column label="Create person" align="center" sort="auto(createPerson)" width="10%"/>
+                    <column label="Commentary" align="center" sort="auto(commentary)"/>
+                </columns>
+        <template name="model">
+            <row>
+                <!--<combobox model="@load(vm.contributorTitles)"-->
+                    <!--selectedItem="@bind(vm.selectedContributor.title)" width="99%" />-->
+                <label value="@load(each.id)"/>
+                <label value="@load(each.sachNrBest)" />
+                <label value="@load(each.sachNrLieferant)"/>
+                <label value="@load(each.prodGruppe)"/>
+                <label value="@load(each.kabelsatzKz)"/>
+                <label value="@load(each.ausfuehrung)"/>
+                <label value="@load(each.grund)"/>
+                <label value="@load(each.block)"/>
+                <!--<label value="@load(each.createTime)"/>-->
+                <datebox format="yyyyMMdd HHmm" value="@load(each.createTime)" mold="rounded" disabled="true" width="90%"/>
+                <label value="@load(each.createPerson)"/>
+                <label value="@load(each.commentary)"/>
+            </row>
+        </template>
+    </grid>
+</window>
+</zk>

@@ -1,0 +1,9 @@
+<window apply="org.zkoss.bind.BindComposer"  viewModel="@id('vm') @init('com.leoni.viewModel.vm.ShowClipsVM')"  width="5%"  position="center,right">
+<grid zclass="none"  model="@load(vm.clipsSet)">
+                                              <template name="model">
+                                                <row zclass="none" >
+                                                <label  value="${each.name}" />
+                                                </row>
+                                              </template>
+                                            </grid>
+</window>

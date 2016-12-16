@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+<?taglib uri="/WEB-INF/security.tld" prefix="sec"?>
+<zk>
+<window apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.leoni.viewModel.ControlNewModulesVM')" width="1700px">
+  <timer id="timerKeepAliveSession" repeats="true" delay="3600000" onTimer=""/>
+
+<groupbox closable="false" mold="3d" width="300px">
+         <caption  height="15px" >
+         <div align="center" >
+         <label  value="Kontrola novych modulov"  style="font-size:12pt" />
+         </div>
+         </caption>
+
+         <vbox>
+         <cell/>
+         <hbox>
+         <label  value="Vyhladat v konretnom prenose (objednavke):"  />
+         <checkbox checked="@bind(vm.specifyDfueNr)" />
+         </hbox>
+         <textbox visible="@load(vm.specifyDfueNr)" value="@bind(vm.dfueNr)"/>
+         <cell/>
+         <button label="Spustit kontrolu" mold="trendy" onClick="@command('submit')" />
+
+         </vbox>
+</groupbox>
+
+ <separator spacing="10px"/>
+<groupbox  closable="false" mold="3d">
+    <caption  height="15px" >
+             <div align="center" >
+             <label  value="Najdene moduly"  style="font-size:12pt" />
+             </div>
+             </caption>
+    <listbox id="modulsGrid" model="@load(vm.criticalNewModulListSearch)" height="600px">
+        <auxhead sclass="category-center">
+            <auxheader  colspan="1">
+                <textbox width="90%"
+                         value="@bind(vm.sachNrBestSearch)" onOK="@command('refresh')" />
+            </auxheader>
+            <auxheader  colspan="7" />
+        </auxhead>
+        <listhead menupopup="auto">
+                        <listheader label="Sach nr best" align="center"  width="20%"/>
+                        <listheader label="Kunden nr" align="center"  width="10%"/>
+                        <listheader label="Prod. nr" align="center"  width="10%"/>
+                        <listheader label="Dfue nr ein" align="center"  width="10%"/>
+                        <listheader label="Liefer datum" align="center"  width="10%"/>
+                        <listheader label="Moduly v TSJI" align="center"  width="10%"/>
+                        <listheader label="Moduly v AUFT" align="center"  width="10%"/>
+                        <listheader label="Poznamka" align="center"  width="20%"/>
+                    </listhead>
+            <template name="model">
+                <listitem>
+                    <!--<combobox model="@load(vm.contributorTitles)"-->
+                        <!--selectedItem="@bind(vm.selectedContributor.title)" width="99%" />-->
+                    <listcell label="@load(each.sachNrBest)"/>
+                    <listcell label="@load(each.kundenNr)" />
+                    <listcell label="@load(each.prNr)"/>
+                    <listcell label="@load(each.dfueNrEin)"/>
+                    <listcell label="@load(each.liefDatum)"/>
+                    <listcell label="@load(each.existsTsji)"/>
+                    <listcell label="@load(each.existsAuft)"/>
+                    <listcell label="@load(each.note)"/>
+                </listitem>
+            </template>
+            </listbox>
+            </groupbox>
+</window>
+</zk>

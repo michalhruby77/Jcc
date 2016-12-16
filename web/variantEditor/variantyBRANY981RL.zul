@@ -1,0 +1,3 @@
+<window>
+    <include arg1="BRANA" arg2="981" arg3="RL" src="variantEditor/variantEditor.zul"/>
+</window>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+<?taglib uri="/WEB-INF/security.tld" prefix="sec"?>
+<zk>
+<window apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.leoni.viewModel.vm.VmBrettVM')">
+ <timer id="timerKeepAliveSession" repeats="true" delay="3600000" onTimer=""/>
+<groupbox title="Pridat novy zaznam" if="${sec:isAllGranted('ROLE_AV')}" closable="true" open="false">
+  <vlayout>
+  <grid width="700px" >
+          <rows>
+
+              <row >
+                 <label value="Nazov:" width="150px"/>
+                 <textbox value="@bind(vm.name)" width="150px"/>
+
+              </row>
+
+              <row >
+                               <label value="Stelle:" width="150px"/>
+                               <combobox width="250px" model="@load(vm.stelleList)" selectedItem="@bind(vm.selectedStelle)" readonly="true">
+                                                <template name="model" >
+                                                 <comboitem label="@load(each.name.trim())"/>
+                                                </template>
+                               </combobox>
+              </row>
+
+          </rows>
+
+  </grid>
+            <groupbox  title="Varianty na doske"  >
+                     <vlayout id="vlayout"/>
+                     <button mold="trendy"  label="+" onClick="@command('addCombobox', vlayout=vlayout)"/>
+            </groupbox>
+       </vlayout>
+    <button mold="trendy"  label="Vytvorit"
+                      onClick="@command('generateNew', vlayout=vlayout)"/>
+    </groupbox>
+<separator bar="true"/>
+
+ <groupbox mold="3d" closable="false">
+    <caption  height="15px" >
+                    <div align="center" >
+                    <label value="VM Dosky"  style="font-size:12pt" />
+                    </div>
+                    </caption>
+    <listbox id="ColorGrid" model="@load(vm.brettList)" mold="paging" selectedItem="@bind(vm.selectedBrett)" height="600px">
+
+
+        <listhead menupopup="auto">
+                    <listheader label="Id" align="center" sort="auto(id)" width="10%"/>
+                    <listheader label="Nazov" align="center" sort="auto(name)" width="10%"/>
+                    <listheader label="Stelle" align="center" sort="auto(name)" width="20%"/>
+                    <listheader label="Zoznam" align="center" sort="auto(name)" width="20%"/>
+                    <listheader label="Editovat varianty" align="center" sort="auto(name)" width="20%"/>
+                    <listheader label="Kopirovat" align="center" sort="auto(name)" width="10%"/>
+                    <listheader label="Zmazat" align="center" width="10%"/>
+                </listhead>
+        <template name="model">
+            <listitem>
+                <listcell label="@load(each.id)" />
+                <listcell label="@load(each.name)"/>
+                <listcell label="@load(each.vmStelle.name)"/>
+                <listcell>
+                                <image src="images/list.png" style="cursor:pointer" popup="position=end_before" onClick="@command('showVariant', brett=each)"/>
+                </listcell>
+                <listcell>
+                                                   <button image="images/edit.png" mold="trendy"  onClick="@command('editVariants', brett=each)"/>
+                </listcell>
+                <listcell>
+                    <button image="images/copy.png" mold="trendy"  onClick="@command('copyBoard', brett=each)"/>
+                </listcell>
+                <listcell>
+                                    <button image="images/delete.png" if="${sec:isAllGranted('ROLE_AV')}" mold="trendy"  onClick="@command('deleteBrett', brett = each)"/>
+                </listcell>
+            </listitem>
+        </template>
+    </listbox>
+<separator bar="true"/>
+<grid if="${sec:isAllGranted('ROLE_AV')}" form="@id('fx') @load(vm.selectedBrett) @save(vm.selectedBrett, before='saveBrett')">
+           <auxhead>
+               <auxheader colspan="4" class="topic">Edit</auxheader>
+           </auxhead>
+           <columns>
+                                  <column label="Id" align="center" width="10%"/>
+                                  <column label="Nazov" align="center" width="30%"/>
+                                  <column label="Stelle" align="center" width="30%"/>
+                                  <column label="Ulozit" align="center" width="30%"/>
+           </columns>
+               <rows>
+               <row>
+
+                   <label value="@load(fx.id)"/>
+                   <textbox value="@bind(fx.name)"/>
+                   <combobox width="150px" model="@load(vm.stelleList)" value="@bind(fx.vmStelle.name)" selectedItem="@bind(vm.selectedStelleSave)" readonly="true">
+                                       <template name="model" >
+                                         <comboitem label="@load(each.name.trim())"/>
+                                       </template>
+                   </combobox>
+               <button image="images/save.png" mold="trendy" onClick="@command('saveBrett', selectedData= vm.selectedBrett)" />
+             </row>
+             </rows>
+       </grid>
+</groupbox>
+
+</window>
+</zk>

@@ -1,0 +1,20 @@
+<zk>
+<window id="modalDialog" title="Varianta" border="normal" width="300px" sizable="true"
+     apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.leoni.viewModel.vm.EditVariantClipsVM',vlayout=vlayout)"
+    position="center,center" closable="true"
+    action="show: slideDown;hide: slideUp">
+<vlayout>
+
+<groupbox  title="Klipy vo variante"  >
+
+               <vlayout id="vlayout">
+
+               </vlayout>
+                <button mold="trendy"  label="+"  onClick="@command('addCombobox', vlayout=vlayout)"/>
+
+      </groupbox>
+      <button mold="trendy"  label="Ulozit"
+                        onClick="@command('saveVariant', vlayout=vlayout)"/>
+</vlayout>
+</window>
+</zk>

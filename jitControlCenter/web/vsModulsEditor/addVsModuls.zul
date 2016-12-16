@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+<?taglib uri="http://www.zkoss.org/zkspring/security" prefix="sec"?>
+<zk>
+<window apply="org.zkoss.bind.BindComposer" title="Nahrat vs moduly" border="normal" viewModel="@id('vm') @init('com.leoni.viewModel.AddVsModulsVM')"
+   action="show: slideDown;hide: slideUp" position="center,center" closable="true">
+
+         <hlayout>
+         <vlayout width = "500px">
+
+
+          <groupbox   closable="false" title=" VS Moduly">
+
+                  <grid mold="paging" pageSize="10">
+                       <columns >
+                                   <column label="Lief. nr." width="40%"/>
+                                   <column label="Vodic" width="20%"/>
+                                   <column label="Prierez" width="20%"/>
+                                   <column label="Popis" width="20%"/>
+                       </columns>
+                       <rows id="rows">
+
+                      </rows>
+                  </grid>
+                  <button label="Get moduls from Excel" mold="trendy" onClick="@command('getModulsFromExcel',rows=rows)"/>
+                  <button mold="trendy"  label="Save"
+                                    onClick="@command('submit', rows=rows)"/>
+                  </groupbox>
+
+         </vlayout>
+         </hlayout>
+</window>
+</zk>

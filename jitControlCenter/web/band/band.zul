@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+
+<zk>
+<window apply="org.zkoss.bind.BindComposer" viewModel="@id('mevm') @init('com.leoni.viewModel.BandViewModel')">
+  <timer id="timerKeepAliveSession" repeats="true" delay="3600000" onTimer=""/>
+
+<button label="Obnovit" mold="trendy" onClick="@command('refreshBand')" width="70px" height="30px"/>
+ <groupbox title="Band" closable="false" >
+    <listbox  model="@load(mevm.harnessList)" mold="paging" selectedItem="@bind(mevm.selectedHarness)" height="550px">
+         <!--auxhead sclass="category-center">
+                     <auxheader colspan="1">
+                         <textbox instant="true" width="90%" value="@bind(mevm.brettType)" onChange="@command('searchByBrettType')" />
+                     </auxheader>
+                     <auxheader colspan="4">
+
+                                                  </auxheader>
+                     <auxheader colspan="1">
+                                              <textbox instant="true" width="90%" value="@bind(mevm.prodNr)" onChange="@command('searchByProdNr')" />
+                                          </auxheader>
+                     <auxheader colspan="6">
+
+                             </auxheader>
+                 </auxhead-->
+
+        <listhead menupopup="auto">
+                    <listheader label="Typ dosky" align="center" sort="auto(bretttype)" width="20%"/>
+                    <listheader label="ID dosky" align="center" sort="auto(brettid)" width="10%"/>
+                    <listheader label="Cas nabehu" align="center" sort="auto(busytime)" width="20%"/>
+                    <listheader label="Blokovane" align="center"  width="10%"/>
+                    <listheader label="Prod. cislo" align="center" sort="auto(prod_nr)" width="20%"/>
+                    <listheader label="StranaA krok" align="center" width="10%"/>
+                    <listheader label="StranaB krok" align="center" width="10%"/>
+                    <!--listheader label="Truck name" align="center" sort="auto(truck_name)" width="5%"/-->
+                    <!--listheader label="Disable" align="center" width="15%"/-->
+                </listhead>
+        <template name="model">
+            <listitem>
+                <listcell label="@load(each.bretttype)"/>
+                <!--listcell label="@load(each.band_name)"/-->
+                <listcell label="@load(each.brettid)" />
+
+                <listcell>
+                                   <datebox value="@load(each.busytime)" format="yyyy/MM/dd HH:mm" disabled="true" mold="rounded" width="90%"/>
+                </listcell>
+                <listcell if="${each.lock=='true'}" style="background-color: 	#FF7E7E">
+                <label value="BLOKOVANE"/>
+                </listcell>
+                <listcell if="${each.lock=='false'}" style="background-color: #99FF66">
+                <label value="AKTIVNE"/>
+                </listcell>
+                                                   <!--label value="NIE" if="${each.lock=='false'}" style="background-color: #BBC2DB; color:green"/>
+                                                   <label value="ANO" if="${each.lock=='true'}" style="background-color: #BBC2DB; color:red"/-->
+
+                <listcell label="@load(each.prod_nr)"/>
+                <listcell label="@load(each.side_a_step)"/>
+                <listcell label="@load(each.side_b_step)"/>
+
+
+
+            </listitem>
+        </template>
+    </listbox>
+<label value="@load(mevm.brettOnClips)" style="font-size:25pt"/>
+<separator bar="true"/>
+
+<button label="Zablokovat 991" mold="trendy" onClick="@command('disableAll991RL')" style="color:red" disabled="@load(not mevm.showDisable991)"/>
+<button label="Zablokovat 981" mold="trendy" onClick="@command('disableAll981RL')" style="color:red" disabled="@load(not mevm.showDisable981)"/>
+<button label="Odblokovat 991" mold="trendy" onClick="@command('enableAll991RL')" style="color:green" disabled="@load(not mevm.showEnable991)"/>
+<button label="odblokovat 981" mold="trendy" onClick="@command('enableAll981RL')" style="color:green" disabled="@load(not mevm.showEnable981)"/>
+</groupbox>
+
+</window>
+</zk>

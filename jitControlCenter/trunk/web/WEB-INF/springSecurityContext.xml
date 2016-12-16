@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+            http://www.springframework.org/schema/security
+           http://www.springframework.org/schema/security/spring-security-3.0.3.xsd">
+
+    <!--
+      - Enable the @Secured annotation to secure service layer methods
+      -->
+    <global-method-security secured-annotations="enabled" />
+
+    <http auto-config="true" use-expressions="true">
+        <!--<intercept-url pattern="/secure/extreme/**" access="ROLE_SUPERVISOR"/>-->
+        <!--<intercept-url pattern="/modulsEditor/**" access="ROLE_USER"/>-->
+        <intercept-url pattern="/index.zul" access="isAuthenticated()"/>
+        <intercept-url pattern="/zkau" access="permitAll"/>
+        <intercept-url pattern="/login/**" access="permitAll"/>
+        <intercept-url pattern="/**" access="permitAll"/>
+        <form-login login-page="/login/loginPage.zul" authentication-failure-url="/login/loginPage.zul?login_error=1"
+                    default-target-url="/" always-use-default-target="true"/>
+        <logout logout-success-url="/" />
+
+        <!--<custom-filter ref="zkDesktopReuseFilter" position="FIRST"/>-->
+        <!--<custom-filter ref="zkDisableSessionInvalidateFilter" before="FORM_LOGIN_FILTER"/>-->
+        <!--<custom-filter ref="zkEnableSessionInvalidateFilter" before="FILTER_SECURITY_INTERCEPTOR"/>-->
+        <!--<custom-filter ref="zkLoginOKFilter" after="FILTER_SECURITY_INTERCEPTOR"/>-->
+        <!--<custom-filter ref="zkError403Filter" after="LOGOUT_FILTER"/>-->
+    </http>
+
+    <!--
+    Defined roles:
+    ROLE_AV
+    ROLE_FST
+    ROLE_FOREMAN - majster
+    ROLE_WORKER - pracovnik na pase
+    ROLE_ADMIN - JCC administrator
+
+    It is possible define some new role. It have to starts with ROLE_.
+    -->
+
+    <authentication-manager alias="authenticationManager">
+        <authentication-provider>
+            <!--<password-encoder hash="md5"/>-->
+            <password-encoder hash="plaintext"/>
+            <user-service>
+                <user name="rod" password="koala" authorities="ROLE_AV, ROLE_FST, ROLE_FOREMAN, ROLE_WORKER, ROLE_ADMIN"/>
+                <user name="dianne" password="emu" authorities="ROLE_USER, ROLE_TELLER"/>
+                <user name="scott" password="wombat" authorities="ROLE_USER"/>
+                <user name="peter" password="opal" authorities="ROLE_USER"/>
+                <user name="dano" password="noda" authorities="ROLE_AV, ROLE_FST, ROLE_FOREMAN, ROLE_WORKER, ROLE_ADMIN"/>
+                <user name="majstri" password="porsche" authorities="ROLE_FOREMAN"/>
+            </user-service>
+        </authentication-provider>
+    </authentication-manager>
+
+
+    <!--
+     - Secure the ZK event processing per the event name and ZK component path pattern
+     -->
+    <!--<zksp:zk-event login-template-close-delay="5">-->
+        <!--<zksp:intercept-event event="onClick" path="//**" access="ROLE_USER" />-->
+        <!--&lt;!&ndash;<zksp:intercept-event path="/**" access="ROLE_AV, ROLE_FST, ROLE_FOREMAN, ROLE_WORKER, ROLE_ADMIN"/>&ndash;&gt;-->
+        <!--<zksp:form-login login-page="/login/login.zul"/>-->
+    <!--</zksp:zk-event>-->
+</beans:beans>

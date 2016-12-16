@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+<?taglib uri="/WEB-INF/security.tld" prefix="sec"?>
+<zk>
+<window apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.leoni.viewModel.HarnessDiffVM')"    width="1700px">
+          <timer id="timerKeepAliveSession" repeats="true" delay="3600000" onTimer=""/>
+
+
+         <groupbox  mold="3d" >
+         <caption  height="15px" >
+                  <div align="center" >
+                  <label  value="Konrola obtiaznosti kablovky"  style="font-size:12pt" />
+                  </div>
+         </caption>
+         <vbox>
+
+         <grid width="400px" >
+                     <rows>
+                      <row >
+                       <label value="Zakaznik:" width="150px"/>
+                       <combobox  width="150px" selectedItem="@bind(vm.selectedCustomer)" value = "@bind(vm.selectedCustomer.name)" model="@load(vm.customerList)" readonly="true" autodrop="true">
+                                                 <template name="model" >
+                                                  <comboitem label="@load(each.name)"/>
+                                                 </template>
+                                                </combobox>
+                      </row>
+                      <row >
+                                             <label value="Typ:" width="150px"/>
+                                             <combobox  width="50px" selectedItem="@bind(vm.selectedKs)" value = "@bind(vm.selectedKs)" model="@load(vm.kabelsatzList)" readonly="true"  autodrop="true">
+                                                                       <template name="model" >
+                                                                        <comboitem label="@load(each)"/>
+                                                                       </template>
+                                                                      </combobox>
+                      </row>
+                      <row >
+                                             <label value="Prod. datum[rrrrmmdd]:" width="150px"/>
+                                             <textbox value="@bind(vm.prodDate)" width="150px"/>
+                      </row>
+                     </rows>
+         </grid>
+         <button label="Generuj" mold="trendy" onClick="@command('submit')" />
+
+         </vbox>
+         </groupbox>
+         <label value="Pocet upravenych zaznamov:" width="150px" />
+         <label value="@load(vm.counter)" width="150px" />
+         <groupbox>
+         <caption label="Produkcne cisla"/>
+         <grid model="@load(vm.updatedProdNrs)" width="200px">
+          <template name="model">
+                      <row>
+                                      <label value="@load(each)" />
+                      </row>
+          </template>
+         </grid>
+         </groupbox>
+
+
+</window>
+</zk>

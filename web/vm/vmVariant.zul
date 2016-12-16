@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+<?taglib uri="/WEB-INF/security.tld" prefix="sec"?>
+<zk>
+<window apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.leoni.viewModel.vm.VmVariantVM')">
+ <timer id="timerKeepAliveSession" repeats="true" delay="3600000" onTimer=""/>
+<groupbox title="Pridat novy zaznam" if="${sec:isAllGranted('ROLE_AV')}" closable="true" open="false">
+  <vlayout>
+  <grid width="700px" >
+          <rows>
+
+              <row >
+                 <label value="Nazov:" width="150px"/>
+                 <textbox value="@bind(vm.name)" width="150px"/>
+
+              </row>
+
+              <row >
+                               <label value="Erz. nr.:" width="150px"/>
+                               <textbox value="@bind(vm.erzNr)" width="150px"/>
+              </row>
+
+          </rows>
+
+  </grid>
+            <groupbox  title="Klipy vo variante"  >
+                     <vlayout id="vlayout"/>
+                     <button mold="trendy"  label="+" onClick="@command('addCombobox', vlayout=vlayout)"/>
+            </groupbox>
+       </vlayout>
+    <button mold="trendy"  label="Vytvorit"
+                      onClick="@command('generateNewVariant', vlayout=vlayout)"/>
+    </groupbox>
+<separator bar="true"/>
+
+ <groupbox mold="3d" closable="false">
+    <caption  height="15px" >
+                    <div align="center" >
+                    <label value="VM Varianty"  style="font-size:12pt" />
+                    </div>
+                    </caption>
+    <listbox id="ColorGrid" model="@load(vm.variantList)" mold="paging" selectedItem="@bind(vm.selectedVariant)" height="600px">
+
+
+        <listhead menupopup="auto">
+                    <listheader label="Id" align="center" sort="auto(id)" width="10%"/>
+                    <listheader label="Nazov" align="center" sort="auto(name)" width="30%"/>
+                    <listheader label="Zoznam" align="center" sort="auto(name)" width="20%"/>
+                    <listheader label="Editovat klipy" align="center" sort="auto(name)" width="20%"/>
+                    <listheader label="Tlacit" align="center" sort="auto(name)" width="10%"/>
+                    <listheader label="Zmazat" align="center" width="10%"/>
+                </listhead>
+        <template name="model">
+            <listitem>
+                <listcell label="@load(each.id)" />
+                <listcell label="@load(each.name)"/>
+                <listcell>
+                <image src="images/list.png" style="cursor:pointer" popup="detail_${harnesstype.id},position=end_before" onClick="@command('showClips', variant=each)"/>
+                </listcell>
+                <listcell>
+                     <button image="images/edit.png" mold="trendy"  onClick="@command('editClips', variant=each)"/>
+                </listcell>
+                <listcell>
+                 <button image="images/print.png" mold="trendy"  onClick="@command('print', variant=each)"/>
+                </listcell>
+                <listcell>
+                 <button image="images/delete.png" if="${sec:isAllGranted('ROLE_AV')}" mold="trendy"  onClick="@command('deleteVariant', variant = each)"/>
+                </listcell>
+            </listitem>
+        </template>
+    </listbox>
+<separator bar="true"/>
+<grid if="${sec:isAllGranted('ROLE_AV')}" form="@id('fx') @load(vm.selectedVariant) @save(vm.selectedVariant, before='saveVariant')">
+           <auxhead>
+               <auxheader colspan="3" class="topic">Edit</auxheader>
+           </auxhead>
+           <columns>
+                                  <column label="Id" align="center" width="10%"/>
+                                  <column label="Nazov" align="center" width="45%"/>
+                                  <column label="Ulozit" align="center" width="45%"/>
+           </columns>
+               <rows>
+               <row>
+
+                   <label value="@load(fx.id)"/>
+                   <textbox value="@bind(fx.name)"/>
+               <button image="images/save.png" mold="trendy" onClick="@command('saveVariant', selectedData= vm.selectedVariant)" />
+             </row>
+             </rows>
+       </grid>
+</groupbox>
+
+</window>
+</zk>

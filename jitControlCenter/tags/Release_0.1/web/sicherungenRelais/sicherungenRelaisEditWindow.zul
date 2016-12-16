@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+
+<!--<?variable-resolver class=”org.zkoss.zkplus.spring.DelegatingVariableResolver”?>-->
+<?variable-resolver class="org.zkoss.spring.DelegatingVariableResolver"?>
+<window id="sichrungenRelaisEditWindow" title="Editor Poistok - Relátiek" closable="true" width="500px"
+        apply="org.zkoss.bind.BindComposer"
+        viewModel="@id('srew') @init('com.leoni.jcc.sicherungenRelais.SicherungenRelaisEditWindowVM')"
+        form="@id('fx') @load(srew.editedSicherungenRelais) @save(srew.editedSicherungenRelais, before='submit') @validator(sichrungRelaisValidator)"
+        validationMessages="@id('vmsgs')">
+    <grid>
+        <columns>
+            <column width="30%">Attribute</column>
+            <column width="59%">Value</column>
+        </columns>
+        <rows>
+            <row>
+                <label value="Id"/>
+                <textbox value="@bind(fx.id)" width="99%" disabled="true"/>
+            </row>
+            <row>
+                <label value="Sach nr best"/>
+                <vbox>
+                    <combobox id="sicherungSachNrBest" autodrop="true" value="@bind(fx.moduls.sachNrBest)" width="99%"
+                              model="@load(srew.sachNrBestAutoCompleteModel)"
+                              onSelect="@command('sachNrBestSelected', sachNrBest=self.value)">
+                        <template name="model">
+                            <comboitem label="${each.sachNrBest}"/>
+                        </template>
+                    </combobox>
+                    <label style="color:red;" value="@load(vmsgs['sachNrBest'])"/>
+                </vbox>
+            </row>
+            <row>
+                <label value="Sach nr lieferant"/>
+                <vbox>
+                    <combobox id="sicherungSachNrLieferant" autodrop="true" value="@bind(fx.moduls.sachNrLieferant)"
+                              width="99%"
+                              model="@load(srew.sachNrLieferantAutoCompleteModel)"
+                              onSelect="@command('sachNrLieferantSelected', sachNrLieferant=self.value)">
+                        <template name="model">
+                            <comboitem label="${each.sachNrLieferant}"/>
+                        </template>
+                    </combobox>
+                    <label style="color:red;" value="@load(vmsgs['sachNrLieferant'])"/>
+                </vbox>
+            </row>
+            <row>
+                <label value="Box"/>
+                <hbox>
+                    <listbox selectedItem="@bind(fx.box)" mold="select"
+                             onSelect="@command('boxSelectionChanged', selectedValue=self.selectedItem.value)"
+                             model="@bind(srew.boxList)">
+                        <template name="model">
+                            <listitem label="@load(each)" value="@load(each)"/>
+                        </template>
+                    </listbox>
+                    <label style="color:red;" value="@load(vmsgs['box'])"/>
+                </hbox>
+            </row>
+            <row>
+                <label value="Platz"/>
+                <hbox>
+                    <listbox selectedItem="@bind(fx.platz)" mold="select" model="@bind(srew.platzList)">
+                        <template name="model">
+                            <listitem label="@load(each)" value="@load(each)"/>
+                        </template>
+                    </listbox>
+                    <label style="color:red;" value="@load(vmsgs['platz'])"/>
+                </hbox>
+            </row>
+            <row>
+                <label value="Wert"/>
+                <textbox value="@bind(fx.wert)" width="99%"/>
+            </row>
+            <row>
+                <label value="Commentary"/>
+                <textbox value="@bind(fx.beschreibung)" width="99%" rows="8"/>
+            </row>
+
+        </rows>
+    </grid>
+    <toolbar>
+        <button label="Save" onClick="@command('submit', sachNrBest=sicherungSachNrBest.value, sachNrLieferant=sicherungSachNrLieferant.value)  @global-command('refreshSicherungenRelais')"/>
+        <button label="Cancel" onClick="@command('cancel')"/>
+    </toolbar>
+</window>

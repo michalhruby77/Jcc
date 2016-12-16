@@ -1,0 +1,85 @@
+<window id="modalDialog" title="Kopirovat variantu" border="normal" width="900px"
+     apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.leoni.viewModel.VariantCopyViewModel',vlayout=vlayout,hlayout=hlayout)"
+    position="center,center" closable="true" sizable="true"
+    action="show: slideDown;hide: slideUp">
+    <vlayout>
+         <grid>
+                            <columns>
+                                                                                   <column width="20%" />
+                                                                                   <column width="75%" />
+                                                                                   <column width="5%" />
+                                                </columns>
+                             <rows>
+                                 <row>
+                                     <label value="Nazov" width="150px" />
+                                     <hlayout>
+                                         <textbox value="@bind(vm.name)"
+                                             width="500px"  />
+                                     </hlayout>
+
+                                 </row>
+                                 <row>
+                                                             Popis
+                                                             <textbox value="@bind(vm.description)"
+                                                                 width="150px"  />
+
+                                 </row>
+
+                                 <row>
+                                                                                      <label value="Sken retazec" width="150px" />
+                                                                                     <hlayout id="hlayout">
+
+                                                                                                    </hlayout>
+                                                                                                     <button mold="trendy"  label="+"  onClick="@command('addTextBoxHor', hlayout=hlayout)"/>
+
+                                                         </row>
+                                 <row>
+                                                            <label value="Skenovat?" width="150px" />
+                                                             <checkbox checked="@bind(vm.scanReq)"
+                                                                 width="150px" />
+
+                                 </row>
+                                 <!--row>
+                                           <label value="Moduls count" width="150px" />
+                                           <textbox value="@bind(tvm.modulsCount)"
+                                             width="150px"/>
+
+                                 </row-->
+                                 <row>
+                                        <label value="Workplace" width="150px" />
+                                        <combobox width="150px" model="@load(vm.workplaceList)"
+                                                                                                          selectedItem="@bind(vm.workplace)" value="@bind(vm.workplace.name)" readonly="true">
+                                                                                                    <template name="model">
+                                                                                                        <comboitem label="@load(each.name)"/>
+                                                                                                    </template>
+
+                                                                                                </combobox>
+                                 </row>
+                                 <row>
+                                                                <label value="Farba" width="150px" />
+                                                                <combobox width="150px" model="@load(vm.colorList)" selectedItem="@bind(vm.color)" value="@bind(vm.color.name)" readonly="true">
+                                                                                                                                                           <template name="model">
+                                                                                                                                                               <comboitem label="@load(each.name)"/>
+                                                                                                                                                           </template>
+
+                                                                                                                                                       </combobox>
+                                 </row>
+                                 <row>
+                                                                            <label value="Typ" width="150px" />
+                                                                            <textbox value="@bind(vm.typ)"
+                                                                              width="150px"/>
+
+                                                                  </row>
+                             </rows>
+                  </grid>
+         <groupbox  title="Moduly vo variante" >
+
+                        <vlayout id="vlayout">
+
+                        </vlayout>
+                         <button mold="trendy"  label="+"  onClick="@command('addTextBoxVert', vlayout=vlayout)"/>
+
+               </groupbox>
+        <button  label="Vytvorit"  onClick="@command('submit', vlayout=vlayout)"/>
+    </vlayout>
+</window>

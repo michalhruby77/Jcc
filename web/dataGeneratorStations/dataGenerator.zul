@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+<?taglib uri="/WEB-INF/security.tld" prefix="sec"?>
+<zk>
+<window apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.leoni.viewModel.DataGeneratorVM')" height="100%"  width="1700px" >
+ <timer id="timerKeepAliveSession" repeats="true" delay="3600000" onTimer=""/>
+         <vbox width="100%" height = "500px"  >
+         <grid width="300px"  >
+
+         <auxhead>
+                     <auxheader colspan="2" label="Variant list generator" />
+                 </auxhead>
+                 <columns>
+                             <column>Polozka</column>
+                             <column>Hodnota</column>
+                         </columns>
+                                 <rows>
+                                     <row>
+                                     <label value="Datum od" width="50px" />
+                                     <datebox value="@bind(vm.dateFrom)" />
+                                     </row>
+                                     <row>
+                                         <label value="Datum do" width="50px" />
+                                         <datebox value="@bind(vm.dateTo)" />
+                                     </row>
+
+                                     <row>
+                                         <label value="Cas od [hhmm]" width="50px" />
+                                         <textbox value="@bind(vm.timeFrom)"
+                                         width="50px" tabindex="2" />
+                                     </row>
+                                     <row>
+                                         <label value="Cas do [hhmm]" width="150px" />
+                                         <textbox value="@bind(vm.timeTo)" width="50px" tabindex="2" />
+                                     </row>
+                                 </rows>
+                      </grid>
+             <button  label="Ok" mold="trendy" onClick="@command('submit')"/>
+             <label value="Vysledok:"/>
+             <label value="@bind(vm.result)"/>
+         </vbox>
+
+</window>
+</zk>

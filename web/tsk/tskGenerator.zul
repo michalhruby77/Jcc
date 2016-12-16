@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?zk xmlns="http://www.zkoss.org/2005/zul"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd" ?>
+<?taglib uri="/WEB-INF/security.tld" prefix="sec"?>
+<zk>
+<window apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.leoni.viewModel.TskGeneratorVM')" height="100%" width="100%" >
+          <timer id="timerKeepAliveSession" repeats="true" delay="3600000" onTimer=""/>
+         <vbox width="100%" height = "500px"  >
+
+         <groupbox  mold="3d" >
+         <caption  height="15px" >
+                  <div align="center" >
+                  <label  value="Generator tagesscheiby pre TSK server"  style="font-size:12pt" />
+                  </div>
+         </caption>
+         <vbox>
+         <label  value="Aplikacia vytvori TS do suboru QSS1.txt a nastavi QSK1.txt na hodnotu 1 aby umoznil TSK
+         generatoru spracovanir TS v QSS1.txt"  style="font-size:12pt"/>
+         <vbox >
+                             <radiogroup id="sv1" />
+                             <radio label="Vytvorit TS pre konkretnu kablovku" radiogroup="sv1"  onCheck="@command('generateProdNr')" checked = "@bind(vm.generateProdNrVis)"/>
+                             <radio label="Vytvorit davku TS" radiogroup="sv1"  onCheck="@command('generateBatch')" checked = "@bind(vm.generateBatchVis)"/>
+         </vbox>
+         <button label="Generuj" mold="trendy" onClick="@command('submit')" />
+         <grid width="100%" visible = "@bind(vm.generateProdNrVis)">
+                     <rows>
+                      <row >
+                       <label value="Prod. c.:" width="150px"/>
+                       <textbox value="@bind(vm.prodNr)" width="150px"/>
+                      </row>
+                      <row>
+                         <label value="Kabelsatz:" width="50px"/>
+                         <combobox  width="50px" selectedItem="@bind(vm.selectedKs)" value = "@bind(vm.selectedKs)"  model="@load(vm.kabelsatzList)"  readonly="true" autodrop="true">
+                          <template name="model" >
+                           <comboitem label="@load(each)"/>
+                          </template>
+                         </combobox>
+                      </row>
+                     </rows>
+         </grid>
+         <grid width="100%" visible = "@bind(vm.generateBatchVis)">
+                     <rows>
+                      <row >
+                       <label value="Zakaznik:" width="150px"/>
+                       <combobox  width="150px" selectedItem="@bind(vm.selectedCustomer)" value = "@bind(vm.selectedCustomer.name)" model="@load(vm.customerList)" onSelect = "@command('setProdDateList')" readonly="true" autodrop="true">
+                                                 <template name="model" >
+                                                  <comboitem label="@load(each.name)"/>
+                                                 </template>
+                                                </combobox>
+                      </row>
+                      <row >
+                                             <label value="Grupa:" width="150px"/>
+                                             <combobox  width="150px" selectedItem="@bind(vm.selectedGroup)" value = "@bind(vm.selectedGroup)" model="@load(vm.groupList)" readonly="true"  autodrop="true">
+                                                                       <template name="model" >
+                                                                        <comboitem label="@load(each)"/>
+                                                                       </template>
+                                                                      </combobox>
+                      </row>
+                      <row >
+                                             <label value="Kabelsatz:" width="150px"/>
+                                             <combobox  width="50px" selectedItem="@bind(vm.selectedKs2)" value = "@bind(vm.selectedKs2)" model="@load(vm.kabelsatzList)" readonly="true"  autodrop="true">
+                                                                       <template name="model" >
+                                                                        <comboitem label="@load(each)"/>
+                                                                       </template>
+                                                                      </combobox>
+                      </row>
+                      <row >
+                                             <label value="Prod. datum:" width="150px"/>
+                                             <combobox  width="150px" selectedItem="@bind(vm.selectedProdDate)" value = "@bind(vm.selectedProdDate)" model="@load(vm.prodDateList)" readonly="true"  autodrop="true">
+                                                                       <template name="model" >
+                                                                        <comboitem label="@load(each)"/>
+                                                                       </template>
+                                                                      </combobox>
+                      </row>
+                     </rows>
+         </grid>
+
+
+         <hbox>
+                  <label value="Vysledok: "  style="font-size:12pt"/>
+                  <label value="@bind(vm.result)"  style="font-size:12pt"/>
+         </hbox>
+         </vbox>
+         </groupbox>
+
+         </vbox>
+
+</window>
+</zk>

@@ -1,0 +1,15 @@
+<window id="modalDialog" title="Tlacit variantu" border="normal" width="300px"
+     apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.leoni.viewModel.PrintVariantVM')"
+    position="center,center" closable="true"
+    action="show: slideDown;hide: slideUp">
+    <vlayout>
+
+        <spinner  value="@bind(vm.nrOfPieces)" />
+        <combobox  width="200px" selectedItem="@bind(vm.selectedPrinter)"   model="@load(vm.printerList)"  readonly="true" autodrop="true">
+                                                          <template name="model" >
+                                                           <comboitem label="@load(each)"/>
+                                                          </template>
+                                                         </combobox>
+        <button  label="Tlacit"  onClick="@command('submit')"/>
+    </vlayout>
+</window>
