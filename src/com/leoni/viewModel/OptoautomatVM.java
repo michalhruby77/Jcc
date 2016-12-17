@@ -39,7 +39,7 @@ public class OptoautomatVM {
     @WireVariable
     protected Properties adminProps;
 
-    private String harnessScan = "20s1274670";//null;
+    private String harnessScan = "20s1274670";//nullaaa;
     private String harness;
     private String servletPrefix;
     private Map<String, String> vorneMap;
