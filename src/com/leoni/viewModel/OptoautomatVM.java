@@ -3,6 +3,8 @@ package com.leoni.viewModel;
 import com.leoni.data.dto.RelaisBoxDTO;
 import com.leoni.data.dto.RelaisZoneDTO;
 import com.leoni.data.manager.Lpab62Manager;
+import com.leoni.data.manager.StoffManager;
+import com.leoni.data.models.Stoff;
 import com.leoni.util.StringParser;
 import org.apache.commons.io.IOUtils;
 import org.zkoss.bind.annotation.AfterCompose;
@@ -24,6 +26,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
@@ -37,21 +41,24 @@ public class OptoautomatVM {
     private Lpab62Manager lpab62Manager;
 
     @WireVariable
+    private StoffManager stoffManager;
+
+    @WireVariable
     protected Properties adminProps;
 
     private String harnessScan = "20s1274670";//nullaaa;
     private String harness;
     private String servletPrefix;
-    private Map<String, String> vorneMap;
-    private Map<String, String> hintenMap;
-    private Map<String, String> linksMap;
-    private Map<String, String> rechtsMap;
+    private Map<String, byte[]> vorneMap = new HashMap<>();
+    private Map<String, byte[]> hintenMap = new HashMap<>();
+    private Map<String, byte[]> linksMap = new HashMap<>();
+    private Map<String, byte[]> rechtsMap = new HashMap<>();
     private byte[] test;
 
     @AfterCompose
     public void doAfterCompose()
     {
-        File imgPath = new File("C:/test.jpg");
+        /*File imgPath = new File("C:/test.jpg");
         BufferedImage bufferedImage = null;
         try {
             bufferedImage = ImageIO.read(imgPath);
@@ -64,13 +71,13 @@ public class OptoautomatVM {
         DataBufferByte data   = (DataBufferByte) raster.getDataBuffer();
 
         test = data.getData();
-
+*/
         servletPrefix = adminProps.getProperty("optoautomat.servletUrl");
     }
 
 
     @Command
-    @NotifyChange({"harnessScan","relaisBoxDTO", "vorneMap", "hintenMap", "linksMap", "rechtsMap", "harness"})
+    @NotifyChange({"harnessScan","relaisBoxDTO", "vorneMap", "hintenMap", "linksMap", "rechtsMap", "harness", "vorneMapObrazok"})
     public void submit() throws IOException {
 
       if(harnessScan != null && !harnessScan.isEmpty() && harnessScan.toLowerCase().startsWith("20s"))
@@ -84,7 +91,7 @@ public class OptoautomatVM {
         String kskz = "";
         if (substring.toLowerCase().equals("20s")) kskz = "F";
 
-          if (!lpab62Manager.findByProdnrAndKabelsatz(prodNr, kskz).isEmpty()){
+          if (!lpab62Manager.findByProdnrAndKabelsatz(prodNr, kskz).isEmpty() || true){
               harness = prodNr + " " + kskz;
               /*try {
                   URL url = new URL(servletPrefix + "prod_nr="
@@ -100,7 +107,7 @@ public class OptoautomatVM {
               }*/
 
               try {
-                  byte[] encoded = Files.readAllBytes(Paths.get("C:/test.txt"));
+                  byte[] encoded = Files.readAllBytes(Paths.get("C:/miso/test.txt"));
                   result = new String(encoded, "UTF-8");
               } catch (UnsupportedEncodingException e) {
                   e.printStackTrace();
@@ -119,16 +126,48 @@ public class OptoautomatVM {
     public void getData(RelaisBoxDTO relaisBoxDTO){
         for (RelaisZoneDTO zone : relaisBoxDTO.getRelaisZoneDTOList()){
             if (zone.getNazov().equals("relais_treager1_vorne")){
-                vorneMap = zone.getPositionMap();
+                for (String key : zone.getPositionMap().keySet()) {
+                    String stoffNr = zone.getPositionMap().get(key);
+                    if (stoffNr != null) {
+                        List<Stoff> stoffList = stoffManager.findByStoffNr(stoffNr);
+                        if (!stoffList.isEmpty()){
+                            vorneMap.put(key,stoffList.get(0).getObrazok());
+                        }
+                    }
+                }
             }
             if (zone.getNazov().equals("relais_treager2_hinten")){
-                hintenMap = zone.getPositionMap();
+                for (String key : zone.getPositionMap().keySet()) {
+                    String stoffNr = zone.getPositionMap().get(key);
+                    if (stoffNr != null) {
+                        List<Stoff> stoffList = stoffManager.findByStoffNr(stoffNr);
+                        if (!stoffList.isEmpty()){
+                            hintenMap.put(key,stoffList.get(0).getObrazok());
+                        }
+                    }
+                }
             }
             if (zone.getNazov().equals("sicherungs_dose_links")){
-                linksMap = zone.getPositionMap();
+                for (String key : zone.getPositionMap().keySet()) {
+                    String stoffNr = zone.getPositionMap().get(key);
+                    if (stoffNr != null) {
+                        List<Stoff> stoffList = stoffManager.findByStoffNr(stoffNr);
+                        if (!stoffList.isEmpty()){
+                            linksMap.put(key,stoffList.get(0).getObrazok());
+                        }
+                    }
+                }
             }
             if (zone.getNazov().equals("sicherungs_dose_rechts")){
-                rechtsMap = zone.getPositionMap();
+                for (String key : zone.getPositionMap().keySet()) {
+                    String stoffNr = zone.getPositionMap().get(key);
+                    if (stoffNr != null) {
+                        List<Stoff> stoffList = stoffManager.findByStoffNr(stoffNr);
+                        if (!stoffList.isEmpty()){
+                            rechtsMap.put(key,stoffList.get(0).getObrazok());
+                        }
+                    }
+                }
             }
         }
     }
@@ -141,35 +180,35 @@ public class OptoautomatVM {
         this.harnessScan = harnessScan;
     }
 
-    public Map<String, String> getVorneMap() {
+    public Map<String, byte[]> getVorneMap() {
         return vorneMap;
     }
 
-    public void setVorneMap(Map<String, String> vorneMap) {
+    public void setVorneMap(Map<String, byte[]> vorneMap) {
         this.vorneMap = vorneMap;
     }
 
-    public Map<String, String> getHintenMap() {
+    public Map<String, byte[]> getHintenMap() {
         return hintenMap;
     }
 
-    public void setHintenMap(Map<String, String> hintenMap) {
+    public void setHintenMap(Map<String, byte[]> hintenMap) {
         this.hintenMap = hintenMap;
     }
 
-    public Map<String, String> getLinksMap() {
+    public Map<String, byte[]> getLinksMap() {
         return linksMap;
     }
 
-    public void setLinksMap(Map<String, String> linksMap) {
+    public void setLinksMap(Map<String, byte[]> linksMap) {
         this.linksMap = linksMap;
     }
 
-    public Map<String, String> getRechtsMap() {
+    public Map<String, byte[]> getRechtsMap() {
         return rechtsMap;
     }
 
-    public void setRechtsMap(Map<String, String> rechtsMap) {
+    public void setRechtsMap(Map<String, byte[]> rechtsMap) {
         this.rechtsMap = rechtsMap;
     }
 
@@ -188,4 +227,6 @@ public class OptoautomatVM {
     public void setTest(byte[] test) {
         this.test = test;
     }
+
+
 }

@@ -28,15 +28,15 @@
             <grid>
                 <rows>
                 <row>
-                    <label value="@load(vm.vorneMap['K1'])" />
-                    <label value="@load(vm.vorneMap['K2b'])" />
-                    <label value="@load(vm.vorneMap['K3'])" />
-                    <label value="@load(vm.vorneMap['K4'])" />
-                    <label value="@load(vm.vorneMap['K5'])" />
-                    <label value="@load(vm.vorneMap['K6'])" />
-                    <label value="@load(vm.vorneMap['K7'])" />
-                    <label value="@load(vm.vorneMap['K8'])" />
-                    <label value="@load(vm.vorneMap['K9'])" />
+                    <image if="${vm.vorneMap['K1']!='null'}" content="@load(vm.vorneMap['K1']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                    <image if="${vm.vorneMap['K2b']!='null'}" content="@load(vm.vorneMap['K2b']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                    <image if="${vm.vorneMap['K3']!='null'}" content="@load(vm.vorneMap['K3']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                    <image if="${vm.vorneMap['K4']!='null'}" content="@load(vm.vorneMap['K4']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                    <image if="${vm.vorneMap['K5']!='null'}" content="@load(vm.vorneMap['K5']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                    <image if="${vm.vorneMap['K6']!='null'}" content="@load(vm.vorneMap['K6']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                    <image if="${vm.vorneMap['K7']!='null'}" content="@load(vm.vorneMap['K7']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                    <image if="${vm.vorneMap['K8']!='null'}" content="@load(vm.vorneMap['K8']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                    <image if="${vm.vorneMap['K9']!='null'}" content="@load(vm.vorneMap['K9']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
                 </row>
                 </rows>
             </grid>
@@ -45,59 +45,59 @@
                 <grid>
                     <rows>
                         <row>
-                            <label value="@load(vm.hintenMap['K1'])" />
-                            <label value="@load(vm.hintenMap['K2'])" />
-                            <label value="@load(vm.hintenMap['K3'])" />
-                            <label value="@load(vm.hintenMap['K4'])" />
-                            <label value="@load(vm.hintenMap['K5'])" />
-                            <label value="@load(vm.hintenMap['K6'])" />
-                            <label value="@load(vm.hintenMap['K7a'])" />
-                            <label value="@load(vm.hintenMap['K8'])" />
-                            <label value="@load(vm.hintenMap['K9'])" />
+                            <image if="${vm.hintenMap['K1']!='null'}" content="@load(vm.hintenMap['K1']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                            <image if="${vm.hintenMap['K2']!='null'}" content="@load(vm.hintenMap['K2']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                            <image if="${vm.hintenMap['K3']!='null'}" content="@load(vm.hintenMap['K3']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                            <image if="${vm.hintenMap['K4']!='null'}" content="@load(vm.hintenMap['K4']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                            <image if="${vm.hintenMap['K5']!='null'}" content="@load(vm.hintenMap['K5']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                            <image if="${vm.hintenMap['K6']!='null'}" content="@load(vm.hintenMap['K6']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                            <image if="${vm.hintenMap['K7a']!='null'}" content="@load(vm.hintenMap['K7a']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                            <image if="${vm.hintenMap['K8']!='null'}" content="@load(vm.hintenMap['K8']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                            <image if="${vm.hintenMap['K9']!='null'}" content="@load(vm.hintenMap['K9']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
                         </row>
                         <row>
-                            <label value="@load(vm.hintenMap['D1'])" />
-                            <label value="@load(vm.hintenMap['D2'])" />
-                            <label value="@load(vm.hintenMap['D3'])" />
-                            <label value="@load(vm.hintenMap['D4'])" />
-                            <label value="@load(vm.hintenMap['D5'])" />
-                            <label value="@load(vm.hintenMap['D6'])" />
-                            <label value="@load(vm.hintenMap['D7'])" />
-                            <label value="@load(vm.hintenMap['D8'])" />
-                            <label value="@load(vm.hintenMap['D9'])" />
+                            <image if="${vm.hintenMap['D1']!='null'}" content="@load(vm.hintenMap['D1']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                            <image if="${vm.hintenMap['D2']!='null'}" content="@load(vm.hintenMap['D2']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                            <image if="${vm.hintenMap['D3']!='null'}" content="@load(vm.hintenMap['D3']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                            <image if="${vm.hintenMap['D4']!='null'}" content="@load(vm.hintenMap['D4']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                            <image if="${vm.hintenMap['D5']!='null'}" content="@load(vm.hintenMap['D5']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                            <image if="${vm.hintenMap['D6']!='null'}" content="@load(vm.hintenMap['D6']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                            <image if="${vm.hintenMap['D7']!='null'}" content="@load(vm.hintenMap['D7']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                            <image if="${vm.hintenMap['D8']!='null'}" content="@load(vm.hintenMap['D8']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                            <image if="${vm.hintenMap['D9']!='null'}" content="@load(vm.hintenMap['D9']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
                         </row>
                         <row>
-                            <label value="@load(vm.hintenMap['C1'])" />
-                            <label value="@load(vm.hintenMap['C2'])" />
-                            <label value="@load(vm.hintenMap['C3'])" />
-                            <label value="@load(vm.hintenMap['C4'])" />
-                            <label value="@load(vm.hintenMap['C5'])" />
-                            <label value="@load(vm.hintenMap['C6'])" />
-                            <label value="@load(vm.hintenMap['C7'])" />
-                            <label value="@load(vm.hintenMap['C8'])" />
-                            <label value="@load(vm.hintenMap['C9'])" />
+                            <image if="${vm.hintenMap['C1']!='null'}" content="@load(vm.hintenMap['C1']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                            <image if="${vm.hintenMap['C2']!='null'}" content="@load(vm.hintenMap['C2']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                            <image if="${vm.hintenMap['C3']!='null'}" content="@load(vm.hintenMap['C3']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                            <image if="${vm.hintenMap['C4']!='null'}" content="@load(vm.hintenMap['C4']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                            <image if="${vm.hintenMap['C5']!='null'}" content="@load(vm.hintenMap['C5']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                            <image if="${vm.hintenMap['C6']!='null'}" content="@load(vm.hintenMap['C6']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                            <image if="${vm.hintenMap['C7']!='null'}" content="@load(vm.hintenMap['C7']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                            <image if="${vm.hintenMap['C8']!='null'}" content="@load(vm.hintenMap['C8']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                            <image if="${vm.hintenMap['C9']!='null'}" content="@load(vm.hintenMap['C9']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
                         </row>
                         <row>
-                            <label value="@load(vm.hintenMap['B1'])" />
-                            <label value="@load(vm.hintenMap['B2'])" />
-                            <label value="@load(vm.hintenMap['B3'])" />
-                            <label value="@load(vm.hintenMap['B4'])" />
-                            <label value="@load(vm.hintenMap['B5'])" />
-                            <label value="@load(vm.hintenMap['B6'])" />
-                            <label value="@load(vm.hintenMap['B7'])" />
-                            <label value="@load(vm.hintenMap['B8'])" />
-                            <label value="@load(vm.hintenMap['B9'])" />
+                            <image if="${vm.hintenMap['B1']!='null'}" content="@load(vm.hintenMap['B1']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                            <image if="${vm.hintenMap['B2']!='null'}" content="@load(vm.hintenMap['B2']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                            <image if="${vm.hintenMap['B3']!='null'}" content="@load(vm.hintenMap['B3']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                            <image if="${vm.hintenMap['B4']!='null'}" content="@load(vm.hintenMap['B4']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                            <image if="${vm.hintenMap['B5']!='null'}" content="@load(vm.hintenMap['B5']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                            <image if="${vm.hintenMap['B6']!='null'}" content="@load(vm.hintenMap['B6']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                            <image if="${vm.hintenMap['B7']!='null'}" content="@load(vm.hintenMap['B7']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                            <image if="${vm.hintenMap['B8']!='null'}" content="@load(vm.hintenMap['B8']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                            <image if="${vm.hintenMap['B9']!='null'}" content="@load(vm.hintenMap['B9']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
                         </row>
                         <row>
-                            <label value="@load(vm.hintenMap['A1'])" />
-                            <label value="@load(vm.hintenMap['A2'])" />
-                            <label value="@load(vm.hintenMap['A3'])" />
-                            <label value="@load(vm.hintenMap['A4'])" />
-                            <label value="@load(vm.hintenMap['A5'])" />
-                            <label value="@load(vm.hintenMap['A6'])" />
-                            <label value="@load(vm.hintenMap['A7'])" />
-                            <label value="@load(vm.hintenMap['A8'])" />
-                            <label value="@load(vm.hintenMap['A9'])" />
+                            <image if="${vm.hintenMap['A1']!='null'}" content="@load(vm.hintenMap['A1']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                            <image if="${vm.hintenMap['A2']!='null'}" content="@load(vm.hintenMap['A2']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                            <image if="${vm.hintenMap['A3']!='null'}" content="@load(vm.hintenMap['A3']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                            <image if="${vm.hintenMap['A4']!='null'}" content="@load(vm.hintenMap['A4']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                            <image if="${vm.hintenMap['A5']!='null'}" content="@load(vm.hintenMap['A5']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                            <image if="${vm.hintenMap['A6']!='null'}" content="@load(vm.hintenMap['A6']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                            <image if="${vm.hintenMap['A7']!='null'}" content="@load(vm.hintenMap['A7']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                            <image if="${vm.hintenMap['A8']!='null'}" content="@load(vm.hintenMap['A8']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                            <image if="${vm.hintenMap['A9']!='null'}" content="@load(vm.hintenMap['A9']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
                         </row>
                     </rows>
                 </grid>
@@ -107,59 +107,59 @@
                     <grid>
                         <rows>
                             <row>
-                                <label value="@load(vm.rechtsMap['G1'])" />
-                                <label value="@load(vm.rechtsMap['G2'])" />
-                                <label value="@load(vm.rechtsMap['G3'])" />
-                                <label value="@load(vm.rechtsMap['G4'])" />
-                                <label value="@load(vm.rechtsMap['G5'])" />
-                                <label value="@load(vm.rechtsMap['G6'])" />
-                                <label value="@load(vm.rechtsMap['G7'])" />
-                                <label value="@load(vm.rechtsMap['G8'])" />
-                                <label value="@load(vm.rechtsMap['G9'])" />
+                                <image if="${vm.linksMap['G1']!='null'}" content="@load(vm.linksMap['G1']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.linksMap['G2']!='null'}" content="@load(vm.linksMap['G2']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.linksMap['G3']!='null'}" content="@load(vm.linksMap['G3']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.linksMap['G4']!='null'}" content="@load(vm.linksMap['G4']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.linksMap['G5']!='null'}" content="@load(vm.linksMap['G5']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.linksMap['G6']!='null'}" content="@load(vm.linksMap['G6']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.linksMap['G7']!='null'}" content="@load(vm.linksMap['G7']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.linksMap['G8']!='null'}" content="@load(vm.linksMap['G8']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.linksMap['G9']!='null'}" content="@load(vm.linksMap['G9']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
                             </row>
                             <row>
-                                <label value="@load(vm.hintenMap['D1'])" />
-                                <label value="@load(vm.hintenMap['D2'])" />
-                                <label value="@load(vm.hintenMap['D3'])" />
-                                <label value="@load(vm.hintenMap['D4'])" />
-                                <label value="@load(vm.hintenMap['D5'])" />
-                                <label value="@load(vm.hintenMap['D6'])" />
-                                <label value="@load(vm.hintenMap['D7'])" />
-                                <label value="@load(vm.hintenMap['D8'])" />
-                                <label value="@load(vm.hintenMap['D9'])" />
+                                <image if="${vm.linksMap['D1']!='null'}" content="@load(vm.linksMap['D1']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.linksMap['D2']!='null'}" content="@load(vm.linksMap['D2']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.linksMap['D3']!='null'}" content="@load(vm.linksMap['D3']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.linksMap['D4']!='null'}" content="@load(vm.linksMap['D4']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.linksMap['D5']!='null'}" content="@load(vm.linksMap['D5']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.linksMap['D6']!='null'}" content="@load(vm.linksMap['D6']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.linksMap['D7']!='null'}" content="@load(vm.linksMap['D7']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.linksMap['D8']!='null'}" content="@load(vm.linksMap['D8']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.linksMap['D9']!='null'}" content="@load(vm.linksMap['D9']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
                             </row>
                             <row>
-                                <label value="@load(vm.hintenMap['C1'])" />
-                                <label value="@load(vm.hintenMap['C2'])" />
-                                <label value="@load(vm.hintenMap['C3'])" />
-                                <label value="@load(vm.hintenMap['C4'])" />
-                                <label value="@load(vm.hintenMap['C5'])" />
-                                <label value="@load(vm.hintenMap['C6'])" />
-                                <label value="@load(vm.hintenMap['C7'])" />
-                                <label value="@load(vm.hintenMap['C8'])" />
-                                <label value="@load(vm.hintenMap['C9'])" />
+                                <image if="${vm.linksMap['C1']!='null'}" content="@load(vm.linksMap['C1']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.linksMap['C2']!='null'}" content="@load(vm.linksMap['C2']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.linksMap['C3']!='null'}" content="@load(vm.linksMap['C3']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.linksMap['C4']!='null'}" content="@load(vm.linksMap['C4']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.linksMap['C5']!='null'}" content="@load(vm.linksMap['C5']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.linksMap['C6']!='null'}" content="@load(vm.linksMap['C6']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.linksMap['C7']!='null'}" content="@load(vm.linksMap['C7']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.linksMap['C8']!='null'}" content="@load(vm.linksMap['C8']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.linksMap['C9']!='null'}" content="@load(vm.linksMap['C9']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
                             </row>
                             <row>
-                                <label value="@load(vm.hintenMap['B1'])" />
-                                <label value="@load(vm.hintenMap['B2'])" />
-                                <label value="@load(vm.hintenMap['B3'])" />
-                                <label value="@load(vm.hintenMap['B4'])" />
-                                <label value="@load(vm.hintenMap['B5'])" />
-                                <label value="@load(vm.hintenMap['B6'])" />
-                                <label value="@load(vm.hintenMap['B7'])" />
-                                <label value="@load(vm.hintenMap['B8'])" />
-                                <label value="@load(vm.hintenMap['B9'])" />
+                                <image if="${vm.linksMap['B1']!='null'}" content="@load(vm.linksMap['B1']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.linksMap['B2']!='null'}" content="@load(vm.linksMap['B2']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.linksMap['B3']!='null'}" content="@load(vm.linksMap['B3']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.linksMap['B4']!='null'}" content="@load(vm.linksMap['B4']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.linksMap['B5']!='null'}" content="@load(vm.linksMap['B5']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.linksMap['B6']!='null'}" content="@load(vm.linksMap['B6']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.linksMap['B7']!='null'}" content="@load(vm.linksMap['B7']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.linksMap['B8']!='null'}" content="@load(vm.linksMap['B8']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.linksMap['B9']!='null'}" content="@load(vm.linksMap['B9']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
                             </row>
                             <row>
-                                <label value="@load(vm.hintenMap['A1'])" />
-                                <label value="@load(vm.hintenMap['A2'])" />
-                                <label value="@load(vm.hintenMap['A3'])" />
-                                <label value="@load(vm.hintenMap['A4'])" />
-                                <label value="@load(vm.hintenMap['A5'])" />
-                                <label value="@load(vm.hintenMap['A6'])" />
-                                <label value="@load(vm.hintenMap['A7'])" />
-                                <label value="@load(vm.hintenMap['A8'])" />
-                                <label value="@load(vm.hintenMap['A9'])" />
+                                <image if="${vm.linksMap['A1']!='null'}" content="@load(vm.linksMap['A1']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.linksMap['A2']!='null'}" content="@load(vm.linksMap['A2']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.linksMap['A3']!='null'}" content="@load(vm.linksMap['A3']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.linksMap['A4']!='null'}" content="@load(vm.linksMap['A4']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.linksMap['A5']!='null'}" content="@load(vm.linksMap['A5']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.linksMap['A6']!='null'}" content="@load(vm.linksMap['A6']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.linksMap['A7']!='null'}" content="@load(vm.linksMap['A7']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.linksMap['A8']!='null'}" content="@load(vm.linksMap['A8']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.linksMap['A9']!='null'}" content="@load(vm.linksMap['A9']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
                             </row>
 
                         </rows>
@@ -169,59 +169,59 @@
                     <grid>
                         <rows>
                             <row>
-                                <label value="@load(vm.rechtsMap['H1'])" />
-                                <label value="@load(vm.rechtsMap['H2'])" />
-                                <label value="@load(vm.rechtsMap['H3'])" />
-                                <label value="@load(vm.rechtsMap['H4'])" />
-                                <label value="@load(vm.rechtsMap['H5'])" />
-                                <label value="@load(vm.rechtsMap['H6'])" />
-                                <label value="@load(vm.rechtsMap['H7'])" />
-                                <label value="@load(vm.rechtsMap['H8'])" />
-                                <label value="@load(vm.rechtsMap['H9'])" />
+                                <image if="${vm.rechtsMap['H1']!='null'}" content="@load(vm.rechtsMap['H1']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.rechtsMap['H2']!='null'}" content="@load(vm.rechtsMap['H2']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.rechtsMap['H3']!='null'}" content="@load(vm.rechtsMap['H3']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.rechtsMap['H4']!='null'}" content="@load(vm.rechtsMap['H4']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.rechtsMap['H5']!='null'}" content="@load(vm.rechtsMap['H5']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.rechtsMap['H6']!='null'}" content="@load(vm.rechtsMap['H6']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.rechtsMap['H7']!='null'}" content="@load(vm.rechtsMap['H7']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.rechtsMap['H8']!='null'}" content="@load(vm.rechtsMap['H8']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.rechtsMap['H9']!='null'}" content="@load(vm.rechtsMap['H9']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
                             </row>
                             <row>
-                                <label value="@load(vm.hintenMap['D1'])" />
-                                <label value="@load(vm.hintenMap['D2'])" />
-                                <label value="@load(vm.hintenMap['D3'])" />
-                                <label value="@load(vm.hintenMap['D4'])" />
-                                <label value="@load(vm.hintenMap['D5'])" />
-                                <label value="@load(vm.hintenMap['D6'])" />
-                                <label value="@load(vm.hintenMap['D7'])" />
-                                <label value="@load(vm.hintenMap['D8'])" />
-                                <label value="@load(vm.hintenMap['D9'])" />
+                                <image if="${vm.rechtsMap['D1']!='null'}" content="@load(vm.rechtsMap['D1']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.rechtsMap['D2']!='null'}" content="@load(vm.rechtsMap['D2']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.rechtsMap['D3']!='null'}" content="@load(vm.rechtsMap['D3']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.rechtsMap['D4']!='null'}" content="@load(vm.rechtsMap['D4']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.rechtsMap['D5']!='null'}" content="@load(vm.rechtsMap['D5']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.rechtsMap['D6']!='null'}" content="@load(vm.rechtsMap['D6']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.rechtsMap['D7']!='null'}" content="@load(vm.rechtsMap['D7']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.rechtsMap['D8']!='null'}" content="@load(vm.rechtsMap['D8']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.rechtsMap['D9']!='null'}" content="@load(vm.rechtsMap['D9']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
                             </row>
                             <row>
-                                <label value="@load(vm.hintenMap['C1'])" />
-                                <label value="@load(vm.hintenMap['C2'])" />
-                                <label value="@load(vm.hintenMap['C3'])" />
-                                <label value="@load(vm.hintenMap['C4'])" />
-                                <label value="@load(vm.hintenMap['C5'])" />
-                                <label value="@load(vm.hintenMap['C6'])" />
-                                <label value="@load(vm.hintenMap['C7'])" />
-                                <label value="@load(vm.hintenMap['C8'])" />
-                                <label value="@load(vm.hintenMap['C9'])" />
+                                <image if="${vm.rechtsMap['C1']!='null'}" content="@load(vm.rechtsMap['C1']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.rechtsMap['C2']!='null'}" content="@load(vm.rechtsMap['C2']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.rechtsMap['C3']!='null'}" content="@load(vm.rechtsMap['C3']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.rechtsMap['C4']!='null'}" content="@load(vm.rechtsMap['C4']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.rechtsMap['C5']!='null'}" content="@load(vm.rechtsMap['C5']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.rechtsMap['C6']!='null'}" content="@load(vm.rechtsMap['C6']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.rechtsMap['C7']!='null'}" content="@load(vm.rechtsMap['C7']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.rechtsMap['C8']!='null'}" content="@load(vm.rechtsMap['C8']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.rechtsMap['C9']!='null'}" content="@load(vm.rechtsMap['C9']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
                             </row>
                             <row>
-                                <label value="@load(vm.hintenMap['B1'])" />
-                                <label value="@load(vm.hintenMap['B2'])" />
-                                <label value="@load(vm.hintenMap['B3'])" />
-                                <label value="@load(vm.hintenMap['B4'])" />
-                                <label value="@load(vm.hintenMap['B5'])" />
-                                <label value="@load(vm.hintenMap['B6'])" />
-                                <label value="@load(vm.hintenMap['B7'])" />
-                                <label value="@load(vm.hintenMap['B8'])" />
-                                <label value="@load(vm.hintenMap['B9'])" />
+                                <image if="${vm.rechtsMap['B1']!='null'}" content="@load(vm.rechtsMap['B1']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.rechtsMap['B2']!='null'}" content="@load(vm.rechtsMap['B2']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.rechtsMap['B3']!='null'}" content="@load(vm.rechtsMap['B3']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.rechtsMap['B4']!='null'}" content="@load(vm.rechtsMap['B4']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.rechtsMap['B5']!='null'}" content="@load(vm.rechtsMap['B5']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.rechtsMap['B6']!='null'}" content="@load(vm.rechtsMap['B6']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.rechtsMap['B7']!='null'}" content="@load(vm.rechtsMap['B7']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.rechtsMap['B8']!='null'}" content="@load(vm.rechtsMap['B8']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.rechtsMap['B9']!='null'}" content="@load(vm.rechtsMap['B9']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
                             </row>
                             <row>
-                                <label value="@load(vm.hintenMap['A1'])" />
-                                <label value="@load(vm.hintenMap['A2'])" />
-                                <label value="@load(vm.hintenMap['A3'])" />
-                                <label value="@load(vm.hintenMap['A4'])" />
-                                <label value="@load(vm.hintenMap['A5'])" />
-                                <label value="@load(vm.hintenMap['A6'])" />
-                                <label value="@load(vm.hintenMap['A7'])" />
-                                <label value="@load(vm.hintenMap['A8'])" />
-                                <label value="@load(vm.hintenMap['A9'])" />
+                                <image if="${vm.rechtsMap['A1']!='null'}" content="@load(vm.rechtsMap['A1']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.rechtsMap['A2']!='null'}" content="@load(vm.rechtsMap['A2']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.rechtsMap['A3']!='null'}" content="@load(vm.rechtsMap['A3']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.rechtsMap['A4']!='null'}" content="@load(vm.rechtsMap['A4']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.rechtsMap['A5']!='null'}" content="@load(vm.rechtsMap['A5']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.rechtsMap['A6']!='null'}" content="@load(vm.rechtsMap['A6']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.rechtsMap['A7']!='null'}" content="@load(vm.rechtsMap['A7']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.rechtsMap['A8']!='null'}" content="@load(vm.rechtsMap['A8']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
+                                <image if="${vm.rechtsMap['A9']!='null'}" content="@load(vm.rechtsMap['A9']) @converter('com.leoni.viewModel.ImageToZkImageConverter')"/>
                             </row>
                         </rows>
                     </grid>
