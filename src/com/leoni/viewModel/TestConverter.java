@@ -19,7 +19,6 @@ public class TestConverter  implements Converter<AImage, byte[], Image> {
     @Override
     public AImage coerceToUi(byte[] beanProp, Image component, BindContext bindContext) {
         try {
-            System.out.println(beanProp+"aaaaa");
             if (beanProp != null && beanProp.length > 0) {
                 AImage im = new AImage("", beanProp);
                 component.setContent(im);

@@ -77,13 +77,11 @@ public class OptoautomatVM {
 
 
     @Command
-    @NotifyChange({"harnessScan","relaisBoxDTO", "vorneMap", "hintenMap", "linksMap", "rechtsMap", "harness", "vorneMapObrazok"})
+    @NotifyChange({"harnessScan","relaisBoxDTO", "vorneMap", "hintenMap", "linksMap", "rechtsMap", "harness"})
     public void submit() throws IOException {
 
       if(harnessScan != null && !harnessScan.isEmpty() && harnessScan.toLowerCase().startsWith("20s"))
       {
-
-
 
         String result = null;
         String substring = harnessScan.trim().substring(0, 3);
@@ -119,6 +117,15 @@ public class OptoautomatVM {
           }
           else Messagebox.show("Kablovka neexistuje v databaze (Lpab62)!", "Error", Messagebox.OK, Messagebox.ERROR);
 
+      } else if(harnessScan != null && !harnessScan.isEmpty() && harnessScan.toLowerCase().startsWith("persnr")){
+
+
+      } else if(harnessScan != null && !harnessScan.isEmpty() && harnessScan.toLowerCase().startsWith("cancel")){
+          harnessScan = "";
+          vorneMap = new HashMap<>();
+          hintenMap = new HashMap<>();
+          linksMap = new HashMap<>();
+          rechtsMap = new HashMap<>();
       }
         else Messagebox.show("Kablovka bola zle naskenovana!", "Error", Messagebox.OK, Messagebox.ERROR);
     }
